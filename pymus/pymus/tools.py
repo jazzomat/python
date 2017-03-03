@@ -130,15 +130,20 @@ class Tools:
         for n in range(num_notes):
             curr_frame_wise_values = frame_wise_values[onset_frame[n]:offset_frame[n]+1]
             num_frames_curr = len(curr_frame_wise_values)
-            result['max'][n] = np.max(curr_frame_wise_values)
-            result['median'][n] = np.median(curr_frame_wise_values)
-            result['std'][n] = np.std(curr_frame_wise_values, ddof=1)  # same result as in Matlab
-            result['temp_centroid'][n] = np.sum(np.linspace(0, 1, num_frames_curr)*curr_frame_wise_values) /\
-                                         np.sum(curr_frame_wise_values)
             if num_frames_curr > 1:
+                result['max'][n] = np.max(curr_frame_wise_values)
+                result['median'][n] = np.median(curr_frame_wise_values)
+                result['std'][n] = np.std(curr_frame_wise_values, ddof=1)  # same result as in Matlab
+                curr_frame_wise_values_scaled = curr_frame_wise_values - np.min(curr_frame_wise_values)
+                result['temp_centroid'][n] = np.sum(np.linspace(0, 1, num_frames_curr)*curr_frame_wise_values_scaled) /\
+                                             np.sum(curr_frame_wise_values_scaled)
                 result['rel_peak_pos'][n] = float(np.argmax(curr_frame_wise_values))/(num_frames_curr-1)
             else:
-                result['rel_peak_pos'][n] = 0
+                result['max'][n] = np.nan
+                result['median'][n] = np.nan
+                result['std'][n] = np.nan
+                result['temp_centroid'][n] = np.nan
+                result['rel_peak_pos'][n] = np.nan
 
         return result
 

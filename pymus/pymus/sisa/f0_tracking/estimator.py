@@ -1,4 +1,5 @@
 from .f0_tracking_peak_tracking import F0TrackerPeakTrackingAbesserDAFX2014
+from .f0_tracking_pyin import F0TrackerPYIN
 
 __author__ = 'Jakob Abesser'
 
@@ -25,6 +26,13 @@ class F0Tracker:
                                                                   onset,
                                                                   duration,
                                                                   tuning_frequency=options['tuning_frequency'])
+        elif options['f0_tracking_method'] == 'pyin':
+            return F0TrackerPYIN().process(samples,
+                                           sample_rate,
+                                           pitch,
+                                           onset,
+                                           duration,
+                                           tuning_frequency=options['tuning_frequency'])
         else:
             raise Exception("F0 tracking method not yet implemented!")
 

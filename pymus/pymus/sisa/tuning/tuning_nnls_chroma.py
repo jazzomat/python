@@ -19,13 +19,13 @@ class TuningEstimatorMauch:
                               'tuning.csv')
         # add sonic annotator to PATH if necessary
         # os.system('export "PATH=/Applications/SonicAnnotator/:$PATH"')
-        command = "sonic-annotator -d vamp:nnls-chroma:tuning:tuning \"{}\" -w csv --csv-one-file {}".format(fn_wav,
-                                                                                                             fn_csv)
+        command = "sonic-annotator -d vamp:nnls-chroma:tuning:tuning \"{}\" -w csv --csv-one-file {} --csv-separator ';'".format(fn_wav,
+                                                                                                                                 fn_csv)
         os.system(command)
 
         # read result (tuning frequency)
         with open(fn_csv, 'r') as f:
-            content = f.readline().split(',')
+            content = f.readline().split(';')
         if os.path.isfile(fn_csv):
             os.remove(fn_csv)
 

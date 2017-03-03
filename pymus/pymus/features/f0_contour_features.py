@@ -48,7 +48,8 @@ class ContourFeatures:
         val_range = np.arange(len(f0_cent_rel))
 
         if feat_mod_range_cent:
-            features.append(np.max(f0_cent_rel)-np.min(f0_cent_rel))
+            # features.append(np.max(f0_cent_rel)-np.min(f0_cent_rel))
+            features.append(np.subtract(*np.percentile(f0_cent_rel, [95, 5])))
             feature_labels.append('mod_range_cent')
 
         if feat_av_f0_dev:
@@ -100,7 +101,7 @@ class ContourFeatures:
 
         if len(freq_hz) < 3:
             num_feat = 7
-            return [None for _ in range(num_feat)], ['' for _ in range(num_feat)]
+            return [np.nan for _ in range(num_feat)], ['' for _ in range(num_feat)]
 
         # Median frequency gradient
         f_diff = np.diff(freq_hz)
@@ -148,7 +149,7 @@ class ContourFeatures:
         try:
             features.append(float(np.sum(seg_len[np.nonzero(seg_sign == 1.)[0]]))/num_diff_sign)
         except:
-            features.append(None)
+            features.append(np.nan)
         feature_labels.append('ratio_of_ascending_segments')
 
         features.append(np.median(seg_len) / np.sum(seg_len))
@@ -220,7 +221,7 @@ class ContourFeatures:
         focus_bins = np.where(np.logical_and(lag_sec > 1./max_mod_freq_hz,
                                              lag_sec < 1./min_mod_freq_hz))[0]
         if len(focus_bins) == 0:
-            return None, None
+            return np.nan, np.nan
 
         focus_acf = acf[focus_bins]
         focus_lag_sec = lag_sec[focus_bins]

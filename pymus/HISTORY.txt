@@ -1,0 +1,41 @@
+
+Changelog
+=========
+
+0.2.5 - Feb 18, 2017
+--------------------
+
+- fixed bug in tuning estimation that occurred for filenames with comma
+- added wrapper to pyin as f0 tracking alternative
+
+0.2.4 - Aug 6, 2016
+--------------------
+
+- code cleanup, fixed docstrings
+- updated search range for f0 modulation frequency to [3, 10] Hz
+
+0.2.3 - Jul 10, 2016
+--------------------
+
+- changed xrange to range for python 3 compatability
+- added 2016 in LICENCE.txt
+
+0.2.2 - Jun 13, 2016
+--------------------
+
+- small improvements and parameter changes in f0 extraction
+
+0.2.1 - Dez 16, 2015
+--------------------
+
+- fixed bug: missing files are included into package now
+
+0.2.0 - Dez 13, 2015
+--------------------
+
+- fixed bugs in f0 tracking
+- analyze() method in class ScoreInformedSoloAnalysis now takes three audio file names for each analysis step
+  (tuning estimation, loudness estimation, f0 tracking)
+- this can be useful if e.g. source separation algorithms were used to split an audio recording into an audio
+  file with the main melody instrument (useful for loudness analysis and f0 tracking) and one with all other
+  instruments (useful for tuning analysis)

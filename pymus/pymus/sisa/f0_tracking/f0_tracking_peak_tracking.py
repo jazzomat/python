@@ -98,7 +98,7 @@ class F0TrackerPeakTrackingAbesserDAFX2014:
             pitch = np.array(pitch)
         if type(onset) is not np.ndarray:
             onset = np.array(onset)
-        if type(pitch) is not np.ndarray:
+        if type(duration) is not np.ndarray:
             duration = np.array(duration)
 
         self.num_notes = len(pitch)
