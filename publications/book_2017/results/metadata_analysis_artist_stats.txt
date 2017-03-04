@@ -1,4 +1,4 @@
-Art Pepper & cl, as & 6 & 3634\\
+Art Pepper & as, cl & 6 & 3634\\
 Ben Webster & ts & 5 & 1826\\
 Benny Carter & as & 7 & 2650\\
 Benny Goodman & cl & 7 & 1144\\
@@ -34,7 +34,7 @@ Herbie Hancock & p & 5 & 2769\\
 J.C. Higginbotham & tb & 1 & 170\\
 J.J. Johnson & tb & 8 & 3324\\
 Joe Henderson & ts & 8 & 4930\\
-Joe Lovano & ss, ts-c, ts & 8 & 6104\\
+Joe Lovano & ss, ts, ts-c & 8 & 6104\\
 John Abercrombie & g & 1 & 298\\
 John Coltrane & ss, ts & 20 & 19429\\
 Johnny Dodds & cl & 6 & 722\\
@@ -46,12 +46,12 @@ Kenny Garrett & as & 2 & 764\\
 Kenny Wheeler & tp & 3 & 843\\
 Kid Ory & tb & 5 & 319\\
 Lee Konitz & as & 8 & 3519\\
-Lee Morgan & tp, ts & 4 & 2243\\
+Lee Morgan & ts, tp & 4 & 2243\\
 Lester Young & ts & 7 & 1787\\
 Lionel Hampton & vib & 6 & 1330\\
 Louis Armstrong & cor, tp & 8 & 1157\\
 Michael Brecker & ts & 10 & 7601\\
-Miles Davis & tp, ts & 19 & 6734\\
+Miles Davis & ts, tp & 19 & 6734\\
 Milt Jackson & vib & 6 & 2302\\
 Nat Adderley & tp & 2 & 648\\
 Ornette Coleman & as & 5 & 2857\\

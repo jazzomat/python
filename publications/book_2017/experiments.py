@@ -6,8 +6,7 @@ import seaborn as sns
 import pandas as pn
 import matplotlib.pyplot as pl
 sns.set(style="white", color_codes=True)
-from scipy import stats
-
+from scipy.stats import ttest_ind, ttest_rel, pearsonr, linregress
 from tools import AudioAnalysisTools, TextWriter
 
 __author__ = 'Jakob Abesser'
@@ -17,18 +16,20 @@ class AudioAnalysisExperiments:
 
     def __init__(self,
                  dir_data,
-                 dir_results):
+                 dir_results,
+                 min_num_solos_per_artist=3):
         self.dir_results = dir_results
         self.dir_data = dir_data
 
         # data loading & preparation
         self.df_notes, self.df_beats, self.df_solos = self.load_data()
-        self.df_performer = self.create_performer_data_frame()
+        self.df_performer = self.create_performer_data_frame(min_num_solos_per_artist=min_num_solos_per_artist)
 
         self.tools = AudioAnalysisTools
-        self.extractors = {'metadata': [self.metadata_analysis],
-                           'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
+        self.extractors = {#'metadata': [self.metadata_analysis],
+                           #'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
                            'intensity': [self.intensity_analysis_correlations]}
+        self.unique_melids = np.unique(self.df_solos['melid'])
         self.text_writer = TextWriter()
 
     def load_data(self):
@@ -60,7 +61,7 @@ class AudioAnalysisExperiments:
         year = self.df_solos['recording_year']
 
         # linear regression
-        slope, intercept, r_value, p_value, std_err = stats.linregress(year, delta_f_ref_440_cent)
+        slope, intercept, r_value, p_value, std_err = linregress(year, delta_f_ref_440_cent)
 
         # write r & p values to files
         self.text_writer.reset()
@@ -87,111 +88,107 @@ class AudioAnalysisExperiments:
                    bbox_inches='tight')
         pl.close()
 
-    def intensity_analysis_correlations(self):
+    def intensity_analysis_correlations(self, num_highest_and_lowest_artists=7):
 
-        num_solos = self.df_solos.shape[0]
+        num_solos = len(self.unique_melids)
 
-        # param_labels = ('Pitch', 'Duration', 'RelPosInPhrase')
-        # num_labels = len(param_labels)
-        # r = np.zeros((num_labels, num_solos))
-        # p = np.zeros((num_labels, num_solos))
-        #
-        # phrase_id_values = self.df_notes['phraseid'].as_matrix()
-        # intensity_values = self.df_notes['intensity_max'].as_matrix()
-        # pitch_values = self.df_notes['pitch'].as_matrix()
-        # duration_values = self.df_notes['duration'].as_matrix()
-        #
-        # base_name_values = self.df_notes['base_name'].as_matrix()
-        # intensity_within_percentiles_values = self.df_notes['intensity_within_percentiles'].as_matrix()
-        #
-        # # iterate over solos
-        # for s in range(num_solos):
-        #
-        #     print('Solo {} / {}'.format(s + 1, num_solos))
-        #
-        #     # get note indices of current solo with valid intensity values
-        #     base_name = self.df_solos['base_name'].as_matrix()[s]
-        #     note_idx = np.where(self.df_notes['base_name'] == base_name)[0]
-        #
-        #     # get note parameters
-        #     curr_intensity = intensity_values[note_idx]
-        #     curr_duration = duration_values[note_idx]
-        #     curr_pitch = pitch_values[note_idx]
-        #     curr_phrase_id = phrase_id_values[note_idx]
-        #     assert all(np.diff(curr_phrase_id) >= 0)
-        #     curr_rel_pos_in_phrase = get_relative_position_in_phrase(curr_phrase_id)
-        #
-        #     vec = (curr_pitch, curr_duration, curr_rel_pos_in_phrase)
-        #     N = len(vec)
-        #     # compute Pearson correlation coefficient
-        #     for _ in range(N):
-        #         # TODO check for normal distribution
-        #         r[_, s], p[_, s] = pearsonr(curr_intensity, vec[_])
-        #
-        # # check for significant correlation
-        # sig_mask = p < .05
-        #
-        # # average r over solos for each artist with significant correlations
-        # artist = np.array(self.df_solos['performer'].as_matrix())
-        # unique_artist = np.unique(artist)
-        # num_unique_artist = len(unique_artist)
-        #
-        # r_artist_mean = np.zeros((num_labels, num_unique_artist))
-        # r_artist_std = np.zeros((num_labels, num_unique_artist))
-        # r_artist_valid = np.ones((num_labels, num_unique_artist), dtype=bool)
-        #
-        # for aid, a in enumerate(unique_artist):
-        #     solo_idx = np.where(artist == a)[0]
-        #
-        #     for lid in range(num_labels):
-        #         # focus on significant correlations
-        #         solo_idx = solo_idx[p[lid, solo_idx] < .05]
-        #
-        #         if len(solo_idx) > 0:
-        #
-        #             r_artist_mean[lid, aid] = np.mean(r[lid, solo_idx])
-        #             r_artist_std[lid, aid] = np.std(r[lid, solo_idx])
-        #         else:
-        #             r_artist_valid[lid, aid] = False
-        #             print('NOPE for ' + a + " - " + str(lid))
-        #
-        # # TODO remove: hack such that non-valid entries get mean values so they don't show up in the table
-        # for aid in range(num_unique_artist):
-        #     for lid in range(num_labels):
-        #         if not r_artist_valid[lid, aid]:
-        #             r_artist_mean[lid, aid] = np.mean(r_artist_mean[lid, :])
-        #
-        # # get matrix with row-wise solo idx in descending order of correlation coefficient size
-        # sorted_indices = np.zeros((num_labels, num_unique_artist))
-        # for lid in range(num_labels):
-        #     sorted_indices[lid] = np.argsort(r_artist_mean[lid, :])[::-1]
-        #
-        # num_highest_and_lowest_artists = 7
-        # txt_results = TextResults()
-        # ranks = np.concatenate((np.arange(num_highest_and_lowest_artists),
-        #                         np.arange(num_unique_artist - num_highest_and_lowest_artists, num_unique_artist)))
-        #
-        # for _ in ranks:
-        #
-        #     txt_results.add(
-        #         "{} & {} \\newline ({:1.2f}~$\pm$~{:1.2f}) & {} \\newline ({:1.2f}~$\pm$~{:1.2f}) & {} \\newline ({:1.2f}~$\pm$~{:1.2f}) \\\\".format(
-        #             _ + 1,
-        #             unique_artist[sorted_indices[0, _]],
-        #             r_artist_mean[0, sorted_indices[0, _]],
-        #             r_artist_std[0, sorted_indices[0, _]],
-        #             unique_artist[sorted_indices[1, _]],
-        #             r_artist_mean[1, sorted_indices[1, _]],
-        #             r_artist_std[1, sorted_indices[1, _]],
-        #             unique_artist[sorted_indices[2, _]],
-        #             r_artist_mean[2, sorted_indices[2, _]],
-        #             r_artist_std[2, sorted_indices[2, _]]))
-        #     if _ == num_highest_and_lowest_artists - 1:
-        #         txt_results.add('\hline')
-        # fn_result = os.path.join(self.dir_results_root, 'SISA_loudness_vs_performers_select.txt')
-        # txt_results.save(fn_result)
-        # print('{} saved ...'.format(fn_result))
+        param_labels = ('Pitch', 'Duration', 'RelPosInPhrase')
+        num_labels = len(param_labels)
+        r = np.zeros((num_labels, num_solos))
+        p = np.zeros((num_labels, num_solos))
 
-    def create_performer_data_frame(self):
+        phrase_id = self.df_notes['phraseid'].as_matrix()
+        intensity = self.df_notes['intensity_solo_max'].as_matrix()
+        pitch = self.df_notes['pitch'].as_matrix()
+        duration = self.df_notes['duration'].as_matrix()
+
+        # iterate over solos
+        for sid, melid in enumerate(self.unique_melids):
+
+            # get note indices of current solo with valid intensity values
+            note_idx = np.where(self.df_notes['melid'] == melid)[0]
+
+            # get note parameters
+            curr_intensity = intensity[note_idx]
+            curr_duration = duration[note_idx]
+            curr_pitch = pitch[note_idx]
+            curr_phrase_id = phrase_id[note_idx]
+            assert all(np.diff(curr_phrase_id) >= 0)
+            curr_rel_pos_in_phrase = self.tools.get_relative_position_in_phrase(curr_phrase_id)
+
+            vec = (curr_pitch, curr_duration, curr_rel_pos_in_phrase)
+            N = len(vec)
+            # compute Pearson correlation coefficient
+            for pid in range(3):
+                r[pid, sid], p[pid, sid] = pearsonr(curr_intensity, vec[pid])
+
+        # average r over solos for each artist with significant correlations
+        artist = np.array(self.df_solos['performer'].as_matrix())
+        # focus on artist selection
+        unique_artist = np.array(self.df_performer.index)
+        unique_artist_label = np.array(self.df_performer['artist_instrument_label'])
+        num_unique_artist = len(unique_artist)
+
+        r_artist_mean = -1*np.ones((num_labels, num_unique_artist))
+        r_artist_std = -1*np.ones((num_labels, num_unique_artist))
+        r_artist_valid = np.ones((num_labels, num_unique_artist), dtype=bool)
+
+        for aid, a in enumerate(unique_artist):
+            solo_idx = np.where(artist == a)[0]
+
+            for lid in range(num_labels):
+                # focus on significant correlations
+                solo_idx = solo_idx[p[lid, solo_idx] < .05]
+
+                if len(solo_idx) > 1:
+                    r_artist_mean[lid, aid] = np.mean(r[lid, solo_idx])
+                    r_artist_std[lid, aid] = np.std(r[lid, solo_idx])
+                else:
+                    r_artist_valid[lid, aid] = False
+                    print('NOPE for ' + a + " - " + str(lid))
+
+        # get matrix with row-wise solo idx in descending order of correlation coefficient size
+        sorted_indices = [[] for _ in range(3)]
+
+        # sorted_indices = np.zeros((num_labels, num_unique_artist), dtype=int)
+        for lid in range(num_labels):
+            # valid artists with significant correlations
+            valid_artist_idx = np.where(r_artist_valid[lid, :])[0]
+            sorted_indices[lid] = valid_artist_idx[np.argsort(r_artist_mean[lid, valid_artist_idx])[::-1]]
+            print(np.min(r_artist_mean[lid, valid_artist_idx]))
+
+        ranks = [None for _ in range(num_labels)]
+        for lid in range(num_labels):
+            num_valid_artists = len(sorted_indices[lid])
+            ranks[lid] = np.concatenate((np.arange(num_highest_and_lowest_artists),
+                                         np.arange(num_valid_artists - num_highest_and_lowest_artists, num_valid_artists)))
+
+        all_ranks = np.concatenate((np.arange(num_highest_and_lowest_artists),
+                                    np.arange(num_unique_artist - num_highest_and_lowest_artists,
+                                              num_unique_artist)))
+
+        self.text_writer.reset()
+        for _, rank in enumerate(all_ranks):
+
+            self.text_writer.add(
+                "{} & {} \\newline ({:1.2f}~$\pm$~{:1.2f}) & {} \\newline ({:1.2f}~$\pm$~{:1.2f}) & {} \\newline ({:1.2f}~$\pm$~{:1.2f}) \\\\".format(
+                    rank + 1,
+                    unique_artist_label[sorted_indices[0][ranks[0][_]]],
+                    r_artist_mean[0, sorted_indices[0][ranks[0][_]]],
+                    r_artist_std[0, sorted_indices[0][ranks[0][_]]],
+                    unique_artist_label[sorted_indices[1][ranks[1][_]]],
+                    r_artist_mean[1, sorted_indices[1][ranks[1][_]]],
+                    r_artist_std[1, sorted_indices[1][ranks[1][_]]],
+                    unique_artist_label[sorted_indices[2][ranks[2][_]]],
+                    r_artist_mean[2, sorted_indices[2][ranks[2][_]]],
+                    r_artist_std[2, sorted_indices[2][ranks[2][_]]]))
+            if _ == num_highest_and_lowest_artists - 1:
+                self.text_writer.add('\hline')
+        fn_result = os.path.join(self.dir_results, 'intensity_analysis_correlations.txt')
+        self.text_writer.save(fn_result)
+        print('{} saved ...'.format(fn_result))
+
+    def create_performer_data_frame(self, min_num_solos_per_artist=3):
         unique_performer = np.unique(self.df_solos['performer'])
         num_unique_performer = len(unique_performer)
         unique_performer_inst = ['' for _ in unique_performer]
@@ -199,7 +196,7 @@ class AudioAnalysisExperiments:
         unique_performer_num_notes = np.zeros(num_unique_performer, dtype=int)
         # get instrument(s), number of solos, number of notes for each unique performer
         for id, up in enumerate(unique_performer):
-            unique_performer_inst[id] = list(set(self.df_solos['instrument'][self.df_solos['performer'] == up]))
+            unique_performer_inst[id] = sorted(list(set(self.df_solos['instrument'][self.df_solos['performer'] == up])))
             unique_performer_num_solos[id] = np.sum(self.df_solos['performer'] == up)
             melids = self.df_solos['melid'][self.df_solos['performer'] == up]
             for melid in melids:
@@ -208,7 +205,10 @@ class AudioAnalysisExperiments:
         # collect results in pandas dataframe
         df_performer = pd.DataFrame({'instrument': unique_performer_inst,
                                      'num_notes': unique_performer_num_notes,
-                                     'num_solos': unique_performer_num_solos},
+                                     'num_solos': unique_performer_num_solos,
+                                     'artist_instrument_label': ["%s (%s)" % (unique_performer[_], ','.join(unique_performer_inst[_])) for _ in range(num_unique_performer)]},
                                     index=unique_performer)
+
+        df_performer = df_performer.ix[df_performer['num_solos'] >= min_num_solos_per_artist]
 
         return df_performer

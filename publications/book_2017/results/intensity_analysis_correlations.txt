@@ -1,0 +1,15 @@
+1 & Sonny Stitt (as,ts) \newline (0.65~$\pm$~0.14) & Lionel Hampton (vib) \newline (0.47~$\pm$~0.03) & Stan Getz (ts) \newline (-0.08~$\pm$~0.02) \\
+2 & Warne Marsh (ts) \newline (0.61~$\pm$~0.09) & Benny Carter (as) \newline (0.31~$\pm$~0.08) & Pepper Adams (bs) \newline (-0.10~$\pm$~0.02) \\
+3 & Don Ellis (tp) \newline (0.60~$\pm$~0.10) & Louis Armstrong (cor,tp) \newline (0.30~$\pm$~0.06) & Branford Marsalis (ts) \newline (-0.10~$\pm$~0.02) \\
+4 & Chet Baker (tp) \newline (0.59~$\pm$~0.09) & Buck Clayton (tp) \newline (0.30~$\pm$~0.09) & Gerry Mulligan (bs) \newline (-0.12~$\pm$~0.01) \\
+5 & Fats Navarro (tp) \newline (0.56~$\pm$~0.08) & Benny Goodman (cl) \newline (0.29~$\pm$~0.07) & Michael Brecker (ts) \newline (-0.12~$\pm$~0.03) \\
+6 & Kenny Dorham (tp) \newline (0.56~$\pm$~0.07) & Johnny Dodds (cl) \newline (0.29~$\pm$~0.08) & Sonny Rollins (ts) \newline (-0.15~$\pm$~0.01) \\
+7 & Clifford Brown (tp) \newline (0.55~$\pm$~0.13) & Fats Navarro (tp) \newline (0.28~$\pm$~0.07) & Wynton Marsalis (tp) \newline (-0.15~$\pm$~0.04) \\
+\hline
+56 & Gerry Mulligan (bs) \newline (0.18~$\pm$~0.05) & Lester Young (ts) \newline (0.14~$\pm$~0.13) & Kenny Dorham (tp) \newline (-0.24~$\pm$~0.05) \\
+57 & Joe Henderson (ts) \newline (0.17~$\pm$~0.13) & Woody Shaw (cor,tp) \newline (0.13~$\pm$~0.07) & Warne Marsh (ts) \newline (-0.25~$\pm$~0.05) \\
+58 & Steve Turre (tb) \newline (0.11~$\pm$~0.41) & Steve Coleman (as,ss) \newline (0.13~$\pm$~0.06) & Joe Lovano (ss,ts,ts-c) \newline (-0.26~$\pm$~0.07) \\
+59 & Michael Brecker (ts) \newline (0.01~$\pm$~0.11) & Chris Potter (ts) \newline (0.10~$\pm$~0.01) & Buck Clayton (tp) \newline (-0.26~$\pm$~0.02) \\
+60 & Bob Berg (ts) \newline (-0.05~$\pm$~0.19) & Don Byas (ts) \newline (0.07~$\pm$~0.25) & Bix Beiderbecke (cor) \newline (-0.26~$\pm$~0.00) \\
+61 & Joshua Redman (ts) \newline (-0.35~$\pm$~0.05) & Stan Getz (ts) \newline (0.04~$\pm$~0.11) & Coleman Hawkins (ts) \newline (-0.31~$\pm$~0.06) \\
+62 & Chris Potter (ts) \newline (-0.41~$\pm$~0.11) & Bix Beiderbecke (cor) \newline (-0.37~$\pm$~0.22) & Freddie Hubbard (tp) \newline (-0.32~$\pm$~0.11) \\
