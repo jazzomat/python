@@ -26,9 +26,10 @@ class AudioAnalysisExperiments:
         self.df_performer = self.create_performer_data_frame(min_num_solos_per_artist=min_num_solos_per_artist)
 
         self.tools = AudioAnalysisTools
-        self.extractors = {#'metadata': [self.metadata_analysis],
-                           #'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
-                           'intensity': [self.intensity_analysis_correlations]}
+        self.extractors = {'metadata': [self.metadata_analysis],
+                           'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
+                           'intensity': [self.intensity_analysis_correlations,
+                                         self.intensity_analysis_eight_note_sequences]}
         self.unique_melids = np.unique(self.df_solos['melid'])
         self.text_writer = TextWriter()
 
@@ -39,6 +40,7 @@ class AudioAnalysisExperiments:
         for category in self.extractors.keys():
             for extractor in self.extractors[category]:
                 extractor()
+        print('Finished all experiments :)')
 
     def metadata_analysis(self):
         self.text_writer.reset()
@@ -52,7 +54,7 @@ class AudioAnalysisExperiments:
         self.text_writer.add("\hline")
         self.text_writer.add("\\textbf{Total} & & \\textbf{" + \
                         str(np.sum(self.df_performer['num_solos'])) + "} & \\textbf{" + \
-                        str(np.sum(self.df_performer['num_notes'])) + "} \\")
+                        str(np.sum(self.df_performer['num_notes'])) + "} \\\\")
         self.text_writer.save(os.path.join(self.dir_results,
                                       'metadata_analysis_artist_stats.txt'))
 
@@ -87,6 +89,145 @@ class AudioAnalysisExperiments:
         pl.savefig(os.path.join(self.dir_results, 'tuning_analysis_tuning_freq_vs_recording_year_scatterplot.eps'),
                    bbox_inches='tight')
         pl.close()
+
+    def intensity_analysis_eight_note_sequences(self, min_num_notes=10, num_examples_table=10):
+        """ Check which solos show significant louder notes on first or second eight notes """
+        print("Experiment: Loudness differences between first and second eight notes")
+        num_solos = self.df_solos.shape[0]
+
+        all_p = []
+        all_d = []
+        all_n = []
+
+        # get peak intensity values for all notes
+        intensity_values = self.df_notes['intensity_solo_max'].as_matrix()
+
+        # iterate over solos
+        for sid in range(num_solos):
+
+            print('Solo {} / {}'.format(sid + 1, num_solos))
+
+            # find all notes of current solo in df_notes
+            base_name = self.df_solos['base_name'][sid]
+            note_idx = np.where(self.df_notes['base_name'] == base_name)[0]
+
+            # make sure onsets are in ascending order
+            note_idx = np.sort(note_idx)
+            onsets = self.df_notes['onset'].as_matrix()[note_idx]
+            assert all(np.diff(onsets) > 0)
+            num_notes = len(note_idx)
+
+            # matrix to store division, bar_num, beat_num, tatum_num
+            met_pos_mat = []
+
+            # get metrical positions of notes in current solo
+            met_pos = self.df_notes["metrical_position"].as_matrix()[note_idx]
+        #
+        #     # iterate over all notes in current solo
+        #     for nid in range(num_notes):
+        #         met_pos_mat.append(self.decode_metrical_position(met_pos[nid])[1:] + [note_idx[nid], ])
+        #
+        #     # decode metrical positions
+        #     met_pos_mat = np.array(met_pos_mat)
+        #     division = met_pos_mat[:, 0]
+        #     bar_number = met_pos_mat[:, 1]
+        #     beat_number = met_pos_mat[:, 2]
+        #     tatum_number = met_pos_mat[:, 3]
+        #     note_idx_valid = met_pos_mat[:, 4]
+        #
+        #     intensity_first_eight = []
+        #     intensity_second_eight = []
+        #
+        #     # iterate over all bars
+        #     for bar_id in np.unique(bar_number):
+        #
+        #         # iterate over all beats within current bar, where eight notes exist
+        #         for beat_id in np.unique(beat_number[np.logical_and(bar_number == bar_id,
+        #                                                             division == 2)]):
+        #
+        #             # get note index of current eight-note-pair
+        #             note_id_cand = np.where(np.logical_and(bar_number == bar_id,
+        #                                                    beat_number == beat_id))[0]
+        #             note_idx_cand = note_idx_valid[note_id_cand]
+        #
+        #             # corresponding tatum values
+        #             tatum_cand = tatum_number[note_id_cand]
+        #             assert len(tatum_cand) < 3
+        #
+        #             # check if we have 2 successive eight notes
+        #             if 1 in tatum_cand and 2 in tatum_cand:
+        #                 # note indices of first and second eight note
+        #                 note_idx_first_eight_note = note_idx_cand[np.where(tatum_cand == 1)[0][0]]
+        #                 note_idx_second_eight_note = note_idx_cand[np.where(tatum_cand == 2)[0][0]]
+        #
+        #                 # save corresponding intensity values
+        #                 intensity_first_eight.append(intensity_values[note_idx_first_eight_note])
+        #                 intensity_second_eight.append(intensity_values[note_idx_second_eight_note])
+        #
+        #     intensity_first_eight = np.array(intensity_first_eight)
+        #     intensity_second_eight = np.array(intensity_second_eight)
+        #
+        #     # paired t-test (compute difference between groups and run one-sample t test)
+        #     t, p = ttest_rel(intensity_first_eight,
+        #                      intensity_second_eight)
+        #
+        #     # cohen's d (effect size measure for paired t-test) -> 0.2 (small), 0.5 (medium), 0.8 (large)
+        #     d, mean_diff = cohen_d(intensity_first_eight,
+        #                            intensity_second_eight)
+        #
+        #     # store results of t-test
+        #     all_p.append(p)  # significance level
+        #     all_d.append(d * np.sign(mean_diff))  # signed effect size
+        #     all_n.append(len(intensity_first_eight))  # number of eight-note-pairs in solo
+        #
+        # all_d = np.array(all_d)
+        # all_p = np.array(all_p)
+        # all_n = np.array(all_n)
+        #
+        # # select solos with
+        # #  - significant difference between first and second eight notes &
+        # #  - minimum of 10 eight-note pairs
+        # idx_select = np.where(np.logical_and(all_p < 0.05,
+        #                                      all_n > min_num_notes))[0]
+        #
+        # print("{} solos with positive d, {} solos with negative d, total = {}".format(np.sum(all_d[idx_select] > 0),
+        #                                                                               np.sum(all_d[idx_select] < 0),
+        #                                                                               len(all_d)))
+        #
+        # # create table with the N solos of both categories with the highest absolute effect size
+        # txt = TextResults()
+        # idx_pos = (all_d[idx_select] > 0).nonzero()[0]
+        # idx_neg = (all_d[idx_select] < 0).nonzero()[0]
+        #
+        # idx_pos_and_neg = (idx_pos, idx_neg)
+        #
+        # # iterate over solos with positive and negative effect size
+        # for k, idx_curr_category in enumerate(idx_pos_and_neg):
+        #     solo_idx_curr_category = idx_select[idx_curr_category]
+        #
+        #     # sort solos of current selection (pos. or neg. d values) in descending order based on absolute value
+        #     sort_idx = np.argsort(np.abs(all_d[solo_idx_curr_category]))
+        #     if k == 0:
+        #         sort_idx = sort_idx[::-1]
+        #     solo_idx_curr_category = solo_idx_curr_category[sort_idx]
+        #
+        #     # create row entries in table
+        #     for _ in range(num_examples_table):
+        #
+        #         # avoid overflow
+        #         if _ < len(sort_idx):
+        #             # write solo metadata into row
+        #             idx = solo_idx_curr_category[_]
+        #             txt.add("{} & {} & {:2.1f} & {} \\\\".format(self.df_solos['performer'].as_matrix()[idx],
+        #                                                          self.df_solos['title'].as_matrix()[idx],
+        #                                                          all_d[idx],
+        #                                                          generate_p_value_string(all_p[idx])))
+        #     if k == 0:
+        #         txt.add("\hline")
+        #
+        # fn_result = os.path.join(self.dir_results_root, 'SISA_Loudness_First_vs_Second_Eight_for_table.txt')
+        # txt.save(fn_result)
+        # print('{} saved ...'.format(fn_result))
 
     def intensity_analysis_correlations(self, num_highest_and_lowest_artists=7):
 
@@ -145,7 +286,6 @@ class AudioAnalysisExperiments:
                     r_artist_std[lid, aid] = np.std(r[lid, solo_idx])
                 else:
                     r_artist_valid[lid, aid] = False
-                    print('NOPE for ' + a + " - " + str(lid))
 
         # get matrix with row-wise solo idx in descending order of correlation coefficient size
         sorted_indices = [[] for _ in range(3)]
@@ -206,7 +346,7 @@ class AudioAnalysisExperiments:
         df_performer = pd.DataFrame({'instrument': unique_performer_inst,
                                      'num_notes': unique_performer_num_notes,
                                      'num_solos': unique_performer_num_solos,
-                                     'artist_instrument_label': ["%s (%s)" % (unique_performer[_], ','.join(unique_performer_inst[_])) for _ in range(num_unique_performer)]},
+                                     'artist_instrument_label': ["%s (%s)" % (unique_performer[_], ', '.join(unique_performer_inst[_])) for _ in range(num_unique_performer)]},
                                     index=unique_performer)
 
         df_performer = df_performer.ix[df_performer['num_solos'] >= min_num_solos_per_artist]
