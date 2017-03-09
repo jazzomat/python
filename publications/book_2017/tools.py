@@ -18,11 +18,11 @@ class AudioAnalysisTools:
     @staticmethod
     def generate_p_value_string(p):
         if p < 0.001:
-            return 'p < 0.001'
+            return '***'
         elif p < 0.01:
-            return 'p < 0.01'
+            return '**'
         elif p < 0.05:
-            return 'p < 0.05'
+            return '*'
         else:
             return 'n. s.'
 
@@ -55,6 +55,14 @@ class AudioAnalysisTools:
             note_count_per_phrase[curr_phrase_num] += 1.
 
         return rel_pos_in_phrase
+
+
+    @staticmethod
+    def cohens_d(x, y):
+        """ Measure Cohen's d, which is an effect size measure for paired t-test
+           -> 0.2 (small), 0.5 (medium), 0.8 (large)
+           """
+        return (np.mean(x) - np.mean(y)) / np.sqrt((np.std(x, ddof=1) ** 2 + np.std(y, ddof=1) ** 2) / 2.0)
 
 
 

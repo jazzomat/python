@@ -1,0 +1,21 @@
+Bix Beiderbecke (cor) & Margie & 1.2 & * \\
+Sidney Bechet (ss) & Limehouse Blues & 1.0 & *** \\
+Benny Goodman (cl) & Tiger Rag & 0.9 & *** \\
+Johnny Dodds (cl) & Heebie Jeebies & 0.9 & * \\
+David Liebman (ss, ts) & Nica's Dream & 0.8 & ** \\
+Zoot Sims (ts) & Night and Day & 0.8 & *** \\
+Joe Henderson (ts) & Totem Pole & 0.8 & * \\
+J.C. Higginbotham (tb) & Baby Won't You Please Come Home & 0.8 & ** \\
+Coleman Hawkins (ts) & It's Only a Papermoon & 0.8 & ** \\
+Sonny Rollins (ts) & Vierd Blues & 0.8 & * \\
+\hline
+Stan Getz (ts) & Blues in the Closet & -0.2 & ** \\
+Herbie Hancock (p) & Hand Jive & -0.2 & * \\
+Clifford Brown (tp) & I'll Remember April & -0.3 & * \\
+Chet Baker (tp) & You'd Be So Nice to Come Home to & -0.3 & * \\
+Phil Woods (as) & Strollin' with Pam & -0.3 & ** \\
+Kai Winding (tb) & Tiny's Blues & -0.4 & * \\
+Milt Jackson (vib) & Don't Get Around Much Anymore & -0.4 & * \\
+Hank Mobley (ts) & Soul Station & -0.4 & * \\
+Fats Navarro (tp) & Good Bait & -0.5 & * \\
+Steve Turre (tb) & Steve's Blues & -0.6 & *** \\

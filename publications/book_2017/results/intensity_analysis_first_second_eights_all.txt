@@ -1,0 +1,456 @@
+Art Pepper (as, cl) & Anthropology & 0.6 & *** \\
+Art Pepper (as, cl) & Blues for Blanche & 0.1 & *** \\
+Art Pepper (as, cl) & Desafinado & -0.0 & n. s. \\
+Art Pepper (as, cl) & In a Mellow Tone & 0.1 & n. s. \\
+Art Pepper (as, cl) & Stardust & 1.9 & n. s. \\
+Art Pepper (as, cl) & Stardust & -0.2 & n. s. \\
+Benny Carter (as) & I Got It Bad & 0.4 & n. s. \\
+Benny Carter (as) & It's a Wonderful World & 0.1 & n. s. \\
+Benny Carter (as) & It's a Wonderful World & -0.3 & n. s. \\
+Benny Carter (as) & Just Friends & 0.1 & n. s. \\
+Benny Carter (as) & Long Ago and Far Away & -0.0 & n. s. \\
+Benny Carter (as) & Long Ago and Far Away & -0.1 & n. s. \\
+Benny Carter (as) & Sweet Lorraine & -0.7 & n. s. \\
+Benny Goodman (cl) & Avalon & 0.0 & n. s. \\
+Benny Goodman (cl) & Handful of Keys & 0.4 & * \\
+Benny Goodman (cl) & Nobody's Sweetheart & 0.5 & * \\
+Benny Goodman (cl) & Runnin' Wild & 0.3 & n. s. \\
+Benny Goodman (cl) & Tiger Rag & 0.9 & *** \\
+Benny Goodman (cl) & Tiger Rag & 0.1 & n. s. \\
+Benny Goodman (cl) & Whispering & 0.4 & * \\
+Ben Webster (ts) & Bye Bye Blackbird & -0.3 & n. s. \\
+Ben Webster (ts) & Did You Call Her Today & 0.3 & n. s. \\
+Ben Webster (ts) & My Ideal & 0.2 & n. s. \\
+Ben Webster (ts) & Night And Day & -0.2 & n. s. \\
+Ben Webster (ts) & Where or When & 1.0 & n. s. \\
+Bix Beiderbecke (cor) & I'm Coming Virginia & 0.2 & n. s. \\
+Bix Beiderbecke (cor) & Margie & 1.2 & * \\
+Bix Beiderbecke (cor) & Riverboat Shuffle & 0.5 & * \\
+Bix Beiderbecke (cor) & Royal Garden Blues & 0.6 & n. s. \\
+Bix Beiderbecke (cor) & Singin the Blues & 0.2 & n. s. \\
+Bob Berg (ts) & Angles & 0.3 & *** \\
+Bob Berg (ts) & Blues for Bela & 0.1 & n. s. \\
+Bob Berg (ts) & I Didn't Know What Time It Was & 0.4 & n. s. \\
+Bob Berg (ts) & Nature of the Beast & 0.3 & n. s. \\
+Bob Berg (ts) & No Moe & -0.1 & n. s. \\
+Bob Berg (ts) & Second Sight & 0.8 & n. s. \\
+Bob Berg (ts) & You and the Night and the Music & 0.2 & n. s. \\
+Branford Marsalis (ts) & Gutbucket Steepy & 0.2 & n. s. \\
+Branford Marsalis (ts) & Housed from Edward & -0.3 & n. s. \\
+Branford Marsalis (ts) & Housed from Edward & 1.0 & * \\
+Branford Marsalis (ts) & The Nearness of You & 0.3 & n. s. \\
+Branford Marsalis (ts) & Three Little Words & 0.2 & * \\
+Branford Marsalis (ts) & Ummg & 0.1 & n. s. \\
+Buck Clayton (tp) & After Theatre Jump & 0.4 & * \\
+Buck Clayton (tp) & Destination K.C. & 0.3 & n. s. \\
+Buck Clayton (tp) & Dickie's Dream & 0.1 & n. s. \\
+Cannonball Adderley (as) & High Fly & 0.1 & n. s. \\
+Cannonball Adderley (as) & So What & -0.4 & n. s. \\
+Cannonball Adderley (as) & Star Eyes & -0.3 & n. s. \\
+Cannonball Adderley (as) & This Here & 0.1 & n. s. \\
+Cannonball Adderley (as) & Work Song & -0.1 & n. s. \\
+Charlie Parker (as) & Billie's Bounce & 0.4 & n. s. \\
+Charlie Parker (as) & Blues for Alice & 0.4 & n. s. \\
+Charlie Parker (as) & Don't Blame Me & nan & n. s. \\
+Charlie Parker (as) & Donna Lee & 0.2 & n. s. \\
+Charlie Parker (as) & Embraceable You & 1.2 & n. s. \\
+Charlie Parker (as) & How Deep Is the Ocean & nan & n. s. \\
+Charlie Parker (as) & K.C. Blues & 0.3 & n. s. \\
+Charlie Parker (as) & Ko-Ko & 0.2 & n. s. \\
+Charlie Parker (as) & My Little Suede Shoes & 0.2 & n. s. \\
+Charlie Parker (as) & Ornithology & 0.0 & n. s. \\
+Charlie Parker (as) & Out of Nowhere & nan & n. s. \\
+Charlie Parker (as) & Scrapple from the Apple & 0.5 & n. s. \\
+Charlie Parker (as) & Segment & nan & n. s. \\
+Charlie Parker (as) & Star Eyes & 0.5 & n. s. \\
+Charlie Parker (as) & Steeplechase & 0.7 & n. s. \\
+Charlie Parker (as) & Thriving on a Riff & 0.2 & n. s. \\
+Charlie Parker (as) & Yardbird Suite & 0.3 & n. s. \\
+Charlie Shavers (tp) & Limehouse Blues & 0.1 & n. s. \\
+Chet Baker (tp) & I Fall in Love Too Easily & 0.8 & n. s. \\
+Chet Baker (tp) & Just Friends & -0.4 & n. s. \\
+Chet Baker (tp) & Let's Get Lost & -0.3 & n. s. \\
+Chet Baker (tp) & Long Ago and Far Away & -0.2 & n. s. \\
+Chet Baker (tp) & There Will Never Be Another You & 0.0 & n. s. \\
+Chet Baker (tp) & There Will Never Be Another You & 0.1 & n. s. \\
+Chet Baker (tp) & Two's Blues & -0.1 & n. s. \\
+Chet Baker (tp) & You'd Be So Nice to Come Home to & -0.3 & * \\
+Chris Potter (ts) & Anthropology & nan & n. s. \\
+Chris Potter (ts) & Arjuna & 0.0 & n. s. \\
+Chris Potter (ts) & In a Sentimental Mood & nan & n. s. \\
+Chris Potter (ts) & Item 1, D.I.T. & 0.0 & n. s. \\
+Chris Potter (ts) & Pop Tune # 1 & nan & n. s. \\
+Chris Potter (ts) & Rumples & -0.3 & n. s. \\
+Chris Potter (ts) & Togo & -0.4 & n. s. \\
+Chu Berry (ts) & Body and Soul & 0.8 & n. s. \\
+Chu Berry (ts) & Body and Soul & 0.4 & n. s. \\
+Clifford Brown (tp) & A Night in Tunisia & -0.2 & n. s. \\
+Clifford Brown (tp) & Daahoud & 0.0 & n. s. \\
+Clifford Brown (tp) & George's Dilemma & 0.2 & n. s. \\
+Clifford Brown (tp) & I'll Remember April & -0.3 & * \\
+Clifford Brown (tp) & I'll Remember April & -0.2 & n. s. \\
+Clifford Brown (tp) & Jordu & -0.2 & n. s. \\
+Clifford Brown (tp) & Joy Spring & 0.4 & n. s. \\
+Clifford Brown (tp) & Sandu & -0.6 & n. s. \\
+Clifford Brown (tp) & Stompin' at the Savoy & -0.1 & n. s. \\
+Coleman Hawkins (ts) & Body and Soul & 0.6 & * \\
+Coleman Hawkins (ts) & It's Only a Papermoon & 0.8 & ** \\
+Coleman Hawkins (ts) & My Blue Heaven & 0.1 & n. s. \\
+Coleman Hawkins (ts) & Perdido & 0.4 & ** \\
+Coleman Hawkins (ts) & Sophisticated Lady & 1.8 & * \\
+Coleman Hawkins (ts) & Stompin' at the Savoy & 0.5 & *** \\
+Curtis Fuller (tb) & Blue Train & 0.3 & n. s. \\
+Curtis Fuller (tb) & Down Under & 0.1 & n. s. \\
+David Liebman (ss, ts) & Begin the Beguine & -2.7 & n. s. \\
+David Liebman (ss, ts) & Day & Nite & -0.1 & n. s. \\
+David Liebman (ss, ts) & I've Got You Under My Skin & 0.2 & * \\
+David Liebman (ss, ts) & Milestones & -0.4 & n. s. \\
+David Liebman (ss, ts) & Nica's Dream & 0.8 & ** \\
+David Liebman (ss, ts) & No Greater Love & 0.3 & n. s. \\
+David Liebman (ss, ts) & Pablo's Story & 0.2 & n. s. \\
+David Liebman (ss, ts) & Pendulum & 0.2 & n. s. \\
+David Liebman (ss, ts) & Secret Love & 0.1 & n. s. \\
+David Liebman (ss, ts) & Softly as in a Morning Sunrise & 0.2 & n. s. \\
+David Liebman (ss, ts) & There Will Never Be Another You & 0.1 & n. s. \\
+David Murray (ts) & Ask Me Now & 0.1 & n. s. \\
+David Murray (ts) & Blues for Two & 0.4 & n. s. \\
+David Murray (ts) & Blues for Two & nan & n. s. \\
+David Murray (ts) & Body and Soul & nan & n. s. \\
+David Murray (ts) & Body and Soul & nan & n. s. \\
+David Murray (ts) & Chelsea Bridge & nan & n. s. \\
+Dexter Gordon (ts) & Cheese Cake & 0.1 & n. s. \\
+Dexter Gordon (ts) & Dextivity & 1.0 & n. s. \\
+Dexter Gordon (ts) & Montmartre & 0.3 & n. s. \\
+Dexter Gordon (ts) & Society Red & 0.2 & n. s. \\
+Dexter Gordon (ts) & Stanley the Steamer & 0.0 & n. s. \\
+Dexter Gordon (ts) & The Rainbow People & 0.2 & n. s. \\
+Dickie Wells (tb) & After Theatre Jump & 0.6 & ** \\
+Dickie Wells (tb) & Destination K.C. & -0.1 & n. s. \\
+Dickie Wells (tb) & Dickie's Dream & 0.4 & n. s. \\
+Dickie Wells (tb) & I Got Rhythm & -0.1 & n. s. \\
+Dickie Wells (tb) & Jo-Jo & -0.2 & n. s. \\
+Dickie Wells (tb) & Six Cats and a Prince & 0.9 & n. s. \\
+Dizzy Gillespie (tp) & Anthropology & 0.2 & n. s. \\
+Dizzy Gillespie (tp) & Be-Bop & 0.1 & n. s. \\
+Dizzy Gillespie (tp) & Blue 'n Boogie & -0.3 & n. s. \\
+Dizzy Gillespie (tp) & Cognac Blues & -1.4 & n. s. \\
+Dizzy Gillespie (tp) & Groovin' High & 0.1 & n. s. \\
+Dizzy Gillespie (tp) & Hot House & -0.1 & n. s. \\
+Don Byas (ts) & Be-Bop & 0.2 & n. s. \\
+Don Byas (ts) & Body and Soul & 0.3 & n. s. \\
+Don Byas (ts) & Cognac Blues & 0.7 & ** \\
+Don Byas (ts) & Harvard Blues & nan & n. s. \\
+Don Byas (ts) & Harvard Blues & 0.1 & n. s. \\
+Don Byas (ts) & Infidele (Cry) & -0.4 & n. s. \\
+Don Byas (ts) & Out of Nowhere & nan & n. s. \\
+Don Byas (ts) & Un Amour Pleurait & 0.8 & n. s. \\
+Don Ellis (tp) & I Love You & -0.2 & n. s. \\
+Don Ellis (tp) & Johnny Come Lately & 0.2 & n. s. \\
+Don Ellis (tp) & Out of Nowhere & 0.2 & n. s. \\
+Don Ellis (tp) & Sweet and Lovely & -0.1 & n. s. \\
+Don Ellis (tp) & You Stepped Out of a Dream & -0.2 & n. s. \\
+Don Ellis (tp) & You Stepped Out of a Dream & 0.2 & n. s. \\
+Eric Dolphy (as, bcl) & 245 & nan & n. s. \\
+Eric Dolphy (as, bcl) & Aisha & nan & n. s. \\
+Eric Dolphy (as, bcl) & Dahomey Dance & 0.0 & n. s. \\
+Eric Dolphy (as, bcl) & Les & 0.7 & *** \\
+Eric Dolphy (as, bcl) & On Green Dolphin Street & -0.1 & n. s. \\
+Eric Dolphy (as, bcl) & Serene & 0.7 & n. s. \\
+Fats Navarro (tp) & Anthropology & -0.1 & n. s. \\
+Fats Navarro (tp) & Double Talk & 0.0 & n. s. \\
+Fats Navarro (tp) & Good Bait & -0.5 & * \\
+Fats Navarro (tp) & Good Bait & 0.7 & * \\
+Fats Navarro (tp) & Our Delight & 0.3 & n. s. \\
+Fats Navarro (tp) & The Skunk & 0.3 & n. s. \\
+Freddie Hubbard (tp) & 245 & 1.1 & n. s. \\
+Freddie Hubbard (tp) & Dolphin Dance & 0.1 & n. s. \\
+Freddie Hubbard (tp) & Down Under & 0.3 & n. s. \\
+Freddie Hubbard (tp) & Maiden Voyage & 0.4 & n. s. \\
+Freddie Hubbard (tp) & Society Red & -0.2 & n. s. \\
+Freddie Hubbard (tp) & Speak No Evil & 0.4 & ** \\
+George Coleman (ts) & Maiden Voyage & nan & n. s. \\
+Gerry Mulligan (bs) & Bunny & -0.1 & n. s. \\
+Gerry Mulligan (bs) & Line for Lyons & -0.0 & n. s. \\
+Gerry Mulligan (bs) & Scrapple from the Apple & 0.2 & * \\
+Gerry Mulligan (bs) & The Red Door & 0.1 & n. s. \\
+Gerry Mulligan (bs) & This Can't Be Love & 0.3 & ** \\
+Gerry Mulligan (bs) & Walking Shoes & -0.4 & n. s. \\
+Hank Mobley (ts) & Doodlin' & -0.6 & n. s. \\
+Hank Mobley (ts) & Lady Bird & -0.2 & n. s. \\
+Hank Mobley (ts) & Remember & 0.1 & n. s. \\
+Hank Mobley (ts) & Soul Station & -0.4 & * \\
+Harry Edison (tp) & Did You Call Her Today & 0.3 & n. s. \\
+Henry Allen (tp) & Baby Won't You Please Come Home & 0.3 & n. s. \\
+Herbie Hancock (p) & Agitation & -0.1 & n. s. \\
+Herbie Hancock (p) & Dolores & 0.0 & n. s. \\
+Herbie Hancock (p) & Gingerbread Boy & -0.0 & n. s. \\
+Herbie Hancock (p) & Hand Jive & -0.2 & * \\
+Herbie Hancock (p) & Orbits & -0.1 & n. s. \\
+J.C. Higginbotham (tb) & Baby Won't You Please Come Home & 0.8 & ** \\
+J.J. Johnson (tb) & Blue Mode & 0.8 & n. s. \\
+J.J. Johnson (tb) & Blues in the Closet & -0.0 & n. s. \\
+J.J. Johnson (tb) & Crazy Rhythm & -0.1 & n. s. \\
+J.J. Johnson (tb) & Elora & -0.0 & n. s. \\
+J.J. Johnson (tb) & My Funny Valentine & 0.3 & n. s. \\
+J.J. Johnson (tb) & Teapot & 0.0 & n. s. \\
+J.J. Johnson (tb) & Walkin' & -0.1 & n. s. \\
+J.J. Johnson (tb) & Yesterdays & -0.1 & n. s. \\
+Joe Henderson (ts) & In 'n Out & 0.2 & *** \\
+Joe Henderson (ts) & In 'n Out & -0.1 & n. s. \\
+Joe Henderson (ts) & Johnny Come Lately & 0.2 & n. s. \\
+Joe Henderson (ts) & Punjab & -0.3 & n. s. \\
+Joe Henderson (ts) & Serenity & 0.4 & n. s. \\
+Joe Henderson (ts) & The Sidewinder & -0.2 & n. s. \\
+Joe Henderson (ts) & Totem Pole & 0.8 & * \\
+Joe Henderson (ts) & U.M.M.G. & 0.3 & n. s. \\
+Joe Lovano (ss, ts, ts-c) & Body and Soul & 0.8 & ** \\
+Joe Lovano (ss, ts, ts-c) & Body and Soul & 0.8 & * \\
+Joe Lovano (ss, ts, ts-c) & Central Park West & 0.6 & n. s. \\
+Joe Lovano (ss, ts, ts-c) & Con Alma & 0.3 & n. s. \\
+Joe Lovano (ss, ts, ts-c) & I Can't Get Started & -0.1 & n. s. \\
+Joe Lovano (ss, ts, ts-c) & Little Willie Leaps in & 0.2 & ** \\
+Joe Lovano (ss, ts, ts-c) & Lonnie's Lament & -0.2 & n. s. \\
+Joe Lovano (ss, ts, ts-c) & Work & -0.0 & n. s. \\
+John Abercrombie (g) & Ralph's Piano Waltz & 0.1 & n. s. \\
+John Coltrane (ss, ts) & 26-2 & -0.1 & n. s. \\
+John Coltrane (ss, ts) & Bessie's Blues & 0.2 & n. s. \\
+John Coltrane (ss, ts) & Blues by Five & 0.4 & * \\
+John Coltrane (ss, ts) & Blue Train & -0.5 & n. s. \\
+John Coltrane (ss, ts) & Body and Soul & 0.6 & n. s. \\
+John Coltrane (ss, ts) & Body and Soul & 0.3 & n. s. \\
+John Coltrane (ss, ts) & Countdown & -0.1 & n. s. \\
+John Coltrane (ss, ts) & Giant Steps & -0.1 & n. s. \\
+John Coltrane (ss, ts) & Giant Steps & 0.1 & n. s. \\
+John Coltrane (ss, ts) & Impressions & 0.1 & n. s. \\
+John Coltrane (ss, ts) & Impressions & 0.1 & n. s. \\
+John Coltrane (ss, ts) & Mr. P.C. & 0.1 & n. s. \\
+John Coltrane (ss, ts) & My Favorite Things & -0.4 & n. s. \\
+John Coltrane (ss, ts) & My Favorite Things & -0.1 & n. s. \\
+John Coltrane (ss, ts) & Nature Boy & -0.1 & n. s. \\
+John Coltrane (ss, ts) & Nutty & 0.8 & n. s. \\
+John Coltrane (ss, ts) & Oleo & -0.1 & n. s. \\
+John Coltrane (ss, ts) & Soultrane & 0.3 & n. s. \\
+John Coltrane (ss, ts) & So What & 0.0 & n. s. \\
+John Coltrane (ss, ts) & Trane's Blues & 0.2 & n. s. \\
+Johnny Dodds (cl) & Got No Blues & 1.3 & ** \\
+Johnny Dodds (cl) & Heebie Jeebies & 0.9 & * \\
+Johnny Dodds (cl) & Hotter than That & 0.8 & ** \\
+Johnny Dodds (cl) & Muskrat Ramble & 0.3 & n. s. \\
+Johnny Dodds (cl) & My Heart & 0.3 & n. s. \\
+Johnny Dodds (cl) & Once in a While & 0.5 & * \\
+Johnny Hodges (as) & Bunny & 0.3 & n. s. \\
+Johnny Hodges (as) & Early Morning Rock & 0.5 & n. s. \\
+Joshua Redman (ts) & Blues on Sunday & 0.0 & n. s. \\
+Joshua Redman (ts) & Home Fries & 0.2 & n. s. \\
+Joshua Redman (ts) & I Got You & 0.4 & n. s. \\
+Joshua Redman (ts) & Sweet Sorrow & -0.3 & n. s. \\
+Joshua Redman (ts) & Tears in Heaven & 1.0 & n. s. \\
+Kai Winding (tb) & Tiny's Blues & -0.4 & * \\
+Kenny Dorham (tp) & Blues in Be-Bop & 0.6 & n. s. \\
+Kenny Dorham (tp) & Doodlin' & 0.0 & n. s. \\
+Kenny Dorham (tp) & In 'n Out & 0.1 & n. s. \\
+Kenny Dorham (tp) & Lady Bird & -0.1 & n. s. \\
+Kenny Dorham (tp) & Prince Albert & -0.1 & n. s. \\
+Kenny Dorham (tp) & Punjab & -0.0 & n. s. \\
+Kenny Dorham (tp) & Serenity & -0.5 & n. s. \\
+Kenny Garrett (as) & Brother Hubbard & 0.6 & *** \\
+Kenny Garrett (as) & Brother Hubbard & 0.6 & *** \\
+Kenny Wheeler (tp) & Double Vision & -0.2 & n. s. \\
+Kenny Wheeler (tp) & Pass it on & 1.2 & ** \\
+Kenny Wheeler (tp) & Slipped again & 0.7 & n. s. \\
+Kid Ory (tb) & Got No Blues & 0.2 & n. s. \\
+Kid Ory (tb) & Gut Bucket Blues & 1.6 & * \\
+Kid Ory (tb) & Muskrat Ramble & 0.9 & n. s. \\
+Kid Ory (tb) & Savoy Blues & 1.3 & n. s. \\
+Kid Ory (tb) & Who's it & 1.6 & * \\
+Lee Konitz (as) & All the Things You Are & -0.0 & n. s. \\
+Lee Konitz (as) & Bop Goes to Leesel & 0.2 & n. s. \\
+Lee Konitz (as) & Crosscurrent & 0.4 & ** \\
+Lee Konitz (as) & I'll Remember April & 0.1 & n. s. \\
+Lee Konitz (as) & Marshmallow & 0.3 & *** \\
+Lee Konitz (as) & Mean to Me & -0.3 & n. s. \\
+Lee Konitz (as) & Tautology & 0.2 & n. s. \\
+Lee Konitz (as) & Wow & 0.3 & n. s. \\
+Lee Morgan (tp, ts) & Blue Train & 0.0 & n. s. \\
+Lee Morgan (tp, ts) & Just One of Those Things & -0.1 & n. s. \\
+Lee Morgan (tp, ts) & The Sidewinder & 0.1 & n. s. \\
+Lee Morgan (tp, ts) & Totem Pole & 0.2 & n. s. \\
+Lester Young (ts) & After Theatre Jump & 0.0 & n. s. \\
+Lester Young (ts) & Body and Soul & 0.4 & n. s. \\
+Lester Young (ts) & D.B. Blues & 0.5 & n. s. \\
+Lester Young (ts) & Destination K.C. & 0.1 & n. s. \\
+Lester Young (ts) & Dickie's Dream & -0.2 & n. s. \\
+Lester Young (ts) & Lester Leaps In & 0.3 & ** \\
+Lester Young (ts) & Six Cats and a Prince & 0.4 & ** \\
+Lionel Hampton (vib) & Avalon & 0.1 & n. s. \\
+Lionel Hampton (vib) & Dinah & 0.2 & n. s. \\
+Lionel Hampton (vib) & High Society & nan & n. s. \\
+Lionel Hampton (vib) & Memories of You & 0.0 & n. s. \\
+Lionel Hampton (vib) & Runnin' Wild & 0.7 & *** \\
+Lionel Hampton (vib) & Whispering & -0.8 & n. s. \\
+Louis Armstrong (cor, tp) & Basin Street Blues & 0.3 & n. s. \\
+Louis Armstrong (cor, tp) & Big Butter and Egg Man & 0.4 & n. s. \\
+Louis Armstrong (cor, tp) & Cornet Chop Suey & 0.3 & n. s. \\
+Louis Armstrong (cor, tp) & Got No Blues & 0.3 & n. s. \\
+Louis Armstrong (cor, tp) & Gut Bucket Blues & 0.8 & * \\
+Louis Armstrong (cor, tp) & Muskrat Ramble & 0.6 & n. s. \\
+Louis Armstrong (cor, tp) & Once in a While & 0.6 & ** \\
+Louis Armstrong (cor, tp) & Savoy Blues & 0.1 & n. s. \\
+Michael Brecker (ts) & Cabin Fever & 0.0 & n. s. \\
+Michael Brecker (ts) & Confirmation & 0.3 & *** \\
+Michael Brecker (ts) & Delta City Blues & 0.4 & *** \\
+Michael Brecker (ts) & I Mean You & 0.4 & * \\
+Michael Brecker (ts) & Midnight Voyage & -0.1 & n. s. \\
+Michael Brecker (ts) & Naked Soul & nan & n. s. \\
+Michael Brecker (ts) & Never Alone & nan & n. s. \\
+Michael Brecker (ts) & Nothing Personal & 0.1 & n. s. \\
+Michael Brecker (ts) & Peep & 0.1 & n. s. \\
+Michael Brecker (ts) & Song for Bilbao & -1.5 & n. s. \\
+Miles Davis (tp, ts) & Agitation & nan & n. s. \\
+Miles Davis (tp, ts) & Airegin & -0.1 & n. s. \\
+Miles Davis (tp, ts) & Bitches Brew & 0.7 & * \\
+Miles Davis (tp, ts) & Bitches Brew & -0.1 & n. s. \\
+Miles Davis (tp, ts) & Blues by Five & 0.2 & n. s. \\
+Miles Davis (tp, ts) & Dolores & 0.1 & n. s. \\
+Miles Davis (tp, ts) & E.S.P. & 0.2 & ** \\
+Miles Davis (tp, ts) & Eighty-One & -0.3 & n. s. \\
+Miles Davis (tp, ts) & K.C. Blues & -0.4 & n. s. \\
+Miles Davis (tp, ts) & Miles Runs the Voodoo Down & 0.3 & n. s. \\
+Miles Davis (tp, ts) & Miles Runs the Voodoo Down & 0.4 & n. s. \\
+Miles Davis (tp, ts) & Oleo & -0.2 & n. s. \\
+Miles Davis (tp, ts) & Oleo & 0.1 & n. s. \\
+Miles Davis (tp, ts) & Orbits & -0.1 & n. s. \\
+Miles Davis (tp, ts) & So What & -0.5 & n. s. \\
+Miles Davis (tp, ts) & Trane's Blues & 0.2 & n. s. \\
+Miles Davis (tp, ts) & Tune Up & -0.1 & n. s. \\
+Miles Davis (tp, ts) & Vierd Blues & 1.1 & ** \\
+Miles Davis (tp, ts) & Walkin' & -1.0 & * \\
+Milt Jackson (vib) & All the Things You Are & -0.3 & n. s. \\
+Milt Jackson (vib) & Bag's Groove & -0.1 & n. s. \\
+Milt Jackson (vib) & Bemsha Swing & 0.0 & n. s. \\
+Milt Jackson (vib) & Don't Get Around Much Anymore & -0.4 & * \\
+Milt Jackson (vib) & Softly as in a Morning Sunrise & -0.0 & n. s. \\
+Milt Jackson (vib) & What's New & nan & n. s. \\
+Nat Adderley (tp) & Bohemia After Dark & -0.1 & n. s. \\
+Nat Adderley (tp) & Work Song & 0.6 & n. s. \\
+Ornette Coleman (as) & Bird Food & -0.0 & n. s. \\
+Ornette Coleman (as) & Chronology & 0.3 & ** \\
+Ornette Coleman (as) & Congeniality & 0.2 & n. s. \\
+Ornette Coleman (as) & Peace & 0.1 & n. s. \\
+Ornette Coleman (as) & Ramblin' & 0.3 & * \\
+Pat Martino (g) & Along Came Betty & -1.2 & n. s. \\
+Pat Metheny (g) & All the Things You Are & 0.2 & * \\
+Pat Metheny (g) & Cabin Fever & -0.0 & n. s. \\
+Pat Metheny (g) & Midnight Voyage & -0.3 & n. s. \\
+Pat Metheny (g) & Nothing Personal & -0.0 & n. s. \\
+Paul Desmond (as) & Alianca & 0.1 & n. s. \\
+Paul Desmond (as) & Alianca & 0.6 & n. s. \\
+Paul Desmond (as) & Alone Together & -0.1 & n. s. \\
+Paul Desmond (as) & Blue Rondo a la Turk & 0.4 & n. s. \\
+Paul Desmond (as) & Bossa Antigua & 0.2 & n. s. \\
+Paul Desmond (as) & Samba Cantina & 0.4 & ** \\
+Paul Desmond (as) & Samba Cantina & -0.1 & n. s. \\
+Paul Desmond (as) & The Girl from East 9th Street & 0.3 & n. s. \\
+Pepper Adams (bs) & A Night in Tunisia & nan & n. s. \\
+Pepper Adams (bs) & Early Morning Mood & nan & n. s. \\
+Pepper Adams (bs) & How High the Moon & nan & n. s. \\
+Pepper Adams (bs) & Just One of Those Things & 0.4 & *** \\
+Pepper Adams (bs) & You'd Be So Nice to Come Home to & -0.0 & n. s. \\
+Phil Woods (as) & Be My Love & -0.1 & n. s. \\
+Phil Woods (as) & Cotton Tail & 0.0 & n. s. \\
+Phil Woods (as) & Crazy Rhythm & 0.2 & n. s. \\
+Phil Woods (as) & Honeysuckle Rose & 0.2 & n. s. \\
+Phil Woods (as) & On a Slow Boat to China & 0.0 & n. s. \\
+Phil Woods (as) & Strollin' with Pam & -0.3 & ** \\
+Red Garland (p) & Oleo & 0.2 & n. s. \\
+Rex Stewart (cor) & Perdido & -0.2 & n. s. \\
+Roy Eldridge (tp) & Body and Soul & 0.1 & n. s. \\
+Roy Eldridge (tp) & King David & 0.1 & n. s. \\
+Roy Eldridge (tp) & St. Louis Blues & 0.2 & n. s. \\
+Roy Eldridge (tp) & The Gasser & 0.5 & ** \\
+Roy Eldridge (tp) & The Gasser & 0.4 & * \\
+Roy Eldridge (tp) & Undecided & -0.0 & n. s. \\
+Sidney Bechet (ss) & Baby Won't You Please Come Home & 0.5 & * \\
+Sidney Bechet (ss) & I'm Coming Virginia & 0.3 & n. s. \\
+Sidney Bechet (ss) & Limehouse Blues & 1.0 & *** \\
+Sidney Bechet (ss) & Really the Blues & 0.8 & n. s. \\
+Sidney Bechet (ss) & Summertime & 0.5 & * \\
+Sonny Rollins (ts) & Airegin & -0.1 & n. s. \\
+Sonny Rollins (ts) & Blue Seven & -0.2 & n. s. \\
+Sonny Rollins (ts) & Blue Seven & 1.3 & n. s. \\
+Sonny Rollins (ts) & Blue Seven & 0.0 & n. s. \\
+Sonny Rollins (ts) & I'll Remember April & -0.0 & n. s. \\
+Sonny Rollins (ts) & Playin' in the Yard & 0.2 & n. s. \\
+Sonny Rollins (ts) & Playin' in the Yard & -0.0 & n. s. \\
+Sonny Rollins (ts) & St. Thomas & -0.3 & n. s. \\
+Sonny Rollins (ts) & St. Thomas & 0.2 & n. s. \\
+Sonny Rollins (ts) & Tenor Madness & 0.1 & n. s. \\
+Sonny Rollins (ts) & The Everywhere Calypso & 0.0 & n. s. \\
+Sonny Rollins (ts) & The Everywhere Calypso & 0.0 & n. s. \\
+Sonny Rollins (ts) & Vierd Blues & 0.8 & * \\
+Sonny Stitt (as, ts) & Blue Mode & nan & n. s. \\
+Sonny Stitt (as, ts) & Blues in Be-Bop & 0.1 & n. s. \\
+Sonny Stitt (as, ts) & Body And Soul & nan & n. s. \\
+Sonny Stitt (as, ts) & Elora & -0.1 & n. s. \\
+Sonny Stitt (as, ts) & Good Kick & 0.2 & n. s. \\
+Sonny Stitt (as, ts) & Teapot & 0.5 & n. s. \\
+Stan Getz (ts) & Blues in the Closet & -0.2 & ** \\
+Stan Getz (ts) & Body and Soul & 0.5 & * \\
+Stan Getz (ts) & Crazy Rhythm & 0.1 & n. s. \\
+Stan Getz (ts) & I'm Glad There Is You & 2.6 & * \\
+Stan Getz (ts) & Insensatez & -0.1 & n. s. \\
+Stan Getz (ts) & My Funny Valentine & 0.2 & n. s. \\
+Steve Coleman (as, ss) & Cross-Fade & -0.4 & n. s. \\
+Steve Coleman (as, ss) & Cross-Fade & 0.2 & n. s. \\
+Steve Coleman (as, ss) & Double Vision & 0.2 & n. s. \\
+Steve Coleman (as, ss) & Pass it On & 0.9 & n. s. \\
+Steve Coleman (as, ss) & Processional & 0.1 & n. s. \\
+Steve Coleman (as, ss) & Segment & 0.1 & n. s. \\
+Steve Coleman (as, ss) & Slipped again & -0.5 & n. s. \\
+Steve Coleman (as, ss) & Take the Coltrane & 0.1 & n. s. \\
+Steve Coleman (as, ss) & The Oracle & 0.6 & n. s. \\
+Steve Coleman (as, ss) & The Oracle & 0.3 & n. s. \\
+Steve Lacy (ss) & Alone Together & -0.9 & n. s. \\
+Steve Lacy (ss) & Ask Me Now & 0.7 & n. s. \\
+Steve Lacy (ss) & Easy to Love & 0.3 & n. s. \\
+Steve Lacy (ss) & Let's Cool One & 0.2 & n. s. \\
+Steve Lacy (ss) & Skippy & -0.0 & n. s. \\
+Steve Lacy (ss) & Work & 0.0 & n. s. \\
+Steve Turre (tb) & Dat Dere & -0.3 & n. s. \\
+Steve Turre (tb) & If I Were a Bell & 0.2 & n. s. \\
+Steve Turre (tb) & Steve's Blues & -0.6 & *** \\
+Von Freeman (ts) & Pass it On & 0.1 & n. s. \\
+Warne Marsh (ts) & Crosscurrent & -0.1 & n. s. \\
+Warne Marsh (ts) & Tautology & 0.1 & n. s. \\
+Warne Marsh (ts) & Wow & -0.1 & n. s. \\
+Wayne Shorter (ts) & Adam's Apple & 0.2 & n. s. \\
+Wayne Shorter (ts) & Dolores & 0.1 & n. s. \\
+Wayne Shorter (ts) & Down Under & nan & n. s. \\
+Wayne Shorter (ts) & E.S.P. & 0.3 & * \\
+Wayne Shorter (ts) & Eighty-One & 0.2 & n. s. \\
+Wayne Shorter (ts) & Footprints & 0.6 & ** \\
+Wayne Shorter (ts) & Infant Eyes & 0.1 & n. s. \\
+Wayne Shorter (ts) & Juju & 0.3 & n. s. \\
+Wayne Shorter (ts) & Orbits & 0.2 & n. s. \\
+Wayne Shorter (ts) & Speak No Evil & 0.2 & * \\
+Woody Shaw (cor, tp) & Dat Dere & 0.6 & n. s. \\
+Woody Shaw (cor, tp) & If I Were a Bell & 0.2 & n. s. \\
+Woody Shaw (cor, tp) & Imagination & 1.0 & n. s. \\
+Woody Shaw (cor, tp) & In a Capricornian Way & 0.4 & * \\
+Woody Shaw (cor, tp) & Rahsaan's Run & -0.2 & n. s. \\
+Woody Shaw (cor, tp) & Rosewood & 0.5 & ** \\
+Woody Shaw (cor, tp) & Stepping Stone & -0.1 & n. s. \\
+Woody Shaw (cor, tp) & Steve's Blues & 0.3 & * \\
+Wynton Marsalis (tp) & April in Paris & 0.2 & n. s. \\
+Wynton Marsalis (tp) & Caravan & -0.1 & n. s. \\
+Wynton Marsalis (tp) & Cherokee II & 0.4 & *** \\
+Wynton Marsalis (tp) & Cherokee & 0.2 & * \\
+Wynton Marsalis (tp) & Johnny Come Lately & 0.3 & n. s. \\
+Wynton Marsalis (tp) & U.M.M.G. & 0.4 & * \\
+Wynton Marsalis (tp) & You're My Everything & -0.2 & n. s. \\
+Zoot Sims (ts) & All the Things You Are & 0.5 & n. s. \\
+Zoot Sims (ts) & Dancing in the Dark & 0.9 & n. s. \\
+Zoot Sims (ts) & Dancing In The Dark & 0.4 & n. s. \\
+Zoot Sims (ts) & King David & 0.7 & n. s. \\
+Zoot Sims (ts) & Night and Day & 0.4 & * \\
+Zoot Sims (ts) & Night and Day & 0.8 & *** \\

@@ -5,16 +5,12 @@ Benny Goodman & cl & 7 & 1144\\
 Bix Beiderbecke & cor & 5 & 680\\
 Bob Berg & ts & 7 & 4894\\
 Branford Marsalis & ts & 6 & 4691\\
-Buck Clayton & tp & 3 & 589\\
 Cannonball Adderley & as & 5 & 2642\\
 Charlie Parker & as & 17 & 5672\\
-Charlie Shavers & tp & 1 & 145\\
 Chet Baker & tp & 8 & 1428\\
 Chris Potter & ts & 7 & 7161\\
-Chu Berry & ts & 2 & 373\\
 Clifford Brown & tp & 9 & 4232\\
 Coleman Hawkins & ts & 6 & 2609\\
-Curtis Fuller & tb & 2 & 501\\
 David Liebman & ss, ts & 11 & 7518\\
 David Murray & ts & 6 & 3005\\
 Dexter Gordon & ts & 6 & 4149\\
@@ -25,56 +21,40 @@ Don Ellis & tp & 6 & 1458\\
 Eric Dolphy & as, bcl & 6 & 3330\\
 Fats Navarro & tp & 6 & 1968\\
 Freddie Hubbard & tp & 6 & 2222\\
-George Coleman & ts & 1 & 224\\
 Gerry Mulligan & bs & 6 & 2621\\
 Hank Mobley & ts & 4 & 2118\\
-Harry Edison & tp & 1 & 366\\
-Henry Allen & tp & 1 & 156\\
 Herbie Hancock & p & 5 & 2769\\
-J.C. Higginbotham & tb & 1 & 170\\
 J.J. Johnson & tb & 8 & 3324\\
 Joe Henderson & ts & 8 & 4930\\
 Joe Lovano & ss, ts, ts-c & 8 & 6104\\
-John Abercrombie & g & 1 & 298\\
 John Coltrane & ss, ts & 20 & 19429\\
 Johnny Dodds & cl & 6 & 722\\
-Johnny Hodges & as & 2 & 320\\
 Joshua Redman & ts & 5 & 2422\\
-Kai Winding & tb & 1 & 208\\
 Kenny Dorham & tp & 7 & 2856\\
-Kenny Garrett & as & 2 & 764\\
-Kenny Wheeler & tp & 3 & 843\\
 Kid Ory & tb & 5 & 319\\
 Lee Konitz & as & 8 & 3519\\
-Lee Morgan & ts, tp & 4 & 2243\\
+Lee Morgan & tp, ts & 4 & 2243\\
 Lester Young & ts & 7 & 1787\\
 Lionel Hampton & vib & 6 & 1330\\
 Louis Armstrong & cor, tp & 8 & 1157\\
 Michael Brecker & ts & 10 & 7601\\
-Miles Davis & ts, tp & 19 & 6734\\
+Miles Davis & tp, ts & 19 & 6734\\
 Milt Jackson & vib & 6 & 2302\\
-Nat Adderley & tp & 2 & 648\\
 Ornette Coleman & as & 5 & 2857\\
-Pat Martino & g & 1 & 851\\
 Pat Metheny & g & 4 & 2374\\
 Paul Desmond & as & 8 & 2169\\
 Pepper Adams & bs & 5 & 2343\\
 Phil Woods & as & 6 & 2802\\
-Red Garland & p & 1 & 380\\
-Rex Stewart & cor & 1 & 277\\
 Roy Eldridge & tp & 6 & 1748\\
 Sidney Bechet & ss & 5 & 1078\\
 Sonny Rollins & ts & 13 & 5399\\
-Sonny Stitt & ts, as & 6 & 1759\\
+Sonny Stitt & as, ts & 6 & 1759\\
 Stan Getz & ts & 6 & 3705\\
-Steve Coleman & ss, as & 10 & 5552\\
+Steve Coleman & as, ss & 10 & 5552\\
 Steve Lacy & ss & 6 & 2332\\
-Steve Turre & tb & 3 & 1096\\
-Von Freeman & ts & 1 & 461\\
-Warne Marsh & ts & 3 & 675\\
 Wayne Shorter & ts & 10 & 3815\\
 Woody Shaw & cor, tp & 8 & 3193\\
 Wynton Marsalis & tp & 7 & 3070\\
 Zoot Sims & ts & 6 & 1136\\
 \hline
-\textbf{Total} & & \textbf{456} & \textbf{200819} \
+\textbf{Total} & & \textbf{423} & \textbf{191474} \\
