@@ -33,7 +33,8 @@ class AudioAnalysisExperiments:
         self.extractors = {#'metadata': [self.metadata_analysis],
                            #'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
                            'intensity': [#self.intensity_analysis_correlations,
-                                         self.intensity_analysis_eight_note_sequences]}
+                                         #self.intensity_analysis_eight_note_sequences
+                                         self.intensity_phrase_contours]}
         self.text_writer = TextWriter()
 
     def load_data(self):
@@ -92,6 +93,93 @@ class AudioAnalysisExperiments:
         pl.savefig(os.path.join(self.dir_results, 'tuning_analysis_tuning_freq_vs_recording_year_scatterplot.eps'),
                    bbox_inches='tight')
         pl.close()
+
+    def intensity_phrase_contours(self, min_phrase_len=4):
+
+        print("Experiment: Phrase contours: intensity vs. pitch")
+
+        contour_type = ('', 'horizontal', 'convex', 'concave', 'ascending', 'descending')
+        contour_type_label = ('$< {}$ notes'.format(min_phrase_len), 'Horizontal', 'Convex', 'Concave', 'Ascending', 'Descending')
+        contour_type_label_short = ('$< {}$ notes'.format(min_phrase_len), 'Horiz.', 'Conv.', 'Conc.', 'Ascend.', 'Descend.')
+        num_contour_type = len(contour_type)
+        num_contour_type_loud = np.zeros((self.num_solos, num_contour_type))
+        num_contour_type_pitch = np.zeros((self.num_solos, num_contour_type))
+        num_contour_type_joint = np.zeros((num_contour_type, num_contour_type))
+
+        # get raw note parameters
+        phrase_id_values = self.df_notes['phraseid'].as_matrix()
+        intensity_values = self.df_notes['intensity_solo_median'].as_matrix()
+        pitch_values = self.df_notes['pitch'].as_matrix()
+
+        for s, mel_id in enumerate(self.mel_ids):
+            print('Solo {} / {}'.format(s + 1, self.num_solos))
+
+            note_idx = np.where(self.df_notes['melid'] == mel_id)[0]
+            phrase_id = phrase_id_values[note_idx]
+            num_phrases = max(phrase_id)
+            num_notes = len(phrase_id)
+
+            for p in range(num_phrases):
+                # notes in current phrase
+                note_id_in_phrase = np.where(phrase_id == p + 1)[0]
+
+                # intensity contour
+                contour_type_loud_idx = 0  # '' = default contour type
+                if len(note_id_in_phrase) > min_phrase_len:
+                    contour_type_loud = self.tools.compute_abesser_contour(intensity_values[note_idx[note_id_in_phrase]])
+                    contour_type_loud_idx = contour_type.index(contour_type_loud)
+
+                num_contour_type_loud[s,
+                                      contour_type_loud_idx] += 1
+
+                # pitch contour
+                contour_type_pitch_idx = 0  # '' = default contour type
+                if len(note_id_in_phrase) > min_phrase_len:
+                    contour_type_pitch = self.tools.compute_abesser_contour(pitch_values[note_idx[note_id_in_phrase]])
+                    contour_type_pitch_idx = contour_type.index(contour_type_pitch)
+
+                num_contour_type_pitch[s,
+                                       contour_type_pitch_idx] += 1
+
+                # count co-occurrances of both contour types
+                num_contour_type_joint[contour_type_pitch_idx,
+                                          contour_type_loud_idx] += 1
+
+        # normalize to %
+        num_contour_type_loud = np.sum(num_contour_type_loud, axis=0)
+        num_contour_type_loud /= np.sum(num_contour_type_loud)
+        num_contour_type_loud *= 100.
+        num_contour_type_pitch = np.sum(num_contour_type_pitch, axis=0)
+        num_contour_type_pitch /= np.sum(num_contour_type_pitch)
+        num_contour_type_pitch *= 100.
+
+        # focus on contours over critical length
+        num_contour_type_joint = num_contour_type_joint[1:, 1:]
+        num_contour_type_joint /= np.tile(np.sum(num_contour_type_joint, axis=1).reshape(-1, 1),
+                                             (1, num_contour_type - 1)) # TODO simplify using broadcasting
+        num_contour_type_joint *= 100.
+
+        # export results for latex table
+        self.text_writer.reset()
+        for _ in range(num_contour_type):
+            self.text_writer.add('{} & {:2.1f} & {:2.1f} \\\\'.format(contour_type_label[_],
+                                                                      num_contour_type_loud[_],
+                                                                      num_contour_type_pitch[_]))
+        self.text_writer.save(os.path.join(self.dir_results, 'intensity_analysis_contour_pitch_intensity.txt'))
+
+        self.text_writer.reset()
+        self.text_writer.add(" & " + " & ".join(contour_type_label_short[1:]) + "\\\\")
+        for row in range(num_contour_type - 1):
+            s = " & ".join(
+                [contour_type_label[row + 1]] + ["{:2.1f}".format(num_contour_type_joint[row, col]) for col in
+                                                 range(num_contour_type - 1)])
+            s += "\\\\"
+            self.text_writer.add(s)
+
+        fn_result = os.path.join(self.dir_results, 'intensity_analysis_contour_joint.txt')
+        self.text_writer.save(fn_result)
+        print('{} saved ...'.format(fn_result))
+
 
     def intensity_analysis_eight_note_sequences(self,
                                                 min_num_notes=10,

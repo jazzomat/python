@@ -1,0 +1,6 @@
+$< 4$ notes & 10.1 & 10.1 \\
+Horizontal & 12.9 & 3.5 \\
+Convex & 13.4 & 17.4 \\
+Concave & 9.7 & 10.9 \\
+Ascending & 13.6 & 20.1 \\
+Descending & 40.3 & 38.1 \\
