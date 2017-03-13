@@ -4,7 +4,7 @@ import numpy as np
 import time
 import seaborn as sns
 import pandas as pn
-import matplotlib.pyplot as pl
+import matplotlib.pyplot as plt
 sns.set(style="white", color_codes=True)
 from scipy.stats import ttest_ind, ttest_rel, pearsonr, linregress
 from tools import AudioAnalysisTools, TextWriter
@@ -30,11 +30,13 @@ class AudioAnalysisExperiments:
         self.df_performer, self.df_performer_all = self.create_performer_data_frame(min_num_solos_per_artist=min_num_solos_per_artist)
 
         self.tools = AudioAnalysisTools
-        self.extractors = {#'metadata': [self.metadata_analysis],
-                           #'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
-                           'intensity': [#self.intensity_analysis_correlations,
+        self.extractors = {#'f0': [self.f0_analysis_classification]#,
+                           #'metadata': [self.metadata_analysis],
+                           'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
+                           #'intensity': [#self.intensity_analysis_correlations,
                                          #self.intensity_analysis_eight_note_sequences
-                                         self.intensity_phrase_contours]}
+                                         #self.intensity_phrase_contours]
+                           }
         self.text_writer = TextWriter()
 
     def load_data(self):
@@ -63,11 +65,12 @@ class AudioAnalysisExperiments:
                                       'metadata_analysis_artist_stats.txt'))
 
     def tuning_analysis_tuning_freq_vs_recording_year(self):
-        delta_f_ref_440_cent = np.abs(1200.*np.log2(self.df_solos['tuning_frequency']/440.))
+        delta_f_ref_440_cent = 1200.*np.log2(self.df_solos['tuning_frequency']/440.)
+        delta_f_ref_440_cent_abs = np.abs(delta_f_ref_440_cent)
         year = self.df_solos['recording_year']
 
         # linear regression
-        slope, intercept, r_value, p_value, std_err = linregress(year, delta_f_ref_440_cent)
+        slope, intercept, r_value, p_value, std_err = linregress(year, delta_f_ref_440_cent_abs)
 
         # write r & p values to files
         self.text_writer.reset()
@@ -80,7 +83,7 @@ class AudioAnalysisExperiments:
 
         # scatter plot with linear regression line
         df = pn.DataFrame({'Year': year,
-                           '$\left|\Delta f_\mathrm{ref}^\mathrm{440}\\right|$ [cent]': delta_f_ref_440_cent})
+                           '$\left|\Delta f_\mathrm{ref}^\mathrm{440}\\right|$ [cent]': delta_f_ref_440_cent_abs})
         sns.set_style("whitegrid")
         # sns.set(font_scale=0.7)
         g = sns.lmplot(x='Year',
@@ -90,9 +93,140 @@ class AudioAnalysisExperiments:
                        scatter_kws={"s": 10, "alpha": 1})
         g.set_xticklabels(rotation=60)
         g.set(ylim=(0, 50))
-        pl.savefig(os.path.join(self.dir_results, 'tuning_analysis_tuning_freq_vs_recording_year_scatterplot.eps'),
+        plt.savefig(os.path.join(self.dir_results, 'tuning_analysis_tuning_freq_vs_recording_year_scatterplot.eps'),
                    bbox_inches='tight')
-        pl.close()
+        plt.close()
+
+        # density plot over delta_f_ref_440_cent
+        plt.figure()
+        plt.hold(True)
+        all_intervals = ((1920, 1940),
+                         (1940, 1960),
+                         (1960, 1980),
+                         (1980, 2010))
+        linestyles = ('-', '--', ':', '-.')
+        for i, interval in enumerate(all_intervals):
+            delta = delta_f_ref_440_cent[np.logical_and(year >= interval[0],
+                                                        year < interval[1])]
+            g = pn.Series(delta).plot.kde(x='$\left|\Delta f_\mathrm{ref}^\mathrm{440}\\right|$ [cent]',
+                                          linestyle=linestyles[i],
+                                          label='%d - %d' % (interval[0], interval[1]))
+            g.set(xlim=(-50, 50))
+            g.set(xlabel='$\Delta f_\mathrm{ref}^\mathrm{440}$ [cent]')
+        plt.legend(loc=0)
+        plt.savefig(os.path.join(self.dir_results, 'tuning_analysis_tuning_freq_dev_dist_plot.eps'),
+                    bbox_inches='tight')
+        plt.close()
+
+    def f0_analysis_classification(self):
+        """ Experiment towards automatic classification of modulation techniques """
+        f0_mod = self.df_notes['f0_mod'].as_matrix()
+        num_notes = len(f0_mod)
+        unique_f0_mod_labels = np.unique(f0_mod)
+        class_id = np.zeros(num_notes, dtype=int)
+        for i, f0_mod_label in enumerate(unique_f0_mod_labels):
+            idx = (f0_mod == f0_mod_label)
+            print('%d notes with label %s ' % (np.sum(idx), f0_mod_label))
+            class_id[idx] = i
+
+        # relevant features
+        f0_feature_labels = ('f0_mod_range_cent',
+                             'f0_av_f0_dev_median',
+                             'f0_av_f0_dev_mean',
+                             'f0_av_abs_f0_dev_median',
+                             'f0_av_abs_f0_dev_mean',
+                             'f0_iqr_f0_dev',
+                             'f0_lin_f0_slope',
+                             'f0_median_freq_gradient_overal',
+                             'f0_median_freq_gradient_first_half',
+                             'f0_median_freq_gradient_second_half',
+                             'f0_ratio_of_descending_segments',
+                             'f0_ratio_of_constant_segments',
+                             'f0_ratio_of_ascending_segments',
+                             'f0_av_rel_segment_len',
+                             'f0_mod_freq_hz',
+                             'f0_mod_dom',
+                             'f0_mod_num_periods')
+
+        # collect feature matrix
+        num_feat = len(f0_feature_labels)
+        feat_mat = np.zeros((num_notes, num_feat))
+        for i, lab in enumerate(f0_feature_labels):
+            feat_mat[:, i] = self.df_notes[lab].as_matrix()
+
+        # remove items with nan features
+        # all_idx = np.arange(num_notes)
+        # nonvalid_idx = np.unique(np.where(np.isnan(feat_mat))[0])
+        # valid_idx = np.setdiff1d(all_idx, nonvalid_idx)
+        # feat_mat = feat_mat[valid_idx, :]
+        # class_id = class_id[valid_idx]
+
+        # feature cleanup
+        feat_mat = np.nan_to_num(feat_mat)
+
+        # focus on annotated classes first
+        select_idx = class_id > 0
+        feat_mat = feat_mat[select_idx, :]
+        class_id = class_id[select_idx]
+
+        print(feat_mat.shape)
+
+        from sklearn import (manifold, datasets, decomposition, ensemble,
+                             discriminant_analysis, random_projection)
+        from sklearn.preprocessing import StandardScaler
+
+        # standardize feature matrix
+        feat_mat = StandardScaler().fit_transform(feat_mat)
+
+        # check LDA for feature space dimension reduction
+        lda = discriminant_analysis.LinearDiscriminantAnalysis(n_components=2)
+
+        lda_model = lda.fit(feat_mat, class_id)
+        X_tsne = lda.transform(feat_mat)
+
+        # create scatter plot
+        colors = ('c', 'm', 'r', 'g', 'b', 'k', 'y') * 3
+        markers = ('o', 's', 'd', 'o', '<', '>', '^', 'p') * 3
+        plt.figure()
+        plt.plot()
+        plt.hold(True)
+        from sklearn import svm
+        clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
+        for cid in np.arange(len(unique_f0_mod_labels)):
+            idx = class_id == cid
+            clf.fit()
+            plt.scatter(X_tsne[idx, 0], X_tsne[idx, 1], label=unique_f0_mod_labels[cid], c=colors[cid], marker=markers[cid], alpha= .2 if cid == 0 else .8, s=25)
+        plt.gca().legend(loc=0, fontsize=8, scatterpoints=1)
+        plt.savefig(os.path.join(self.dir_results, 'f0_mod_scatter.png'))
+        plt.close()
+
+    def plot_embedding(X, title=None):
+        x_min, x_max = np.min(X, 0), np.max(X, 0)
+        X = (X - x_min) / (x_max - x_min)
+
+        plt.figure()
+        ax = plt.subplot(111)
+        for i in range(X.shape[0]):
+            plt.text(X[i, 0], X[i, 1], str(digits.target[i]),
+                     color=plt.cm.Set1(y[i] / 10.),
+                     fontdict={'weight': 'bold', 'size': 9})
+
+        if hasattr(offsetbox, 'AnnotationBbox'):
+            # only print thumbnails with matplotlib > 1.0
+            shown_images = np.array([[1., 1.]])  # just something big
+            for i in range(digits.data.shape[0]):
+                dist = np.sum((X[i] - shown_images) ** 2, 1)
+                if np.min(dist) < 4e-3:
+                    # don't show points that are too close
+                    continue
+                shown_images = np.r_[shown_images, [X[i]]]
+                imagebox = offsetbox.AnnotationBbox(
+                    offsetbox.OffsetImage(digits.images[i], cmap=plt.cm.gray_r),
+                    X[i])
+                ax.add_artist(imagebox)
+        plt.xticks([]), plt.yticks([])
+        if title is not None:
+            plt.title(title)
 
     def intensity_phrase_contours(self, min_phrase_len=4):
 
