@@ -18,7 +18,8 @@ class AudioAnalysisExperiments:
                  dir_data,
                  dir_results,
                  min_num_solos_per_artist=4,
-                 debug=True):
+                 debug=True,
+                 fontsize=14:
         self.dir_results = dir_results
         self.dir_data = dir_data
         self.debug = debug
@@ -30,13 +31,15 @@ class AudioAnalysisExperiments:
         self.df_performer, self.df_performer_all = self.create_performer_data_frame(min_num_solos_per_artist=min_num_solos_per_artist)
 
         self.tools = AudioAnalysisTools
-        self.extractors = {#'f0': [self.f0_analysis_classification]#,
+        self.extractors = {'f0': [self.f0_analysis_intonation]
+                                   # self.f0_analysis_classification]#,
                            #'metadata': [self.metadata_analysis],
-                           'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
+                           #'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
                            #'intensity': [#self.intensity_analysis_correlations,
                                          #self.intensity_analysis_eight_note_sequences
                                          #self.intensity_phrase_contours]
                            }
+        self.fontsize = fontsize
         self.text_writer = TextWriter()
 
     def load_data(self):
@@ -117,6 +120,100 @@ class AudioAnalysisExperiments:
         plt.savefig(os.path.join(self.dir_results, 'tuning_analysis_tuning_freq_dev_dist_plot.eps'),
                     bbox_inches='tight')
         plt.close()
+
+
+    # def f0_analysis_modulation(self):
+    #
+    #     f0_mod = self.df_notes['f0_mod']
+    #
+    #     # vib_idx = f0_mod ==v'vibrato'
+    #     iqr_f0_dev = self.df_notes['f0_iqr_f0_dev']
+    #
+    #     f0_mod_range_cent = self.df_notes['f0_mod_range_cent']
+    #     f0_mod_freq_hz = self.df_notes['f0_mod_freq_hz']
+    #     f0_mod_range_cent = self.df_notes['f0_mod_range_cent']
+    #
+    #     # todo create for performer for main instruments (as, ts, tp)
+    #
+    #
+    #     # - AvF0Dev(sharp    # vs.flat) vs.artists\ \
+    #     #         - modulation
+    #     # range
+    #     # vs.pitch
+    #     # for different instruments \ \
+    #     #         - vibrato frequency (hz) and extend (cent) vs.artists / instrument\ \
+    #     #         -- f0 progressions (slides upwards / downwards) vs.artist\ \
+    #     #         - Ratio between the modulation frequency of vi- brato tones and the average tempo of a piece vs.the average tempo.
+
+    def f0_analysis_intonation(self,
+                               selected_instruments=('tp', 'as', 'ts')):
+        """ Analyze intonation (flat / sharp) of different as, ts, and tp soloists
+        Args:
+            selected_instruments (list of strings): Instruments of interest
+        """
+
+        # load data
+        melid_notes = self.df_notes['melid'].as_matrix()
+        melid_solos = np.array(self.df_solos.index)
+        num_notes = len(melid_notes)
+        av_f0_dev_median = self.df_notes['f0_av_f0_dev_median']
+
+        performer_solo = list(self.df_solos['performer'])
+        instrument_solo = list(self.df_solos['instrument'])
+        performer_selected = list(self.df_performer.index)
+        performer_notes = ['' for _ in range(num_notes)]
+        instrument_notes = ['' for _ in range(num_notes)]
+        note_performer_select_mask = np.ones(num_notes, dtype=bool)
+
+        # map solo metadata (artist / instrument) to note metadata
+        for i, melid in enumerate(melid_solos):
+            mask = melid_notes == melid
+            curr_performer = performer_solo[i]
+            curr_instrument = instrument_solo[i]
+            for n in np.where(mask)[0]:
+                performer_notes[n] = curr_performer
+                instrument_notes[n] = curr_instrument
+            if curr_performer not in performer_selected:
+                note_performer_select_mask[mask] = False
+        instrument_notes = np.array(instrument_notes)
+
+        # analyze performers for each instrument
+        for valid_instrument in selected_instruments:
+            print('Create boxplot over performers for instrument %s' % valid_instrument)
+
+            # combined selection of valid performers & instrument of interest
+            note_instrument_select_mask = np.zeros(num_notes, dtype=bool)
+            note_instrument_select_mask[instrument_notes == valid_instrument] = True
+            note_select_mask_mix = np.logical_and(note_performer_select_mask, note_instrument_select_mask)
+
+            # create temporary DataFrame
+            temp_df = pd.DataFrame({'av_f0_dev_median': av_f0_dev_median[note_select_mask_mix],
+                                    'performer': [performer_notes[_] for _ in np.where(note_select_mask_mix)[0]]})
+            # group by instrument
+            grouped = temp_df.groupby(["performer"])
+            temp_df2 = pd.DataFrame({col: vals['av_f0_dev_median'] for col, vals in grouped})
+
+            # compute median values over different performers
+            performer_medians = temp_df2.median()
+            # sort median in ascending order
+            performer_medians.sort(ascending=True)
+            # create boxplot
+            temp_df2 = temp_df2[performer_medians.index]
+            temp_df2.boxplot(fontsize=self.fontsize)
+            ax = plt.gca()
+            ax.set_ylim(-50, 50)
+            ax.set_xlabel('Performer', fontsize=self.fontsize)
+            ax.set_ylabel('Median over tone-wise $f_0$ deviation [cent]', fontsize=self.fontsize)
+            ax.set_title('')
+            ax.set_xticklabels(ax.get_xticklabels(), rotation = 90)
+            for tick in ax.yaxis.get_major_ticks():
+                tick.label.set_fontsize(self.fontsize)
+            plt.suptitle("")
+            plt.tight_layout()
+            plt.grid(True)
+            plt.savefig(os.path.join(self.dir_results, 'f0_sharp_flat_performer_%s.eps' % valid_instrument), dpi=300)
+            plt.close()
+
 
     def f0_analysis_classification(self):
         """ Experiment towards automatic classification of modulation techniques """
