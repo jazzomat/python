@@ -99,7 +99,7 @@ class SymbolicAnalysisExperiments:
                                                              int(np.sum(class_id_curr == 0)),
                                                              int(np.sum(class_id_curr == 1))))
 
-                self.text_writer.add("Rank; Feature; Mean (class); Mean (others); Significance (t-test)")
+                self.text_writer.add("Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D")
 
                 clf.fit(self.numeric_features, class_id_curr)
 
@@ -115,11 +115,13 @@ class SymbolicAnalysisExperiments:
     
                     # only consider features with significant differences in means
                     if p < 0.05:
-                        self.text_writer.add('%d; %s; %f; %f; %s' % (fid,
-                                                                     self.numeric_feature_labels[numeric_feat_idx],
-                                                                     float(np.mean(self.numeric_features[class_id_curr == 0, numeric_feat_idx])),
-                                                                     float(np.mean(self.numeric_features[class_id_curr == 1, numeric_feat_idx])),
-                                                                     self.tools.generate_p_value_string(p)))
+                        self.text_writer.add('%d; %s; %f; %f; %s; %f' % (fid,
+                                                                         self.numeric_feature_labels[numeric_feat_idx],
+                                                                         float(np.mean(self.numeric_features[class_id_curr == 0, numeric_feat_idx])),
+                                                                         float(np.mean(self.numeric_features[class_id_curr == 1, numeric_feat_idx])),
+                                                                         self.tools.generate_p_value_string(p),
+                                                                         self.tools.cohens_d(self.numeric_features[class_id_curr == 0, numeric_feat_idx],
+                                                                                             self.numeric_features[class_id_curr == 1, numeric_feat_idx])))
             self.text_writer.save(os.path.join(self.dir_results, 'symbolic_analysis_1_vs_N_feature_selection_%s.csv' % class_type))
 
     def create_class_ids(self, all_vals):
