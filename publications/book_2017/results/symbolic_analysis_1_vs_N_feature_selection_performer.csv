@@ -1,0 +1,606 @@
+Art Pepper; (N = 26 vs. 1390)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1979.000000; 1965.620144; ***
+1; ioiclass_abs_hist_04_long; 0.071923; 0.037763; ***
+2; ioiclass_rel_hist_05_very_long; 0.029615; 0.018619; *
+3; cdpcx_density_5; 0.174231; 0.137935; *
+4; mean_number_of_unique_pc; 5.232308; 6.807029; ***
+5; mean_length_seq_ascending; 3.645385; 4.156309; **
+8; aic_mean_seg_len_04_long; 1.174231; 0.954180; *
+13; ric_mean_seg_len_05_very_long; 1.020769; 0.734777; **
+Ben Webster; (N = 12 vs. 1404)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; ric_mean_seg_len; 1.737500; 2.297934; *
+1; ratio_ascending_descending; 1.171667; 0.923711; **
+3; durclass_abs_hist_01_very_short; 0.309167; 0.606581; ***
+4; metric_complexity_division; 0.314828; 0.234551; ***
+5; ioiclass_abs_entropy; 0.755000; 0.626396; *
+Benny Carter; (N = 14 vs. 1402)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+1; art_median; 0.762143; 0.846084; ***
+3; fuzzyint_hist_08_jump_down; 0.143571; 0.049750; ***
+4; recordingyear; 1978.714286; 1965.737518; **
+5; cdpcx_density_4; 0.052857; 0.085392; *
+6; avgtempo; 141.992857; 195.594294; **
+7; nPVI_dur; 0.537143; 0.451904; *
+11; mean_length_step; 3.589286; 4.928837; ***
+Benny Goodman; (N = 8 vs. 1408)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+1; mean_length_arpeggio_ascending; 3.713750; 2.598061; *
+2; recordingyear; 1936.500000; 1966.032670; ***
+3; mean_length_chromatic_descending; 4.562500; 2.896776; **
+7; mean_length_chromatic_mixed; 4.657500; 3.542741; *
+8; extrema_ratio; 0.547500; 0.410384; **
+11; durclass_rel_hist_04_long; 0.156250; 0.028480; ***
+Bix Beiderbecke; (N = 6 vs. 1410)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+2; recordingyear; 1927.166667; 1966.030496; ***
+7; ric_mean_seg_len_05_very_long; 0.333333; 0.741759; *
+9; ioiclass_abs_hist_04_long; 0.071667; 0.038248; *
+13; ioiclass_abs_hist_02_short; 0.575000; 0.394085; *
+Bob Berg; (N = 22 vs. 1394)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1991.454545; 1965.461980; ***
+2; int_min; -13.136364; -9.999283; **
+3; aic_mean_seg_len; 2.739091; 2.274240; *
+8; int_std; 3.814545; 3.376478; *
+9; event_density; 5.633636; 4.778931; *
+10; ioiclass_abs_hist_01_very_short; 0.641818; 0.437819; ***
+13; durclass_abs_hist_02_short; 0.202273; 0.311894; *
+14; ratio_chromatic_sequences; 0.130909; 0.092783; *
+Branford Marsalis; (N = 35 vs. 1381)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1988.000000; 1965.304852; ***
+2; mean_length_arpeggio; 3.838857; 3.385720; **
+3; extrema_ratio; 0.463429; 0.409833; *
+4; ioiclass_abs_hist_05_very_long; 0.013429; 0.006901; *
+5; pitch_median; 62.285714; 65.478277; ***
+6; ratio_ascending_descending; 1.030857; 0.923150; *
+7; art_median; 0.789714; 0.846662; ***
+8; ric_mean_seg_len_01_very_short; 2.694571; 1.617277; ***
+9; mean_length_step_descending; 3.316286; 3.930934; **
+10; fuzzyint_hist_06_step_down; 0.199714; 0.277429; ***
+13; ric_mean_seg_len_03_medium; 1.740857; 1.388472; ***
+14; ric_mean_seg_len_04_long; 1.230571; 1.020087; ***
+Buck Clayton; (N = 4 vs. 1412)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+7; recordingyear; 1942.750000; 1965.931303; **
+11; ric_mean_seg_len_03_medium; 1.910000; 1.395729; *
+Cannonball Adderley; (N = 15 vs. 1401)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+2; ric_mean_seg_len_05_very_long; 0.400000; 0.743669; **
+4; durclass_rel_entropy; 0.754000; 0.579893; ***
+5; ioiclass_bigram_entropy; 3.224667; 2.525446; **
+Charlie Parker; (N = 34 vs. 1382)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; art_median; 0.927059; 0.843242; ***
+1; recordingyear; 1947.882353; 1966.308249; ***
+2; art_std; 0.148235; 0.187590; ***
+5; aic_mean_seg_len_05_very_long; 0.852941; 0.405977; ***
+6; fuzzyint_hist_06_step_down; 0.326765; 0.274247; *
+13; parsons_bigram_entropy; 1.737353; 2.196773; ***
+Charlie Shavers; (N = 1 vs. 1415)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+Chet Baker; (N = 15 vs. 1401)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; mean_length_arpeggio; 3.892667; 3.391613; *
+3; cdpcx_density_4; 0.129333; 0.084597; ***
+4; durclass_abs_hist_01_very_short; 0.452667; 0.605682; *
+5; event_density; 3.600000; 4.804975; **
+8; fuzzyint_hist_04_step_up; 0.311333; 0.241899; *
+11; abs_int_range; 8.533333; 12.773733; **
+12; fuzzyint_hist_02_jump_up; 0.019333; 0.050857; **
+13; int_std; 2.709333; 3.390500; **
+Chris Potter; (N = 27 vs. 1389)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 2001.370370; 1965.175666; ***
+1; syncopicity; 0.214110; 0.315101; ***
+2; durclass_abs_hist_01_very_short; 0.865556; 0.598978; ***
+4; cdpcx_density_T; 0.077037; 0.042613; ***
+6; pitch_range; 30.740741; 23.071994; ***
+7; ioiclass_abs_hist_01_very_short; 0.701852; 0.435918; ***
+8; int_min; -16.370370; -9.925126; ***
+9; metric_complexity_compression; 0.060507; 0.106108; *
+12; durclass_abs_hist_02_short; 0.115556; 0.313974; ***
+Chu Berry; (N = 2 vs. 1414)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+1; art_range; 0.410000; 0.846089; ***
+3; art_std; 0.095000; 0.186775; **
+14; durclass_bigram_entropy; 3.290000; 1.894979; *
+Clifford Brown; (N = 21 vs. 1395)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; ric_mean_seg_len; 2.771905; 2.285978; **
+1; aic_mean_seg_len; 2.856190; 2.272810; **
+5; aic_mean_seg_len_02_short; 2.799524; 2.060910; **
+7; ioiclass_abs_hist_03_medium; 0.040000; 0.088703; *
+8; pitch_median; 68.357143; 65.354839; **
+10; durclass_rel_hist_03_medium; 0.049048; 0.114903; *
+12; durclass_abs_entropy; 0.453333; 0.586065; **
+Coleman Hawkins; (N = 10 vs. 1406)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+Curtis Fuller; (N = 8 vs. 1408)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; ioiclass_abs_hist_03_medium; 0.311250; 0.086712; ***
+1; cdpcx_density_7; 0.247500; 0.103622; ***
+2; ioiclass_rel_hist_03_medium; 0.340000; 0.170405; ***
+3; art_median; 0.758750; 0.845746; ***
+4; mean_length_arpeggio_ascending; 1.333750; 2.611584; *
+5; pitch_median; 58.500000; 65.438565; ***
+6; mean_number_of_unique_pc; 4.448750; 6.791349; **
+9; fuzzyint_hist_05_repeat; 0.195000; 0.056612; ***
+13; int_std; 2.395000; 3.388899; **
+David Liebman; (N = 34 vs. 1382)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1990.588235; 1965.257598; ***
+1; cpc_bigram_entropy; 5.909706; 5.188415; **
+2; art_range; 0.900882; 0.844110; *
+3; cdpcx_density_T; 0.075588; 0.042475; ***
+4; int_min; -13.470588; -9.963821; ***
+6; mean_length_seq_repitition; 2.919118; 1.930210; *
+9; pc_entropy; 0.937647; 0.864276; *
+10; cdpcx_density_<; 0.008529; 0.002771; ***
+13; durclass_abs_hist_01_very_short; 0.737941; 0.600767; **
+14; mean_length_chromatic_mixed; 4.216765; 3.532612; **
+David Murray; (N = 12 vs. 1404)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; metrical_event_density; 14.891667; 6.319523; ***
+1; pitch_std; 7.075833; 5.086282; ***
+3; durclass_rel_hist_01_very_short; 0.818333; 0.267635; ***
+4; durclass_rel_hist_02_short; 0.145833; 0.582379; ***
+5; mean_seg_len_01_very_short; 10.207500; 2.258547; ***
+7; ioiclass_rel_entropy; 0.492500; 0.625199; *
+10; pitch_entropy; 4.335833; 3.771987; *
+11; aic_mean_seg_len_02_short; 2.798333; 2.065655; *
+14; ric_mean_seg_len_01_very_short; 5.776667; 1.608583; ***
+Dexter Gordon; (N = 35 vs. 1381)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+1; ric_mean_seg_len; 1.910857; 2.302875; **
+3; avgtempo; 152.274286; 196.148805; ***
+8; durclass_abs_entropy; 0.676857; 0.581745; *
+9; pitch_median; 63.285714; 65.452933; *
+10; ric_mean_seg_len_02_short; 2.451714; 3.220239; *
+13; ratio_chromatic_sequences; 0.063143; 0.094142; *
+Dickie Wells; (N = 8 vs. 1408)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; ioiclass_rel_hist_03_medium; 0.496250; 0.169517; ***
+1; metric_complexity_compression; 0.231728; 0.104520; **
+4; durclass_bigram_entropy; 2.488750; 1.893587; *
+5; int_range; 28.750000; 21.634943; *
+8; ioiclass_rel_hist_02_short; 0.371250; 0.540483; *
+9; aic_mean_seg_len_02_short; 2.890000; 2.067216; *
+11; int_std; 4.236250; 3.378437; **
+13; durclass_abs_hist_02_short; 0.558750; 0.308778; ***
+14; parsons_hist_constant; 0.133750; 0.056960; *
+Dizzy Gillespie; (N = 13 vs. 1403)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; pitch_median; 74.230769; 65.317534; ***
+2; recordingyear; 1946.153846; 1966.048468; ***
+3; mean_length_chromatic_ascending; 4.114615; 2.351711; ***
+4; mean_length_arpeggio_descending; 1.756154; 2.554790; *
+5; syncopicity; 0.227278; 0.313971; *
+7; ratio_chromatic_sequences; 0.137692; 0.092965; *
+Don Byas; (N = 13 vs. 1403)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+2; durclass_abs_hist_03_medium; 0.154615; 0.064811; **
+3; fuzzyint_hist_03_leap_up; 0.155385; 0.116130; *
+4; pitch_median; 58.923077; 65.459373; ***
+5; cdpcx_density_3; 0.193077; 0.119722; **
+8; avgtempo; 132.753846; 195.641696; **
+10; recordingyear; 1948.538462; 1966.026372; ***
+11; ioiclass_abs_hist_04_long; 0.060769; 0.038182; *
+Don Ellis; (N = 12 vs. 1404)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; cdpcx_density_<; 0.012500; 0.002828; ***
+1; cdpcx_density_B; 0.075833; 0.033191; ***
+4; aic_mean_seg_len; 1.450000; 2.288568; **
+14; cdpcx_density_>; 0.039167; 0.012322; ***
+Eric Dolphy; (N = 21 vs. 1395)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; metrical_event_density; 11.753810; 6.311455; ***
+1; ric_mean_seg_len; 3.363333; 2.277075; ***
+3; ioiclass_abs_hist_01_very_short; 0.629524; 0.438151; ***
+6; durclass_rel_hist_01_very_short; 0.622857; 0.267025; ***
+7; durclass_abs_hist_02_short; 0.191429; 0.311978; **
+8; ioiclass_rel_hist_01_very_short; 0.526190; 0.175642; ***
+10; event_density; 5.682381; 4.778810; *
+11; ioiclass_abs_hist_02_short; 0.245238; 0.397104; ***
+12; pitch_std; 6.252857; 5.085835; **
+13; ioiclass_abs_entropy; 0.500476; 0.629398; **
+14; durclass_mean_seg_len; 5.068095; 2.896437; ***
+Fats Navarro; (N = 11 vs. 1405)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+2; ioiclass_rel_hist_04_long; 0.019091; 0.058961; *
+3; ratio_chromatic_sequences; 0.178182; 0.092712; ***
+4; pitch_median; 70.681818; 65.358007; ***
+5; mean_length_arpeggio_ascending; 3.574545; 2.596769; *
+8; recordingyear; 1948.000000; 1966.005694; ***
+12; mean_number_of_unique_pc; 8.606364; 6.763801; **
+Freddie Hubbard; (N = 19 vs. 1397)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; fuzzyint_hist_01_big_jump_up; 0.040000; 0.022276; **
+1; parsons_hist_ascending; 0.344737; 0.433236; **
+2; cdpcx_density_2; 0.137895; 0.097810; *
+3; ioiclass_abs_hist_05_very_long; 0.025263; 0.006815; ***
+4; durclass_rel_hist_02_short; 0.350526; 0.581782; ***
+5; ric_mean_seg_len_01_very_short; 3.191053; 1.622863; ***
+6; durclass_abs_hist_04_long; 0.077368; 0.016149; ***
+11; ratio_ascending_descending; 0.755263; 0.928132; *
+George Coleman; (N = 2 vs. 1414)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; durclass_rel_hist_05_very_long; 0.500000; 0.005545; ***
+5; mean_length_step; 7.440000; 4.912023; *
+6; durclass_rel_hist_02_short; 0.090000; 0.579371; **
+12; durclass_abs_hist_05_very_long; 0.500000; 0.002546; ***
+Gerry Mulligan; (N = 16 vs. 1400)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; pitch_median; 58.250000; 65.481071; ***
+1; ioiclass_rel_hist_03_medium; 0.273125; 0.170200; **
+2; art_median; 0.783750; 0.845957; ***
+5; syncopicity; 0.209543; 0.314360; **
+Hank Mobley; (N = 19 vs. 1397)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+6; durclass_abs_entropy; 0.734211; 0.582054; **
+9; pitch_median; 63.105263; 65.430565; *
+13; cdpcx_density_3; 0.166842; 0.119764; *
+Harry Edison; (N = 2 vs. 1414)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+Henry Allen; (N = 2 vs. 1414)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+Herbie Hancock; (N = 14 vs. 1402)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; art_median; 0.937857; 0.844330; ***
+1; cdpcx_entropy; 0.626429; 0.815021; ***
+2; ric_mean_seg_len_02_short; 4.367857; 3.189593; *
+5; ric_mean_seg_len_01_very_short; 0.716429; 1.653167; *
+6; mean_length_step_descending; 5.325714; 3.901662; ***
+7; ioiclass_abs_hist_01_very_short; 0.687857; 0.438524; ***
+8; ioiclass_rel_hist_02_short; 0.711429; 0.537810; **
+10; event_density; 5.872143; 4.781427; *
+14; cdpcx_density_3; 0.052857; 0.121070; **
+J.C. Higginbotham; (N = 2 vs. 1414)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+6; ioiclass_rel_hist_03_medium; 0.390000; 0.171054; *
+11; recordingyear; 1941.000000; 1965.900990; *
+J.J. Johnson; (N = 38 vs. 1378)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; pitch_std; 4.033947; 5.132627; ***
+1; durclass_rel_entropy; 0.677895; 0.579086; **
+2; mean_length_seq_repitition; 3.387632; 1.914419; ***
+3; mean_length_step; 5.434474; 4.901284; *
+6; cdpcx_density_b2; 0.026579; 0.039761; **
+7; art_median; 0.784737; 0.846923; ***
+8; fuzzyint_hist_05_repeat; 0.130263; 0.055385; ***
+9; ioiclass_abs_hist_01_very_short; 0.331316; 0.444013; **
+10; parsons_bigram_entropy; 2.586053; 2.174702; ***
+11; durclass_bigram_entropy; 2.221842; 1.887990; *
+Joe Henderson; (N = 47 vs. 1369)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; cdpcx_density_>; 0.022766; 0.012199; ***
+1; cdpcx_density_<; 0.009362; 0.002688; ***
+3; ioiclass_abs_hist_01_very_short; 0.643830; 0.434025; ***
+9; fuzzyint_hist_01_big_jump_up; 0.030213; 0.022250; *
+11; mean_length_step_descending; 4.403830; 3.898985; **
+12; fuzzyint_hist_07_leap_down; 0.162766; 0.137480; *
+13; avgtempo; 234.765957; 193.701315; ***
+Joe Lovano; (N = 38 vs. 1378)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1992.921053; 1965.119739; ***
+2; abs_int_range; 15.842105; 12.642961; ***
+14; int_range; 25.078947; 21.581277; *
+John Abercrombie; (N = 3 vs. 1413)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+2; durclass_rel_hist_03_medium; 0.326667; 0.113475; **
+5; mean_length_seq_ascending; 5.290000; 4.144501; *
+6; aic_mean_seg_len_03_medium; 2.100000; 1.161323; **
+John Coltrane; (N = 137 vs. 1279)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; avgtempo; 241.302920; 190.111493; ***
+1; ioiclass_abs_hist_02_short; 0.231314; 0.412369; ***
+2; recordingyear; 1959.525547; 1966.544957; ***
+3; event_density; 5.913869; 4.672064; ***
+4; cdpcx_density_7; 0.087737; 0.106224; **
+5; metric_complexity_division; 0.259135; 0.232671; ***
+6; durclass_abs_entropy; 0.469854; 0.596333; ***
+7; aic_mean_seg_len_04_long; 0.803504; 0.974793; ***
+8; int_min; -11.693431; -9.871775; ***
+9; ric_mean_seg_len_05_very_long; 0.640438; 0.750696; *
+10; mean_length_arpeggio_descending; 2.879416; 2.511900; **
+12; int_std; 3.789051; 3.339820; ***
+13; int_bigram_entropy; 5.532336; 5.309984; *
+14; aic_mean_seg_len_02_short; 1.511679; 2.131869; ***
+Johnny Dodds; (N = 6 vs. 1410)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; pitch_median; 73.666667; 65.364184; ***
+1; extrema_ratio; 0.535000; 0.410631; *
+2; recordingyear; 1926.333333; 1966.034043; ***
+12; cdpcx_density_4; 0.040000; 0.085262; *
+Johnny Hodges; (N = 3 vs. 1413)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+Joshua Redman; (N = 19 vs. 1397)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1993.473684; 1965.490336; ***
+5; pitch_std; 6.640526; 5.082233; ***
+12; int_std; 3.890000; 3.376392; *
+13; cdpcx_density_1; 0.211053; 0.152427; *
+Kai Winding; (N = 6 vs. 1410)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; ioiclass_rel_hist_05_very_long; 0.056667; 0.018660; ***
+1; ratio_ascending_descending; 0.673333; 0.926887; *
+6; durclass_rel_hist_01_very_short; 0.043333; 0.273277; *
+14; mean_length_arpeggio_descending; 0.500000; 2.556170; ***
+Kenny Dorham; (N = 33 vs. 1383)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; cdpcx_density_<; 0.017273; 0.002567; ***
+1; pitch_median; 69.636364; 65.298265; ***
+2; fuzzyint_hist_06_step_down; 0.321212; 0.274418; *
+3; int_entropy; 2.942121; 3.295705; ***
+10; cdpcx_density_2; 0.141818; 0.097310; ***
+13; metric_complexity_compression; 0.162105; 0.103882; **
+Kenny Garrett; (N = 3 vs. 1413)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; mean_number_of_unique_pc; 4.326667; 6.783319; *
+2; fuzzyint_hist_05_repeat; 0.176667; 0.057141; *
+7; nPVI_dur; 0.626667; 0.452378; *
+9; nPVI_ioi; 0.626667; 0.452378; *
+11; parsons_bigram_entropy; 2.890000; 2.184246; *
+Kenny Wheeler; (N = 7 vs. 1409)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+2; mean_length_step; 6.497143; 4.907736; **
+3; fuzzyint_hist_06_step_down; 0.377143; 0.275004; *
+13; cdpcx_density_3; 0.231429; 0.119844; **
+14; abs_int_range; 19.285714; 12.696238; **
+Kid Ory; (N = 5 vs. 1411)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1926.200000; 1966.006378; ***
+1; ioiclass_rel_entropy; 0.802000; 0.623444; *
+4; pitch_median; 59.200000; 65.421332; **
+5; durclass_abs_hist_02_short; 0.552000; 0.309334; **
+7; ric_mean_seg_len_01_very_short; 0.400000; 1.648313; *
+10; metric_complexity_compression; 0.216304; 0.104845; *
+14; ioiclass_abs_hist_01_very_short; 0.136000; 0.442069; **
+Lee Konitz; (N = 23 vs. 1393)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; mean_length_chromatic_ascending; 3.222174; 2.353790; *
+2; cdpcx_density_1; 0.219565; 0.152118; **
+3; ioiclass_rel_hist_02_short; 0.772609; 0.535678; ***
+4; art_std; 0.149565; 0.187258; ***
+5; durclass_rel_hist_01_very_short; 0.137826; 0.274523; *
+6; mean_length_step; 5.622609; 4.903920; *
+7; ratio_chromatic_sequences; 0.131739; 0.092742; *
+8; metric_complexity; 0.132979; 0.170850; *
+10; durclass_rel_hist_02_short; 0.726087; 0.576246; **
+11; ric_mean_seg_len_04_long; 0.848261; 1.028212; *
+Lee Morgan; (N = 10 vs. 1406)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; ratio_chromatic_sequences; 0.181000; 0.092752; ***
+1; cdpcx_density_L; 0.130000; 0.033578; ***
+5; fuzzyint_hist_05_repeat; 0.159000; 0.056671; ***
+6; mean_length_seq_repitition; 4.250000; 1.937624; **
+7; aic_mean_seg_len_05_very_long; 0.850000; 0.413627; *
+9; cdpcx_density_B; 0.064000; 0.033336; *
+14; parsons_hist_constant; 0.159000; 0.056671; ***
+Lester Young; (N = 12 vs. 1404)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; pitch_median; 57.083333; 65.470442; ***
+1; recordingyear; 1942.500000; 1966.065527; ***
+8; durclass_rel_hist_03_medium; 0.249167; 0.112771; ***
+14; int_bigram_entropy; 6.011667; 5.325684; *
+Lionel Hampton; (N = 7 vs. 1409)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+2; pitch_std; 6.642857; 5.095493; *
+3; int_std; 4.927143; 3.375614; ***
+4; pitch_median; 70.714286; 65.372960; **
+5; durclass_rel_hist_03_medium; 0.215714; 0.113421; *
+6; recordingyear; 1938.000000; 1966.004258; ***
+Louis Armstrong; (N = 12 vs. 1404)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1926.833333; 1966.199430; ***
+5; mean_length_seq_descending; 3.805000; 4.385855; *
+6; fuzzyint_entropy; 0.833333; 0.685093; **
+7; cdpcx_density_b2; 0.017500; 0.039594; *
+8; avgtempo; 148.508333; 195.462251; *
+11; art_median; 0.754167; 0.846033; ***
+14; fuzzyint_hist_05_repeat; 0.120000; 0.056859; *
+Michael Brecker; (N = 53 vs. 1363)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1992.169811; 1964.842993; ***
+1; mean_length_seq_ascending; 4.681509; 4.126141; ***
+2; ric_mean_seg_len_02_short; 4.572075; 3.147938; ***
+4; fuzzyint_hist_06_step_down; 0.345283; 0.272795; ***
+7; cdpcx_density_b6; 0.061132; 0.041988; ***
+9; aic_mean_seg_len_01_very_short; 4.954528; 2.810983; ***
+11; mean_seg_len_02_short; 6.149434; 3.700418; ***
+Miles Davis; (N = 69 vs. 1347)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; pitch_median; 70.739130; 65.125835; ***
+1; mean_length_step_ascending; 4.314928; 3.653838; ***
+2; ioiclass_abs_hist_05_very_long; 0.024058; 0.006192; ***
+3; mean_length_seq_ascending; 4.584783; 4.124499; ***
+4; art_std; 0.235217; 0.184157; ***
+5; fuzzyint_hist_04_step_up; 0.299130; 0.239740; ***
+6; recordingyear; 1959.144928; 1966.210097; ***
+7; mean_length_step; 5.671304; 4.876882; ***
+8; metrical_event_density; 4.375362; 6.495479; ***
+9; aic_mean_seg_len_05_very_long; 0.685362; 0.402947; ***
+10; ioiclass_abs_hist_03_medium; 0.169275; 0.083816; ***
+11; mean_length_arpeggio; 2.888406; 3.422970; ***
+12; event_density; 3.502754; 4.858263; ***
+13; parsons_hist_constant; 0.125942; 0.053883; ***
+14; cdpcx_density_T; 0.056667; 0.042584; **
+Milt Jackson; (N = 17 vs. 1399)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; aic_mean_seg_len_02_short; 3.590588; 2.053410; ***
+1; art_std; 0.145294; 0.187148; ***
+2; pitch_median; 72.029412; 65.318799; ***
+4; avgtempo; 151.541176; 195.593209; **
+5; durclass_abs_hist_02_short; 0.465294; 0.308306; **
+14; cdpcx_density_6; 0.115882; 0.082495; *
+Nat Adderley; (N = 7 vs. 1409)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+2; nPVI_dur; 0.584286; 0.452094; *
+10; pitch_median; 72.214286; 65.365507; ***
+Ornette Coleman; (N = 5 vs. 1411)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; fuzzyint_bigram_entropy; 5.340000; 4.194585; *
+1; metrical_event_density; 1.120000; 6.410850; ***
+3; int_range; 32.000000; 21.638554; *
+4; int_bigram_entropy; 6.948000; 5.325769; **
+5; cpc_bigram_entropy; 1.206000; 5.219908; ***
+6; mcm_entropy; 0.432000; 0.715804; ***
+7; cdpcx_entropy; 0.172000; 0.815429; ***
+8; cdpcx_density_5; 0.036000; 0.138965; *
+9; cdpcx_density_4; 0.006000; 0.085351; ***
+10; cdpcx_density_3; 0.020000; 0.120751; *
+13; ioiclass_rel_hist_05_very_long; 0.040000; 0.018746; *
+Pat Martino; (N = 2 vs. 1414)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; metric_complexity_division; 0.057943; 0.235482; **
+1; metric_complexity; 0.032541; 0.170430; **
+4; durclass_bigram_entropy; 0.685000; 1.898663; *
+6; nPVI_ioi; 0.230000; 0.453062; *
+8; durclass_mean_seg_len; 7.390000; 2.922334; **
+9; durclass_rel_hist_01_very_short; 0.920000; 0.271386; ***
+13; nPVI_dur; 0.230000; 0.453062; *
+Pat Metheny; (N = 20 vs. 1396)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1991.750000; 1965.494986; ***
+1; art_median; 0.764000; 0.846418; ***
+2; durclass_rel_hist_03_medium; 0.198000; 0.112722; **
+3; ioiclass_rel_hist_03_medium; 0.321000; 0.169219; ***
+4; ric_mean_seg_len_03_medium; 2.193500; 1.385774; ***
+5; metric_complexity_compression; 0.224762; 0.103526; ***
+6; ric_mean_seg_len_05_very_long; 0.500000; 0.743467; *
+8; avgtempo; 285.390000; 193.770272; ***
+11; durclass_rel_hist_01_very_short; 0.094000; 0.274857; **
+13; durclass_abs_hist_01_very_short; 0.713500; 0.602493; *
+Paul Desmond; (N = 18 vs. 1398)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; mean_length_chromatic_ascending; 3.850000; 2.348813; ***
+1; ioiclass_rel_hist_05_very_long; 0.037778; 0.018577; ***
+2; fuzzyint_hist_01_big_jump_up; 0.052778; 0.022124; ***
+4; ric_mean_seg_len_03_medium; 1.688333; 1.393433; *
+10; parsons_hist_descending; 0.400000; 0.480579; **
+Pepper Adams; (N = 9 vs. 1407)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; pitch_median; 54.777778; 65.467306; ***
+1; art_median; 0.763333; 0.845778; ***
+3; ioiclass_rel_hist_01_very_short; 0.464444; 0.179026; ***
+8; avgtempo; 140.788889; 195.411514; *
+11; metrical_event_density; 11.468889; 6.359694; ***
+13; ric_mean_seg_len_03_medium; 0.943333; 1.400085; **
+14; mean_seg_len_01_very_short; 5.902222; 2.303035; ***
+Phil Woods; (N = 18 vs. 1398)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; mean_seg_len_02_short; 5.431667; 3.770973; **
+3; ratio_chromatic_sequences; 0.161111; 0.092504; ***
+5; syncopicity; 0.219312; 0.314384; **
+7; mean_length_seq_repitition; 3.277778; 1.936910; *
+8; ric_mean_seg_len_05_very_long; 0.222222; 0.746695; ***
+11; mean_length_chromatic_ascending; 3.619444; 2.351781; **
+13; ioiclass_rel_hist_05_very_long; 0.001111; 0.019049; **
+Red Garland; (N = 3 vs. 1413)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; fuzzyint_hist_09_big_jump_down; 0.350000; 0.014706; ***
+1; pitch_median; 51.333333; 65.429229; ***
+7; nPVI_dur; 0.666667; 0.452293; *
+Rex Stewart; (N = 3 vs. 1413)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; cdpcx_density_L; 0.353333; 0.033581; ***
+1; pitch_median; 77.666667; 65.373319; ***
+Roy Eldridge; (N = 10 vs. 1406)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; mean_length_chromatic_mixed; 5.022000; 3.538563; ***
+3; mean_length_chromatic_ascending; 3.656000; 2.358734; *
+5; recordingyear; 1945.400000; 1966.011380; ***
+Sidney Bechet; (N = 9 vs. 1407)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; ioiclass_abs_hist_04_long; 0.094444; 0.038031; ***
+2; durclass_abs_hist_04_long; 0.073333; 0.016610; *
+3; durclass_bigram_entropy; 2.998889; 1.889900; ***
+Sonny Rollins; (N = 77 vs. 1339)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; ioiclass_abs_hist_02_short; 0.578701; 0.384279; ***
+1; aic_mean_seg_len_02_short; 3.167532; 2.008857; ***
+2; pitch_median; 61.415584; 65.628454; ***
+5; mean_length_chromatic_ascending; 1.364935; 2.425571; ***
+6; mean_length_chromatic_sequences; 1.809740; 3.261658; ***
+7; fuzzyint_hist_02_jump_up; 0.061429; 0.049895; *
+8; ric_mean_seg_len_02_short; 3.939091; 3.158813; ***
+10; mean_length_step_descending; 3.427792; 3.943801; ***
+11; art_range; 0.786364; 0.848872; ***
+12; fuzzyint_hist_06_step_down; 0.237922; 0.277670; **
+13; pitch_range; 19.519481; 23.430919; ***
+14; ric_mean_seg_len; 2.499091; 2.281344; *
+Sonny Stitt; (N = 10 vs. 1406)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1947.400000; 1965.997155; ***
+Stan Getz; (N = 32 vs. 1384)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+1; recordingyear; 1957.625000; 1966.056358; **
+2; metric_complexity_division; 0.205671; 0.235914; *
+6; ric_mean_seg_len_02_short; 4.303125; 3.175766; ***
+Steve Coleman; (N = 39 vs. 1377)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1986.717949; 1965.275236; ***
+1; cdpcx_density_b2; 0.060000; 0.038824; ***
+4; durclass_mean_seg_len; 5.294872; 2.861627; ***
+6; nPVI_ioi; 0.345641; 0.455781; ***
+7; fuzzyint_hist_08_jump_down; 0.079487; 0.049862; ***
+8; cdpcx_density_5; 0.098462; 0.139739; **
+10; durclass_rel_entropy; 0.520513; 0.583471; *
+11; nPVI_dur; 0.345641; 0.455781; ***
+12; fuzzyint_hist_02_jump_up; 0.070513; 0.049956; **
+Steve Lacy; (N = 16 vs. 1400)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; pitch_median; 69.343750; 65.354286; **
+2; mean_length_step_ascending; 4.451875; 3.677300; *
+10; aic_mean_seg_len_02_short; 2.634375; 2.065436; *
+11; fuzzyint_hist_04_step_up; 0.181875; 0.243329; *
+Steve Turre; (N = 9 vs. 1407)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; art_median; 0.782222; 0.845657; **
+2; recordingyear; 1987.000000; 1965.730633; ***
+9; pitch_median; 61.166667; 65.426439; *
+12; ric_mean_seg_len_03_medium; 1.722222; 1.395103; *
+Von Freeman; (N = 3 vs. 1413)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; int_min; -21.666667; -10.023355; ***
+2; int_std; 4.623333; 3.380651; *
+5; cdpcx_density_T; 0.100000; 0.043149; *
+Warne Marsh; (N = 4 vs. 1412)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+1; mean_seg_len_02_short; 11.220000; 3.771041; ***
+6; mean_length_step_descending; 5.927500; 3.910042; **
+8; mean_length_seq_descending; 6.027500; 4.376268; ***
+Wayne Shorter; (N = 34 vs. 1382)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; cdpcx_density_>; 0.027647; 0.012178; ***
+1; cdpcx_density_T; 0.064118; 0.042757; **
+3; int_range; 25.411765; 21.583213; *
+7; fuzzyint_hist_03_leap_up; 0.090882; 0.117120; *
+8; ioiclass_bigram_entropy; 2.906471; 2.523661; **
+12; mean_length_chromatic_ascending; 1.543235; 2.388184; **
+Woody Shaw; (N = 23 vs. 1393)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; pitch_median; 71.326087; 65.301508; ***
+1; mean_length_arpeggio_ascending; 1.614783; 2.620704; **
+2; recordingyear; 1981.608696; 1965.605887; ***
+6; fuzzyint_hist_02_jump_up; 0.070000; 0.050201; *
+12; cdpcx_density_b6; 0.056957; 0.042469; *
+Wynton Marsalis; (N = 14 vs. 1402)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+0; recordingyear; 1988.000000; 1965.644793; ***
+3; avgtempo; 233.271429; 194.682810; *
+4; ric_mean_seg_len_04_long; 1.205714; 1.023488; *
+6; aic_mean_seg_len_01_very_short; 4.724286; 2.872910; **
+7; abs_int_range; 16.000000; 12.696148; *
+8; mean_number_of_unique_pc; 8.805000; 6.757874; ***
+10; ric_mean_seg_len_03_medium; 1.727143; 1.393887; *
+Zoot Sims; (N = 8 vs. 1408)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test)
+2; durclass_rel_hist_04_long; 0.095000; 0.028828; *
+4; durclass_abs_hist_03_medium; 0.281250; 0.064411; ***
+7; durclass_bigram_entropy; 2.636250; 1.892749; *
+9; mean_length_chromatic_sequences; 2.062500; 3.189070; *
+11; ioiclass_rel_hist_04_long; 0.108750; 0.058366; *
+14; art_range; 0.712500; 0.846229; **

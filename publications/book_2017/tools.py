@@ -3,12 +3,12 @@ import numpy as np
 __author__ = 'Jakob Abesser'
 
 
-class AudioAnalysisTools:
+class AnalysisTools:
 
     @staticmethod
     def write_to_text_file(fn_txt, num, is_prob=False):
         if is_prob:
-            content = AudioAnalysisTools.generate_p_value_string(num)
+            content = AnalysisTools.generate_p_value_string(num)
         else:
             content = str(num)
 
@@ -40,9 +40,9 @@ class AudioAnalysisTools:
         num_phrases = len(unique_phrase_id)
 
         # initialize
-        num_notes_per_phrase_id = np.zeros(num_phrases, dcontour_type=float)
-        note_count_per_phrase = np.zeros(num_phrases, dcontour_type=float)
-        rel_pos_in_phrase = np.zeros(num_notes, dcontour_type=float)
+        num_notes_per_phrase_id = np.zeros(num_phrases, dtype=float)
+        note_count_per_phrase = np.zeros(num_phrases, dtype=float)
+        rel_pos_in_phrase = np.zeros(num_notes, dtype=float)
 
         # get number of notes in each phrase
         for pid, curr_phrase_id in enumerate(unique_phrase_id):
@@ -130,6 +130,10 @@ class TextWriter:
 
     def add(self, val):
         self.content.append(val)
+
+    def show(self):
+        for _ in self.content:
+            print(_)
 
     def save(self, fnTXT):
         with open(fnTXT, 'w+') as f:

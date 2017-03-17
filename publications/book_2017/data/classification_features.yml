@@ -1,0 +1,91 @@
+### General input/output settings ###
+
+dir: ../analysis/data/FINAL/RELEASE2.0/DB
+feature_dir: ../analysis/feature_definitions/
+outdir: ./results/melfeature
+outfile: classification_features.csv
+
+
+### Formatting output ###
+
+shortnames: True
+convention: English
+NA_str: 0.0
+
+###### Input specification ######
+
+tunes:
+
+  - query:
+      conditions:
+        solo_info: 
+          performer: '%'
+          title: '%'
+      display:
+        transcription_info: filename_sv
+      type: sv        
+
+###### Feature selection ######
+
+features:
+  - ARPEGGIOS
+  - CDPCX_FEATURES: -cdpcx_mode, -cdpcx_zipf
+  - CHROMATIC_SEQUENCES
+  - CPC_2GRAMS: cpc_bigram_entropy
+#  - CPC_FEATURES: -cpc_circ_mean_length, -cpc_circ_std, -cpc_circ_disp, -cpc_zipf
+  - DURCLASS_2GRAMS: durclass_bigram_entropy
+  - DURCLASS_FEATURES: -durclass_abs_mode, -durclass_rel_mode, -durclass_abs_zipf, -durclass_rel_zipf
+  - DURCLASS_RUNLENGTH: -seg_len
+  - FUZZYINT_2GRAMS: fuzzyint_bigram_entropy
+  - FUZZYINT_FEATURES: -fuzzyint_zipf, -fuzzyint_mode
+  - GENERAL_ARTICULATION: art_range, art_median, art_std
+  - GENERAL_EVENT_DENSITY: -total_duration, -total_duration_bar, -number_notes
+  - GENERAL_SOLO_METADATA: performer, title, full_title, style, rhythmfeel, instrument, avgtempo, tonality_type, recordingyear
+  - INT_2GRAMS: int_bigram_entropy
+  - INT_CHROMATIC_SEQUENCES_AV_LEN
+  - INT_CHROMATIC_SEQUENCES_RATIO
+  - INT_FEATURES: int_std, int_min, int_range, abs_int_range, abs_int_mean, int_entropy, 
+  - IOICLASS_2GRAMS: ioiclass_bigram_entropy
+  - IOICLASS_FEATURES: -ioiclass_abs_mode, -ioiclass_rel_mode, -ioiclass_abs_zipf, -ioiclass_rel_zipf
+  - IOICLASS_RUNLENGTH: -aic_seg_len, -ric_seg_len
+  - MCM_FEATURES: mcm_entropy, mcm_mean_angle, mcm_var
+  - METER_RAW: syncopicity, metric_complexity, metric_complexity_division, metric_complexity_compression
+  - PARSON_2GRAMS: parsons_bigram_entropy
+  - PARSON_FEATURES: -parsons_mode, -parsons_zipf
+  - PARSON_SEQUENCES
+  - PARSON_UP_DOWN_RATIO
+  - PC_FEATURES: pc_entropy, pc_circ_var
+  - PC_AV_NUM_UNIQUE_PC_PHRASES
+  - PITCH_FEATURES: pitch_entropy, pitch_range, pitch_median, pitch_std 
+  - PITCH_WAVINESS: extrema_ratio
+  - STEP_SEQUENCES
+  - VI_DUR: nPVI_dur
+  - VI_IOI: nPVI_ioi
+
+###### Segmentation ######
+
+segments: 
+# - bars
+# - bars: 1-8 17-32
+# - bars: chunks 8 4
+# - chorus
+# - chorus: 1 2
+# - chords
+# - chords: G7
+# - chords: set
+# - form: A1 A2 B3
+# - chunk: 32 16
+# - phrases
+# - phrases: 1 2 
+
+
+
+###### Database information ######
+
+database: 
+  type: sqlite3
+  path: wjazzd.db
+  password: None
+  use: True
+  version: 2
+  content_type: sv

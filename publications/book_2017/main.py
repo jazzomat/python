@@ -1,6 +1,7 @@
 import os
 
-from experiments import AudioAnalysisExperiments
+from audio_experiments import AudioAnalysisExperiments
+from symbolic_experiments import SymbolicAnalysisExperiments
 
 __author__ = 'Jakob Abesser'
 
@@ -10,5 +11,6 @@ __author__ = 'Jakob Abesser'
 if __name__ == '__main__':
     dir_data = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data')
     dir_results = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'results')
-    extractor = AudioAnalysisExperiments(dir_data, dir_results)
-    extractor.run()
+    for extractor in [SymbolicAnalysisExperiments(dir_data, dir_results),
+                      AudioAnalysisExperiments(dir_data, dir_results)]:
+        extractor.run()
