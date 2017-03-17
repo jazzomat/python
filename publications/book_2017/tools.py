@@ -95,6 +95,7 @@ class AnalysisTools:
         borders = np.round(np.cumsum(segment_size_percent)[:-1]*num_values)
         borders = np.insert(borders, 0, 0)
         borders = np.append(borders, num_values)
+        borders = borders.astype(int)
         num_segments = len(segment_size_percent)
         segment_vals = np.zeros(num_segments)
         for s in range(num_segments):
