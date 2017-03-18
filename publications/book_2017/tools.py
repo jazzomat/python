@@ -61,8 +61,16 @@ class AnalysisTools:
     def cohens_d(x, y):
         """ Measure Cohen's d, which is an effect size measure for paired t-test
            -> 0.2 (small), 0.5 (medium), 0.8 (large)
-           """
-        return (np.mean(x) - np.mean(y)) / np.sqrt((np.std(x, ddof=1) ** 2 + np.std(y, ddof=1) ** 2) / 2.0)
+           Use pooled variance to deal with unequal population sizes
+        References:
+            [1] https://en.wikipedia.org/wiki/Pooled_variance
+            [2] http://trendingsideways.com/index.php/cohens-d-formula/
+        """
+        nx, ny = len(x), len(y)
+        pooled_variance = ((nx - 1) * np.std(x, ddof=1) ** 2 +
+                           (ny - 1) * np.std(y, ddof=1) ** 2) / \
+                          ((nx - 1) + (ny - 1))
+        return (np.mean(x) - np.mean(y)) / np.sqrt(pooled_variance)
 
     @staticmethod
     def compute_abesser_contour(vals, 
