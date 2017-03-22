@@ -51,7 +51,10 @@ class AnalysisTools:
         # compute relative in-phrase-position for each note (0 - first note, 1 - last note)
         for nid, curr_phrase_id in enumerate(phrase_id):
             curr_phrase_num = np.where(unique_phrase_id == curr_phrase_id)[0][0]
-            rel_pos_in_phrase[nid] = note_count_per_phrase[curr_phrase_num] / (num_notes_per_phrase_id[curr_phrase_num] - 1)
+            if num_notes_per_phrase_id[curr_phrase_num] > 1:
+                rel_pos_in_phrase[nid] = note_count_per_phrase[curr_phrase_num] / (num_notes_per_phrase_id[curr_phrase_num] - 1)
+            else:
+                rel_pos_in_phrase[nid] = 0
             note_count_per_phrase[curr_phrase_num] += 1.
 
         return rel_pos_in_phrase
