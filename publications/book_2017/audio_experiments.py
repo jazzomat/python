@@ -6,7 +6,8 @@ import seaborn as sns
 import pandas as pn
 import matplotlib.pyplot as plt
 sns.set(style="white", color_codes=True)
-from scipy.stats import ttest_ind, ttest_rel, pearsonr, linregress
+from scipy.stats import ttest_ind, ttest_rel, pearsonr, linregress, kendalltau
+from scipy.stats.mstats import normaltest
 from tools import AnalysisTools, TextWriter
 from sklearn.preprocessing import StandardScaler
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
@@ -26,14 +27,9 @@ class AudioAnalysisExperiments:
         self.dir_data = dir_data
         self.debug = debug
 
-        # data loading & preparation
-        self.df_notes, self.df_beats, self.df_solos = self.load_data()
-        self.mel_ids = np.array(self.df_solos.index)
-        self.num_solos = len(self.mel_ids)
-        self.df_performer, self.df_performer_all = self.create_performer_data_frame(min_num_solos_per_artist=min_num_solos_per_artist)
 
         self.tools = AnalysisTools
-        self.extractors = {'f0': [self.f0_analysis_modulation,
+        self.extractors = {'f0': [self.f0_analysis_vibrato,
                                   self.f0_analysis_classification],
                            'metadata': [self.metadata_analysis],
                            'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
@@ -42,6 +38,15 @@ class AudioAnalysisExperiments:
                                          self.intensity_phrase_contours]}
         self.fontsize = fontsize
         self.text_writer = TextWriter()
+
+        # data loading & preparation
+        self.df_notes, self.df_beats, self.df_solos = self.load_data()
+
+        # add rel_pos_in_phrase
+        self.add_relative_position_in_phrase_for_all_solos()
+        self.mel_ids = np.array(self.df_solos.index)
+        self.num_solos = len(self.mel_ids)
+        self.df_performer, self.df_performer_all = self.create_performer_data_frame(min_num_solos_per_artist=min_num_solos_per_artist)
 
     def load_data(self):
         return [pd.read_pickle(os.path.join(self.dir_data, 'df_%s.dat' % _)) for _ in ['notes', 'beats', 'solos']]
@@ -122,7 +127,7 @@ class AudioAnalysisExperiments:
                     bbox_inches='tight')
         plt.close()
 
-    def f0_analysis_modulation(self,
+    def f0_analysis_vibrato(self,
                                selected_instruments=('tp', 'as', 'ts'),
                                min_number_of_notes=20):
 
@@ -133,6 +138,9 @@ class AudioAnalysisExperiments:
 
         f0_mod = self.df_notes['f0_mod'].as_matrix()
         vibrato_mask = f0_mod == 'vibrato'
+
+        mod_mask = np.ones(num_notes, dtype=bool)
+        mod_mask[f0_mod == ''] = False
 
         # select artists with minimum number of notes
         all_performer = np.unique(performer_notes)
@@ -147,6 +155,66 @@ class AudioAnalysisExperiments:
             note_performer_select_mask[performer_notes == performer] = True
 
         f0_mod_freq_hz = self.df_notes['f0_mod_freq_hz']
+
+        # (3) Correlation between f0 contour features and contextual features
+        contour_features = ['f0_mod_range_cent',
+                            'f0_av_abs_f0_dev_median',
+                            'f0_mod_freq_hz',
+                            'f0_mod_num_periods']
+
+        metadata_features = ['intensity_solo_median',
+                             'noteid',
+                             'tatum',
+                             'rel_pos_in_phrase',
+                             'pitch',
+                             'onset',
+                             'duration']
+
+        num_contour_features = len(contour_features)
+        num_metadata_features = len(metadata_features)
+
+        # test for normal distribution
+        for c, feature in enumerate(contour_features + metadata_features):
+            k, p = normaltest(np.nan_to_num(self.df_notes.loc[mod_mask, feature].as_matrix()))
+            print('Distribution of feature %s is %s.' % (feature, 'normal' if p > .05 else 'not normal'))
+
+        r = np.zeros((num_contour_features, num_metadata_features))
+        p = np.zeros((num_contour_features, num_metadata_features))
+
+        # compute pair-wise correlation
+        for c, contour_feature in enumerate(contour_features):
+            for m, metadata_feature in enumerate(metadata_features):
+                r[c, m], p[c, m] = kendalltau(np.nan_to_num(self.df_notes.loc[mod_mask, contour_feature].as_matrix()),
+                                              np.nan_to_num(self.df_notes.loc[mod_mask, metadata_feature].as_matrix()))
+
+        contour_features = [_.replace('_', '\\_') for _ in contour_features]
+        metadata_features = [_.replace('_', '\\_') for _ in metadata_features]
+
+        self.text_writer.reset()
+
+        num_feature_per_table = 2
+        for offset in (0, 2):
+
+            curr_contour_features = contour_features[offset:offset+num_feature_per_table]
+            curr_line = [''] + ['\\textbf{' + _ + '}' for _ in curr_contour_features]
+            curr_line = ' & '.join(curr_line) + '\\\\'
+            self.text_writer.add(curr_line)
+            self.text_writer.add('\\midrule')
+
+            for m, metadata_feature in enumerate(metadata_features):
+                curr_line = ['\\textbf{' + metadata_feature + '}']
+                for c, contour_feature in enumerate(curr_contour_features):
+                    if p[c, m] < 0.05:
+                        curr_line.append('%1.2f%s' % (r[c, m], self.tools.generate_p_value_string(p[c, m])))
+                    else:
+                        curr_line.append('')
+                curr_line = ' & '.join(curr_line) + '\\\\'
+                self.text_writer.add(curr_line)
+
+            if offset == 0:
+                self.text_writer.add('\\midrule')
+
+        self.text_writer.save(os.path.join(self.dir_results, 'f0_modulation_correlations.txt'))
 
         # (1) Boxplots over vibrato modulation frequency
 
@@ -190,8 +258,8 @@ class AudioAnalysisExperiments:
             plt.savefig(os.path.join(self.dir_results, 'f0_vibrato_modulation_frequency_performer_%s.eps' % valid_instrument), dpi=300)
             plt.close()
 
-
         # (2) Vibrato modulation frequency vs. tempo
+
         df = pn.DataFrame({'t_solo': tempo_notes[vibrato_mask],
                            'ratio': 60 * f0_mod_freq_hz[vibrato_mask] / tempo_notes[vibrato_mask]})
         df.plot(kind='scatter',
@@ -591,6 +659,7 @@ class AudioAnalysisExperiments:
         intensity = self.df_notes['intensity_solo_median'].as_matrix()
         pitch = self.df_notes['pitch'].as_matrix()
         duration = self.df_notes['duration'].as_matrix()
+        rel_pos_in_phrase = self.df_notes['rel_pos_in_phrase'].as_matrix()
 
         # iterate over solos
         for sid, melid in enumerate(self.mel_ids):
@@ -604,7 +673,7 @@ class AudioAnalysisExperiments:
             curr_pitch = pitch[note_idx]
             curr_phrase_id = phrase_id[note_idx]
             assert all(np.diff(curr_phrase_id) >= 0)
-            curr_rel_pos_in_phrase = self.tools.get_relative_position_in_phrase(curr_phrase_id)
+            curr_rel_pos_in_phrase = rel_pos_in_phrase[note_idx]
 
             vec = (curr_pitch, curr_duration, curr_rel_pos_in_phrase)
             N = len(vec)
@@ -735,3 +804,9 @@ class AudioAnalysisExperiments:
 
         return performer_notes, instrument_notes, tempo_notes, note_performer_select_mask
 
+    def add_relative_position_in_phrase_for_all_solos(self):
+        """ Add column to dataframe self.df_notes with note-wise relative position in its corresponding phrase """
+        self.df_notes.loc[:, 'rel_pos_in_phrase'] = np.zeros(self.df_notes.shape[0])
+        for melid in np.unique(self.df_notes['melid']):
+            idx = self.df_notes['melid'] == melid
+            self.df_notes.loc[idx, 'rel_pos_in_phrase'] = self.tools.get_relative_position_in_phrase(self.df_notes.loc[idx, 'phraseid'])
