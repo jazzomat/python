@@ -1,66 +1,110 @@
-BLUES; (N = 526 vs. 890)
+BLUES vs. all; (N = 526 vs. 890)
 Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
-0; cpc_bigram_entropy; 4.998080; 5.328461; ***; -0.220750
-1; int_bigram_entropy; 5.001160; 5.526730; ***; -0.468469
-2; cdpcx_density_L; 0.044335; 0.028303; ***; 0.329405
-3; fuzzyint_bigram_entropy; 4.025570; 4.300910; ***; -0.235895
-4; cdpcx_density_B; 0.043726; 0.027539; ***; 0.372115
-5; mean_length_arpeggio_ascending; 2.249011; 2.814382; ***; -0.394903
-6; art_std; 0.194734; 0.181865; ***; 0.321247
-7; int_range; 18.505703; 23.548315; ***; -0.560535
-8; mean_length_chromatic_ascending; 2.053498; 2.553708; ***; -0.298102
-9; avgtempo; 185.540114; 200.693258; ***; -0.218205
-10; cdpcx_density_>; 0.009202; 0.014528; ***; -0.249530
-11; cdpcx_density_3; 0.112833; 0.124865; *; -0.131216
-12; abs_int_range; 10.937262; 13.787640; ***; -0.498814
-13; mean_length_seq_repitition; 1.552053; 2.191483; ***; -0.281089
-14; int_min; -8.515209; -10.953933; ***; 0.463443
-COLOR; (N = 92 vs. 1324)
+0; !! int_bigram_entropy; 5.001160; 5.526730; ***; -0.468469
+1; !! cpc_bigram_entropy; 4.998080; 5.328461; ***; -0.220750
+2; !! cdpcx_density_L; 0.044335; 0.028303; ***; 0.329405
+3; !! fuzzyint_bigram_entropy; 4.025570; 4.300910; ***; -0.235895
+4; !! cdpcx_density_B; 0.043726; 0.027539; ***; 0.372115
+5; !! int_range; 18.505703; 23.548315; ***; -0.560535
+6; !! cdpcx_density_3; 0.112833; 0.124865; *; -0.131216
+7; !! cdpcx_density_>; 0.009202; 0.014528; ***; -0.249530
+8; !! avgtempo; 185.540114; 200.693258; ***; -0.218205
+9; !! abs_int_range; 10.937262; 13.787640; ***; -0.498814
+10; recordingyear; 1965.475285; 1966.096629; n. s.; -0.035702
+11; !! art_std; 0.194734; 0.181865; ***; 0.321247
+12; !! int_entropy; 3.209068; 3.333798; ***; -0.212787
+13; !! pitch_entropy; 3.657928; 3.847000; ***; -0.199315
+14; !! durclass_rel_hist_01_very_short; 0.297015; 0.257697; **; 0.155349
+15; !! syncopicity; 0.334894; 0.300339; ***; 0.244535
+16; !! int_min; -8.515209; -10.953933; ***; 0.463443
+17; metrical_event_density; 6.446939; 6.359798; n. s.; 0.030431
+18; !! cdpcx_density_<; 0.001654; 0.003652; ***; -0.207950
+19; mean_length_step_ascending; 3.640304; 3.713090; n. s.; -0.055299
+COLOR vs. all; (N = 92 vs. 1324)
 Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
-0; recordingyear; 1973.717391; 1965.320242; ***; 0.485880
-2; pitch_entropy; 4.001196; 3.761171; *; 0.252348
-3; cdpcx_density_<; 0.006630; 0.002651; ***; 0.414302
-4; cdpcx_density_B; 0.044565; 0.032787; *; 0.267063
-5; mean_length_seq_ascending; 4.406630; 4.128882; **; 0.332924
-6; int_range; 25.282609; 21.424471; ***; 0.416109
-7; fuzzyint_hist_03_leap_up; 0.088370; 0.118444; ***; -0.490720
-9; mean_length_step; 5.614565; 4.867024; ***; 0.498046
-10; mean_length_chromatic_ascending; 2.750326; 2.341322; *; 0.241683
-13; cdpcx_density_T; 0.061630; 0.041994; ***; 0.468768
-FREE; (N = 12 vs. 1404)
+0; !! recordingyear; 1973.717391; 1965.320242; ***; 0.485880
+1; cdpcx_entropy; 0.794130; 0.814479; n. s.; -0.099477
+2; !! mean_length_seq_repitition; 3.000217; 1.881254; ***; 0.490968
+3; !! art_range; 0.875109; 0.843414; *; 0.222395
+4; cpc_bigram_entropy; 5.104457; 5.212772; n. s.; -0.071975
+5; !! mean_length_step; 5.614565; 4.867024; ***; 0.498046
+6; !! pitch_range; 27.086957; 22.949396; ***; 0.507775
+7; avgtempo; 196.625000; 194.955891; n. s.; 0.023903
+8; ioiclass_bigram_entropy; 2.664239; 2.523724; n. s.; 0.170072
+9; !! pitch_entropy; 4.001196; 3.761171; *; 0.252348
+10; !! mean_length_seq_ascending; 4.406630; 4.128882; **; 0.332924
+11; !! cdpcx_density_T; 0.061630; 0.041994; ***; 0.468768
+12; mcm_mean_angle; 24.922609; 23.112628; n. s.; 0.137369
+13; !! int_range; 25.282609; 21.424471; ***; 0.416109
+14; mean_seg_len_05_very_long; 0.483696; 0.265106; n. s.; 0.107252
+15; !! abs_int_mean; 2.556196; 2.695491; *; -0.225463
+16; int_std; 3.337391; 3.386473; n. s.; -0.054724
+17; int_bigram_entropy; 5.375652; 5.328429; n. s.; 0.041055
+18; !! mean_length_seq_descending; 4.672826; 4.360650; **; 0.346199
+19; !! mean_length_step_ascending; 3.995761; 3.664532; *; 0.252046
+FREE vs. all; (N = 12 vs. 1404)
 Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
-1; cdpcx_entropy; 0.426667; 0.816460; ***; -1.934766
-2; int_bigram_entropy; 6.429167; 5.322115; ***; 0.966164
-5; cpc_bigram_entropy; 3.057500; 5.224095; ***; -1.452188
-6; cdpcx_density_4; 0.039167; 0.085463; ***; -0.979839
-8; art_range; 0.956667; 0.844523; **; 0.787754
-FUNCTIONAL; (N = 684 vs. 732)
+0; metrical_event_density; 5.681667; 6.398241; n. s.; -0.250279
+1; !! int_bigram_entropy; 6.429167; 5.322115; ***; 0.966164
+2; !! fuzzyint_bigram_entropy; 5.064167; 4.191232; *; 0.744792
+3; mcm_entropy; 0.651667; 0.715342; n. s.; -0.353461
+4; !! cpc_bigram_entropy; 3.057500; 5.224095; ***; -1.452188
+5; !! art_range; 0.956667; 0.844523; **; 0.787754
+6; !! durclass_rel_hist_01_very_short; 0.405000; 0.271168; n. s.; 0.527908
+7; pc_circ_var; 0.915833; 0.818141; n. s.; 0.484206
+8; aic_mean_seg_len; 1.864167; 2.285028; n. s.; -0.415858
+9; cdpcx_density_L; 0.014167; 0.034430; n. s.; -0.411479
+10; !! int_entropy; 3.650000; 3.284366; *; 0.621500
+11; aic_mean_seg_len_01_very_short; 2.114167; 2.897856; n. s.; -0.331864
+12; ioiclass_abs_hist_04_long; 0.046667; 0.038319; n. s.; 0.248226
+13; mean_seg_len_01_very_short; 2.862500; 2.321325; n. s.; 0.166060
+14; !! cdpcx_density_1; 0.061667; 0.153996; **; -0.752866
+15; !! ioiclass_bigram_entropy; 3.065833; 2.528298; *; 0.651188
+16; durclass_bigram_entropy; 2.256667; 1.893875; n. s.; 0.444507
+17; pitch_entropy; 4.220000; 3.772977; n. s.; 0.469500
+18; pc_entropy; 0.933333; 0.865463; n. s.; 0.338992
+19; !! cdpcx_entropy; 0.426667; 0.816460; ***; -1.934766
+FUNCTIONAL vs. all; (N = 684 vs. 732)
 Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
-0; mean_length_arpeggio_ascending; 2.911213; 2.317637; ***; 0.415963
-1; cpc_bigram_entropy; 5.400526; 5.023716; ***; 0.252336
-2; art_std; 0.176506; 0.196120; ***; -0.498657
-3; int_bigram_entropy; 5.496213; 5.177582; ***; 0.279692
-4; mean_length_arpeggio_descending; 2.774137; 2.335642; ***; 0.317966
-5; durclass_rel_hist_01_very_short; 0.242178; 0.300451; ***; -0.231118
-6; recordingyear; 1964.191520; 1967.430328; ***; -0.186885
-7; cdpcx_density_B; 0.028509; 0.038265; ***; -0.222096
-8; cdpcx_density_L; 0.028333; 0.039795; ***; -0.234170
-9; mean_number_of_unique_pc; 7.053480; 6.520806; ***; 0.257301
-11; durclass_rel_hist_02_short; 0.604620; 0.554440; ***; 0.204884
-12; cdpcx_density_3; 0.128801; 0.112541; ***; 0.177661
-13; fuzzyint_bigram_entropy; 4.266754; 4.134973; *; 0.112352
-MODAL; (N = 102 vs. 1314)
+0; !! cpc_bigram_entropy; 5.400526; 5.023716; ***; 0.252336
+1; !! int_bigram_entropy; 5.496213; 5.177582; ***; 0.279692
+2; !! recordingyear; 1964.191520; 1967.430328; ***; -0.186885
+3; !! art_std; 0.176506; 0.196120; ***; -0.498657
+4; !! cdpcx_density_L; 0.028333; 0.039795; ***; -0.234170
+5; !! cdpcx_density_3; 0.128801; 0.112541; ***; 0.177661
+6; avgtempo; 198.303070; 192.037978; n. s.; 0.089810
+7; !! cdpcx_density_B; 0.028509; 0.038265; ***; -0.222096
+8; !! syncopicity; 0.290378; 0.334478; ***; -0.313707
+9; !! fuzzyint_bigram_entropy; 4.266754; 4.134973; *; 0.112352
+10; cdpcx_density_>; 0.011754; 0.013292; n. s.; -0.071575
+11; !! ioiclass_abs_hist_02_short; 0.423933; 0.367678; ***; 0.272301
+12; !! mean_number_of_unique_pc; 7.053480; 6.520806; ***; 0.257301
+13; !! int_range; 22.356725; 21.038251; **; 0.141813
+14; !! art_range; 0.835906; 0.854413; *; -0.129932
+15; !! aic_mean_seg_len_02_short; 2.182485; 1.968497; ***; 0.206470
+16; !! durclass_rel_hist_01_very_short; 0.242178; 0.300451; ***; -0.231118
+17; int_entropy; 3.314912; 3.261817; n. s.; 0.090196
+18; !! ioiclass_abs_hist_01_very_short; 0.418231; 0.462254; ***; -0.178584
+19; aic_mean_seg_len_01_very_short; 2.840205; 2.938880; n. s.; -0.041775
+MODAL vs. all; (N = 102 vs. 1314)
 Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
-0; cdpcx_density_>; 0.028824; 0.011286; ***; 0.834437
-1; ioiclass_abs_hist_01_very_short; 0.569902; 0.430982; ***; 0.567324
-2; cdpcx_density_B; 0.008235; 0.035518; ***; -0.625294
-3; int_range; 29.500000; 21.067732; ***; 0.930536
-4; ioiclass_abs_hist_02_short; 0.267451; 0.404741; ***; -0.668241
-6; abs_int_mean; 3.017745; 2.660723; ***; 0.583521
-7; cdpcx_density_6; 0.103922; 0.081263; ***; 0.361366
-8; mean_number_of_unique_pc; 6.207059; 6.822443; **; -0.295684
-9; int_bigram_entropy; 5.761471; 5.298120; ***; 0.405009
-10; fuzzyint_hist_08_jump_down; 0.061667; 0.049825; *; 0.214355
-11; recordingyear; 1970.764706; 1965.485540; **; 0.304234
-12; int_min; -14.049020; -9.737443; ***; -0.817197
-13; cdpcx_density_T; 0.051373; 0.042641; *; 0.207366
+0; !! cdpcx_density_B; 0.008235; 0.035518; ***; -0.625294
+1; !! int_entropy; 3.525882; 3.268957; ***; 0.438811
+2; !! fuzzyint_bigram_entropy; 4.544020; 4.171819; **; 0.317895
+3; !! cdpcx_density_>; 0.028824; 0.011286; ***; 0.834437
+4; !! int_std; 4.007451; 3.334833; ***; 0.764406
+5; !! avgtempo; 224.292157; 192.795510; ***; 0.454150
+6; !! int_bigram_entropy; 5.761471; 5.298120; ***; 0.405009
+7; !! fuzzyint_entropy; 0.735000; 0.682572; **; 0.299627
+8; !! cdpcx_density_6; 0.103922; 0.081263; ***; 0.361366
+9; !! int_range; 29.500000; 21.067732; ***; 0.930536
+10; !! aic_mean_seg_len_01_very_short; 3.603137; 2.835951; **; 0.325877
+11; !! abs_int_mean; 3.017745; 2.660723; ***; 0.583521
+12; !! ioiclass_abs_hist_01_very_short; 0.569902; 0.430982; ***; 0.567324
+13; !! ioiclass_abs_hist_02_short; 0.267451; 0.404741; ***; -0.668241
+14; !! recordingyear; 1970.764706; 1965.485540; **; 0.304234
+15; !! pitch_range; 27.813725; 22.861492; ***; 0.610520
+16; !! cdpcx_density_4; 0.106765; 0.083387; ***; 0.496855
+17; !! pitch_std; 5.946078; 5.037709; ***; 0.560555
+18; !! abs_int_range; 17.225490; 12.379756; ***; 0.843775
+19; !! aic_mean_seg_len_02_short; 1.680588; 2.102237; ***; -0.406921
