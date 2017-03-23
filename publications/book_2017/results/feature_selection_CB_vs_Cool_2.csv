@@ -1,0 +1,22 @@
+Chet Baker vs. Lee Konitz-Warne Marsh; (N = 15 vs. 27)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; !! recordingyear; 1965.466667; 1952.222222; ***; 2.019524
+1; !! ioiclass_rel_hist_02_short; 0.547333; 0.782963; ***; -1.289377
+2; aic_mean_seg_len; 1.802000; 2.161852; n. s.; -0.461481
+3; !! ric_mean_seg_len_02_short; 3.539333; 5.258519; *; -0.732071
+4; !! aic_mean_seg_len_01_very_short; 1.334000; 2.634074; *; -0.754585
+5; !! ric_mean_seg_len; 2.354000; 3.099630; *; -0.713519
+6; mcm_mean_angle; 25.807333; 25.215185; n. s.; 0.038930
+7; !! mean_length_seq_descending; 4.154667; 4.837778; *; -0.769681
+8; !! ioiclass_rel_entropy; 0.662000; 0.393333; ***; 1.663930
+9; !! cdpcx_density_4; 0.129333; 0.080370; **; 1.062221
+10; mean_number_of_unique_pc; 7.049333; 7.751852; n. s.; -0.294847
+11; !! ric_mean_seg_len_03_medium; 1.895333; 1.199259; ***; 1.741988
+12; mean_length_arpeggio_descending; 2.483333; 2.643704; n. s.; -0.099657
+13; !! mean_length_arpeggio; 3.892667; 3.219630; n. s.; 0.514959
+14; mcm_entropy; 0.664000; 0.638519; n. s.; 0.136816
+15; !! mean_length_step_descending; 3.694667; 4.473704; n. s.; -0.535416
+16; syncopicity; 0.259575; 0.296654; n. s.; -0.208728
+17; !! durclass_bigram_entropy; 2.502000; 1.528519; ***; 1.388141
+18; mean_length_step; 5.058000; 5.763704; n. s.; -0.468744
+19; int_std; 2.709333; 2.691481; n. s.; 0.021396

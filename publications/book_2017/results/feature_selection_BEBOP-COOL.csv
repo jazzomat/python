@@ -1,0 +1,22 @@
+BEBOP vs. COOL; (N = 138 vs. 154)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; !! recordingyear; 1950.630435; 1960.909091; ***; -1.309370
+1; syncopicity; 0.287194; 0.271024; n. s.; 0.113128
+2; avgtempo; 189.402174; 196.859740; n. s.; -0.124883
+3; aic_mean_seg_len; 2.025507; 2.005065; n. s.; 0.030715
+4; art_median; 0.850942; 0.840260; n. s.; 0.142025
+5; mean_length_chromatic_ascending; 2.664855; 2.658377; n. s.; 0.003673
+6; art_range; 0.818623; 0.828961; n. s.; -0.066792
+7; int_std; 3.154130; 3.106753; n. s.; 0.065627
+8; !! ric_mean_seg_len_02_short; 2.858841; 3.788571; ***; -0.546531
+9; pitch_median; 66.050725; 65.912338; n. s.; 0.029254
+10; cpc_bigram_entropy; 5.184928; 5.219610; n. s.; -0.022406
+11; ioiclass_abs_hist_02_short; 0.427754; 0.446364; n. s.; -0.097447
+12; !! event_density; 4.848333; 4.409351; **; 0.308353
+13; aic_mean_seg_len_01_very_short; 2.367754; 2.181623; n. s.; 0.126761
+14; !! ric_mean_seg_len; 2.145725; 2.436299; ***; -0.400128
+15; durclass_abs_hist_01_very_short; 0.596884; 0.549156; n. s.; 0.191704
+16; abs_int_mean; 2.497609; 2.579935; n. s.; -0.154066
+17; durclass_abs_hist_02_short; 0.332681; 0.352338; n. s.; -0.093624
+18; ioiclass_abs_hist_01_very_short; 0.425435; 0.375649; n. s.; 0.224127
+19; durclass_bigram_entropy; 1.890725; 2.012532; n. s.; -0.157730

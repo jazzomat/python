@@ -1,0 +1,22 @@
+Paul Desmond vs. Chet Baker; (N = 18 vs. 15)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; ric_mean_seg_len_03_medium; 1.688333; 1.895333; n. s.; -0.329387
+1; cdpcx_density_4; 0.102222; 0.129333; n. s.; -0.499280
+2; durclass_bigram_entropy; 2.612222; 2.502000; n. s.; 0.218284
+3; !! mean_length_chromatic_ascending; 3.850000; 2.002000; **; 1.186310
+4; ioiclass_abs_hist_02_short; 0.583333; 0.574667; n. s.; 0.087695
+5; ratio_ascending_descending; 1.095000; 1.080000; n. s.; 0.051336
+6; !! int_std; 3.548889; 2.709333; ***; 1.686036
+7; ric_mean_seg_len_02_short; 3.025556; 3.539333; n. s.; -0.352064
+8; mean_length_arpeggio; 3.325000; 3.892667; n. s.; -0.405943
+9; aic_mean_seg_len_02_short; 2.812778; 2.358000; n. s.; 0.476087
+10; fuzzyint_hist_04_step_up; 0.305556; 0.311333; n. s.; -0.069023
+11; !! ric_mean_seg_len; 2.055556; 2.354000; n. s.; -0.530465
+12; !! fuzzyint_hist_01_big_jump_up; 0.052778; 0.005333; n. s.; 0.568730
+13; mean_length_arpeggio_ascending; 3.178333; 2.880667; n. s.; 0.235430
+14; !! mean_length_chromatic_sequences; 3.752778; 2.193333; **; 1.150731
+15; durclass_rel_hist_01_very_short; 0.193333; 0.120667; n. s.; 0.342911
+16; parsons_hist_ascending; 0.516667; 0.470667; n. s.; 0.436363
+17; metric_complexity_division; 0.236128; 0.242840; n. s.; -0.091020
+18; mean_seg_len_02_short; 3.333889; 4.050000; n. s.; -0.443819
+19; !! abs_int_mean; 2.847222; 2.240000; **; 1.180035

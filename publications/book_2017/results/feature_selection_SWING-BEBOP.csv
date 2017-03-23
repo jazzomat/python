@@ -1,0 +1,17 @@
+SWING vs. BEBOP; (N = 106 vs. 138)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; recordingyear; 1950.896226; 1950.630435; n. s.; 0.027015
+1; !! avgtempo; 171.750000; 189.402174; *; -0.275686
+2; !! fuzzyint_bigram_entropy; 4.550000; 3.947754; ***; 0.471888
+3; !! pitch_median; 64.103774; 66.050725; **; -0.357053
+4; !! art_median; 0.827453; 0.850942; *; -0.327092
+5; !! int_bigram_entropy; 5.829245; 5.137899; ***; 0.593816
+6; !! aic_mean_seg_len_01_very_short; 1.925283; 2.367754; *; -0.331628
+7; cpc_bigram_entropy; 5.467925; 5.184928; n. s.; 0.182740
+8; metric_complexity_division; 0.253053; 0.236403; n. s.; 0.204009
+9; !! ioiclass_abs_hist_01_very_short; 0.305943; 0.425435; ***; -0.608137
+10; aic_mean_seg_len; 1.900755; 2.025507; n. s.; -0.208856
+11; art_range; 0.835377; 0.818623; n. s.; 0.110802
+12; art_std; 0.174434; 0.178841; n. s.; -0.115505
+13; !! durclass_bigram_entropy; 2.248585; 1.890725; ***; 0.488174
+14; !! fuzzyint_hist_06_step_down; 0.221604; 0.309493; ***; -0.744194

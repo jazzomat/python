@@ -1,0 +1,22 @@
+Paul Desmond vs. Gerry Mulligan-Stan Getz-Zoot Sims; (N = 18 vs. 56)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; !! recordingyear; 1962.444444; 1956.464286; ***; 1.989746
+1; !! pitch_median; 66.722222; 61.723214; ***; 1.548297
+2; !! avgtempo; 167.122222; 217.455357; **; -0.840791
+3; !! durclass_bigram_entropy; 2.612222; 1.901429; ***; 0.950229
+4; !! mean_length_chromatic_ascending; 3.850000; 2.766607; *; 0.701358
+5; !! ric_mean_seg_len_02_short; 3.025556; 3.937321; *; -0.580163
+6; syncopicity; 0.282159; 0.243777; n. s.; 0.341712
+7; mcm_entropy; 0.683333; 0.677679; n. s.; 0.043487
+8; !! durclass_abs_hist_01_very_short; 0.373889; 0.666607; ***; -1.242320
+9; cpc_bigram_entropy; 5.393333; 5.452679; n. s.; -0.052335
+10; !! mean_length_seq_descending; 4.056667; 4.672500; *; -0.671185
+11; metrical_event_density; 4.882222; 5.595179; n. s.; -0.329306
+12; !! event_density; 3.171111; 4.710179; ***; -1.292712
+13; mean_length_arpeggio_descending; 2.606111; 2.897143; n. s.; -0.222803
+14; durclass_rel_hist_04_long; 0.050000; 0.035893; n. s.; 0.367050
+15; !! durclass_abs_hist_02_short; 0.472222; 0.235714; ***; 1.411417
+16; ric_mean_seg_len_03_medium; 1.688333; 1.490536; n. s.; 0.364562
+17; art_median; 0.796667; 0.833214; n. s.; -0.404485
+18; !! ioiclass_abs_hist_02_short; 0.583333; 0.379643; ***; 1.513327
+19; !! ric_mean_seg_len; 2.055556; 2.453929; **; -0.755388

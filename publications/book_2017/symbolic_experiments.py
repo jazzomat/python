@@ -32,8 +32,9 @@ class SymbolicAnalysisExperiments:
         self.numeric_feature_labels, \
         self.numeric_features = self.load_data()
 
-        self.extractors = {'feature_selection': [self.performer_subset_feature_selection]}
-        # self.extractors = {'feature_selection': [self.one_vs_n_feature_selection]}
+        self.extractors = {'feature_selection': [self.performer_subset_feature_selection,
+                                                 self.subsequent_style_feature_selection,
+                                                 self.one_vs_n_feature_selection]}
         self.fontsize = fontsize
         self.num_features_to_select = num_features_to_select
         self.min_feature_importance = min_feature_importance
@@ -73,6 +74,7 @@ class SymbolicAnalysisExperiments:
         print('Finished all experiments :)')
 
     def performer_subset_feature_selection(self):
+        """ Experiment: Identify important features to discriminate solos between west-coast jazz performers """
 
         # prepare class id
         metadata_feat_idx = self.metadata_feature_labels.index('performer')
@@ -108,6 +110,42 @@ class SymbolicAnalysisExperiments:
                     'CB_vs_Cool_2']
                    ]
 
+        self.feature_selection_flexible(configs,
+                                        class_id,
+                                        all_feature_values)
+
+    def subsequent_style_feature_selection(self):
+        """ Experiment: Identify important features to discriminate solos between historically adjacent styles """
+
+        # prepare class id
+        metadata_feat_idx = self.metadata_feature_labels.index('style')
+        all_feature_values = self.metadata_features[:, metadata_feat_idx]
+        class_id, unique_class_values = SymbolicAnalysisExperiments.create_class_ids(all_feature_values)
+
+        styles_in_order = ['TRADITIONAL', 'SWING', 'BEBOP', 'COOL', 'HARDBOP', 'POSTBOP', 'FUSION', 'FREE']
+        num_styles = len(styles_in_order)
+        configs = []
+
+        for s in range(num_styles-1):
+            label = styles_in_order[s] + '-' + styles_in_order[s+1]
+            print('Feature selection for configuration %s' % label)
+            configs.append([[styles_in_order[s]],
+                            [styles_in_order[s+1]],
+                            label])
+
+        self.feature_selection_flexible(configs,
+                                        class_id,
+                                        all_feature_values)
+
+    def feature_selection_flexible(self,
+                                   configs,
+                                   class_id,
+                                   all_feature_values):
+        """ Run feature selection for flexible configurations
+        Args:
+            configs (list of lists): List of configurations, each config is a list of list, like
+                                     []
+        """
 
         # iterate over class configurations
         for config in configs:
@@ -134,7 +172,7 @@ class SymbolicAnalysisExperiments:
                                                                          min_feature_importance=self.min_feature_importance,
                                                                          min_effect_size=self.min_effect_size)
 
-            self.text_writer.save(os.path.join(self.dir_results, 'feature_selection_benjaming_%s.csv' % config[2]))
+            self.text_writer.save(os.path.join(self.dir_results, 'feature_selection_%s.csv' % config[2]))
 
 
     def one_vs_n_feature_selection(self):

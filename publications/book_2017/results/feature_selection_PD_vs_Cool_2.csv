@@ -1,0 +1,22 @@
+Paul Desmond vs. Lee Konitz-Warne Marsh; (N = 18 vs. 27)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; !! recordingyear; 1962.444444; 1952.222222; ***; 4.281521
+1; !! mean_length_chromatic_ascending; 3.850000; 2.892963; n. s.; 0.600205
+2; !! ioiclass_rel_hist_02_short; 0.512778; 0.782963; ***; -1.668970
+3; !! ric_mean_seg_len_02_short; 3.025556; 5.258519; **; -1.029395
+4; aic_mean_seg_len; 1.903889; 2.161852; n. s.; -0.326883
+5; mean_length_arpeggio_descending; 2.606111; 2.643704; n. s.; -0.022723
+6; !! ric_mean_seg_len; 2.055556; 3.099630; ***; -1.086589
+7; !! aic_mean_seg_len_02_short; 2.812778; 1.846296; *; 0.797647
+8; !! mean_length_seq_descending; 4.056667; 4.837778; **; -0.952201
+9; !! aic_mean_seg_len_01_very_short; 1.383333; 2.634074; *; -0.763597
+10; !! durclass_bigram_entropy; 2.612222; 1.528519; ***; 1.607927
+11; !! mean_length_step_descending; 3.383333; 4.473704; *; -0.781939
+12; mcm_mean_angle; 28.044444; 25.215185; n. s.; 0.210172
+13; !! ioiclass_rel_entropy; 0.721111; 0.393333; ***; 2.075195
+14; parsons_hist_ascending; 0.516667; 0.468148; n. s.; 0.275545
+15; syncopicity; 0.282159; 0.296654; n. s.; -0.085705
+16; !! fuzzyint_bigram_entropy; 4.464444; 3.555556; *; 0.640739
+17; !! art_median; 0.796667; 0.886667; ***; -1.821303
+18; !! mean_seg_len_02_short; 3.333889; 5.795926; *; -0.745616
+19; !! ioiclass_bigram_entropy; 2.841667; 1.667407; ***; 1.485008

@@ -1,0 +1,18 @@
+TRADITIONAL vs. SWING; (N = 43 vs. 106)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; !! recordingyear; 1930.930233; 1950.896226; ***; -1.625775
+1; fuzzyint_bigram_entropy; 4.729070; 4.550000; n. s.; 0.164547
+2; !! pitch_median; 69.104651; 64.103774; ***; 0.805777
+3; !! int_bigram_entropy; 5.486512; 5.829245; *; -0.424771
+4; int_entropy; 3.506977; 3.505283; n. s.; 0.003585
+5; !! art_median; 0.785116; 0.827453; **; -0.588147
+6; !! ioiclass_abs_hist_02_short; 0.570000; 0.494151; *; 0.462187
+7; fuzzyint_entropy; 0.776512; 0.720189; n. s.; 0.328142
+8; avgtempo; 161.213953; 171.750000; n. s.; -0.168309
+9; !! ioiclass_abs_hist_01_very_short; 0.217209; 0.305943; **; -0.518937
+10; mean_length_step; 4.383256; 4.467264; n. s.; -0.078153
+11; !! art_range; 0.788837; 0.835377; *; -0.443540
+12; !! durclass_bigram_entropy; 2.588837; 2.248585; **; 0.488464
+13; cpc_bigram_entropy; 5.273953; 5.467925; n. s.; -0.149981
+14; aic_mean_seg_len_01_very_short; 1.860233; 1.925283; n. s.; -0.033168
+15; !! metric_complexity_division; 0.287500; 0.253053; *; 0.447561

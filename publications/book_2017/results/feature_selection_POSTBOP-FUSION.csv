@@ -1,0 +1,18 @@
+POSTBOP vs. FUSION; (N = 616 vs. 32)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; !! recordingyear; 1978.530844; 1990.062500; ***; -0.802679
+1; pitch_std; 5.561997; 6.143750; n. s.; -0.344184
+2; pitch_entropy; 3.943799; 3.966250; n. s.; -0.025658
+3; !! avgtempo; 210.724188; 121.303125; ***; 1.218825
+4; !! pitch_range; 25.181818; 31.156250; ***; -0.710696
+5; !! aic_mean_seg_len_01_very_short; 3.534984; 2.223125; **; 0.487915
+6; cdpcx_density_5; 0.125958; 0.114062; n. s.; 0.140381
+7; !! durclass_abs_hist_02_short; 0.245438; 0.383125; ***; -0.745524
+8; !! ioiclass_abs_hist_02_short; 0.342468; 0.459375; **; -0.566766
+9; !! ioiclass_abs_hist_01_very_short; 0.518539; 0.343750; ***; 0.724410
+10; !! aic_mean_seg_len; 2.540162; 2.013438; *; 0.458332
+11; cdpcx_entropy; 0.829156; 0.762188; n. s.; 0.343688
+12; !! durclass_abs_hist_01_very_short; 0.681331; 0.535937; ***; 0.634594
+13; cdpcx_density_>; 0.017857; 0.021250; n. s.; -0.121866
+14; cdpcx_density_T; 0.050357; 0.045313; n. s.; 0.133667
+15; pc_entropy; 0.888880; 0.858750; n. s.; 0.171739

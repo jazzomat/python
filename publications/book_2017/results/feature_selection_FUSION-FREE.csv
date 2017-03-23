@@ -1,0 +1,22 @@
+FUSION vs. FREE; (N = 32 vs. 5)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; !! recordingyear; 1990.062500; 1959.000000; ***; 2.959436
+1; !! int_bigram_entropy; 5.703750; 6.948000; **; -1.597300
+2; !! metrical_event_density; 8.782187; 1.120000; ***; 2.368076
+3; !! ioiclass_bigram_entropy; 2.886563; 3.308000; n. s.; -0.644992
+4; !! avgtempo; 121.303125; 210.280000; ***; -3.354830
+5; pitch_range; 31.156250; 27.400000; n. s.; 0.438401
+6; !! art_range; 0.891875; 0.964000; n. s.; -0.736992
+7; art_std; 0.220000; 0.222000; n. s.; -0.052559
+8; !! fuzzyint_bigram_entropy; 4.524375; 5.340000; n. s.; -0.872216
+9; int_range; 31.218750; 32.000000; n. s.; -0.052674
+10; abs_int_range; 18.312500; 17.800000; n. s.; 0.059673
+11; !! mcm_entropy; 0.802500; 0.432000; ***; 2.350134
+12; !! cdpcx_density_1; 0.179688; 0.022000; n. s.; 0.968940
+13; int_min; -14.562500; -15.000000; n. s.; 0.048950
+14; !! pitch_std; 6.143750; 5.258000; n. s.; 0.571453
+15; !! ioiclass_rel_hist_01_very_short; 0.389688; 0.094000; **; 1.560506
+16; mean_length_step; 4.966250; 4.702000; n. s.; 0.221874
+17; parsons_bigram_entropy; 2.354375; 2.456000; n. s.; -0.212767
+18; !! cpc_bigram_entropy; 5.109063; 1.206000; ***; 2.000680
+19; aic_mean_seg_len_01_very_short; 2.223125; 2.120000; n. s.; 0.081082
