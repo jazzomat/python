@@ -1,0 +1,22 @@
+Paul Desmond vs. Gerry Mulligan-Stan Getz-Zoot Sims-Lee Konitz-Warne Marsh; (N = 18 vs. 83)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; !! recordingyear; 1962.444444; 1955.084337; ***; 2.170040
+1; !! ric_mean_seg_len_02_short; 3.025556; 4.367108; *; -0.677585
+2; syncopicity; 0.282159; 0.260978; n. s.; 0.145976
+3; aic_mean_seg_len; 1.903889; 2.051446; n. s.; -0.224374
+4; !! mean_length_chromatic_ascending; 3.850000; 2.807711; *; 0.659001
+5; !! ioiclass_rel_hist_02_short; 0.512778; 0.654217; **; -0.716707
+6; !! durclass_bigram_entropy; 2.612222; 1.780120; ***; 1.082746
+7; mean_length_arpeggio_descending; 2.606111; 2.814699; n. s.; -0.149763
+8; !! avgtempo; 167.122222; 219.360241; ***; -0.930956
+9; !! mean_length_seq_descending; 4.056667; 4.726265; **; -0.714494
+10; !! aic_mean_seg_len_01_very_short; 1.383333; 2.603133; **; -0.789359
+11; !! mean_length_step_descending; 3.383333; 4.194096; *; -0.578432
+12; mcm_entropy; 0.683333; 0.664940; n. s.; 0.114899
+13; metric_complexity; 0.186197; 0.157628; n. s.; 0.402604
+14; cpc_bigram_entropy; 5.393333; 5.287831; n. s.; 0.071687
+15; !! ric_mean_seg_len; 2.055556; 2.663976; **; -0.754330
+16; !! durclass_abs_hist_01_very_short; 0.373889; 0.652771; ***; -1.156758
+17; !! pitch_median; 66.722222; 63.590361; **; 0.734143
+18; mcm_mean_angle; 28.044444; 25.237229; n. s.; 0.211810
+19; !! durclass_rel_hist_02_short; 0.581111; 0.707229; *; -0.572806

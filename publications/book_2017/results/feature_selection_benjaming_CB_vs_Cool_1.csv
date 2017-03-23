@@ -1,0 +1,22 @@
+Chet Baker vs. Gerry Mulligan-Stan Getz-Zoot Sims; (N = 15 vs. 56)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; !! recordingyear; 1965.466667; 1956.464286; ***; 1.621940
+1; !! pitch_median; 68.533333; 61.723214; ***; 2.116018
+2; mcm_entropy; 0.664000; 0.677679; n. s.; -0.112495
+3; avgtempo; 188.593333; 217.455357; n. s.; -0.480457
+4; syncopicity; 0.259575; 0.243777; n. s.; 0.135296
+5; !! durclass_bigram_entropy; 2.502000; 1.901429; **; 0.784616
+6; metric_complexity_division; 0.242840; 0.228576; n. s.; 0.192243
+7; !! ric_mean_seg_len_03_medium; 1.895333; 1.490536; *; 0.753533
+8; !! durclass_abs_hist_02_short; 0.422000; 0.235714; ***; 1.054339
+9; ric_mean_seg_len_02_short; 3.539333; 3.937321; n. s.; -0.236084
+10; !! cdpcx_density_4; 0.129333; 0.085357; **; 0.968413
+11; metric_complexity; 0.190907; 0.170282; n. s.; 0.344753
+12; art_median; 0.816000; 0.833214; n. s.; -0.192325
+13; !! durclass_abs_hist_01_very_short; 0.452667; 0.666607; **; -0.871291
+14; durclass_rel_hist_02_short; 0.682667; 0.686607; n. s.; -0.018788
+15; cpc_bigram_entropy; 5.352667; 5.452679; n. s.; -0.094583
+16; metrical_event_density; 4.742667; 5.595179; n. s.; -0.401314
+17; !! mean_length_seq_descending; 4.154667; 4.672500; n. s.; -0.541131
+18; !! durclass_abs_entropy; 0.688000; 0.570357; *; 0.601590
+19; metric_complexity_compression; 0.138973; 0.111989; n. s.; 0.375394
