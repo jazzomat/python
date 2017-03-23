@@ -32,7 +32,8 @@ class SymbolicAnalysisExperiments:
         self.numeric_feature_labels, \
         self.numeric_features = self.load_data()
 
-        self.extractors = {'feature_selection': [self.one_vs_n_feature_selection]}
+        self.extractors = {'feature_selection': [self.performer_subset_feature_selection]}
+        # self.extractors = {'feature_selection': [self.one_vs_n_feature_selection]}
         self.fontsize = fontsize
         self.num_features_to_select = num_features_to_select
         self.min_feature_importance = min_feature_importance
@@ -40,6 +41,7 @@ class SymbolicAnalysisExperiments:
         self.num_estimators = num_estimators
         self.text_writer = TextWriter()
         self.tools = AnalysisTools
+        self.clf = RandomForestClassifier(n_estimators=self.num_estimators)
 
     def load_data(self):
         """ Load features exported with MeloSpySuite GUI and split it into metadata and numeric features """
@@ -70,6 +72,70 @@ class SymbolicAnalysisExperiments:
                 extractor()
         print('Finished all experiments :)')
 
+    def performer_subset_feature_selection(self):
+
+        # prepare class id
+        metadata_feat_idx = self.metadata_feature_labels.index('performer')
+        all_feature_values = self.metadata_features[:, metadata_feat_idx]
+        class_id, unique_class_values = SymbolicAnalysisExperiments.create_class_ids(all_feature_values)
+
+        cool_group_1 = ['Gerry Mulligan',
+                        'Stan Getz',
+                        'Zoot Sims']
+        cool_group_2 = ['Lee Konitz',
+                        'Warne Marsh']
+
+        configs = [[['Paul Desmond'],
+                    ['Chet Baker'],
+                    'PD_vs_CB'],
+                   [['Paul Desmond'],
+                    cool_group_1 + cool_group_2,
+                    'PD_vs_Cool_1_2'],
+                   [['Chet Baker'],
+                    cool_group_1 + cool_group_2,
+                    'CB_vs_Cool_1_2'],
+                   [['Paul Desmond'],
+                    cool_group_1,
+                    'PD_vs_Cool_1'],
+                   [['Chet Baker'],
+                    cool_group_1,
+                    'CB_vs_Cool_1'],
+                   [['Paul Desmond'],
+                    cool_group_2,
+                    'PD_vs_Cool_2'],
+                   [['Chet Baker'],
+                    cool_group_2,
+                    'CB_vs_Cool_2']
+                   ]
+
+
+        # iterate over class configurations
+        for config in configs:
+
+            print('Feature selection for config %s' % config[2])
+
+            self.text_writer.reset()
+
+            class_id_curr = -1*np.ones_like(class_id)
+
+            # define class IDs for current config
+            for cid in (0, 1):
+                class_id_curr[np.in1d(all_feature_values, np.array(config[cid]))] = cid
+            assert len(np.unique(class_id_curr)) == 3
+
+            class_label = ['-'.join(config[_]) for _ in (0, 1)]
+            SymbolicAnalysisExperiments.analyze_features_for_two_classes(self.clf,
+                                                                         self.text_writer,
+                                                                         self.numeric_features,
+                                                                         self.numeric_feature_labels,
+                                                                         class_id_curr,
+                                                                         class_label,
+                                                                         num_features_to_select=self.num_features_to_select,
+                                                                         min_feature_importance=self.min_feature_importance,
+                                                                         min_effect_size=self.min_effect_size)
+
+            self.text_writer.save(os.path.join(self.dir_results, 'feature_selection_benjaming_%s.csv' % config[2]))
+
 
     def one_vs_n_feature_selection(self):
         """ Perform 1-vs-N feature selection to identify most characteristic properties
@@ -79,7 +145,7 @@ class SymbolicAnalysisExperiments:
 
         num_items, num_features = self.numeric_features.shape
 
-        clf = RandomForestClassifier(n_estimators=self.num_estimators)
+
 
         # attributes of interest
         class_type_labels = ['instrument', 'performer', 'rhythmfeel', 'style', 'tonality_type']
@@ -105,15 +171,15 @@ class SymbolicAnalysisExperiments:
                 class_id_curr = np.ones(num_items, dtype=int)
                 class_id_curr[class_id == cid] = 0
 
-                SymbolicAnalysisExperiments.analyze_features_for_two_classes(clf,
-                                                             self.text_writer,
-                                                             self.numeric_features,
-                                                             self.numeric_feature_labels,
-                                                             class_id_curr,
-                                                             [class_label, class_one_label],
-                                                             num_features_to_select=self.num_features_to_select,
-                                                             min_feature_importance=self.min_feature_importance,
-                                                             min_effect_size=self.min_effect_size)
+                SymbolicAnalysisExperiments.analyze_features_for_two_classes(self.clf,
+                                                                             self.text_writer,
+                                                                             self.numeric_features,
+                                                                             self.numeric_feature_labels,
+                                                                             class_id_curr,
+                                                                             [class_label, class_one_label],
+                                                                             num_features_to_select=self.num_features_to_select,
+                                                                             min_feature_importance=self.min_feature_importance,
+                                                                             min_effect_size=self.min_effect_size)
 
             self.text_writer.save(os.path.join(self.dir_results, 'symbolic_analysis_1_vs_N_feature_selection_%s.csv' % class_type))
 
