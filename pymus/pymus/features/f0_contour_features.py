@@ -21,9 +21,8 @@ class ContourFeatures:
                 feat_lin_slope_cent_rel=True,
                 feat_tendency_hz=True,
                 feat_modulation_hz=True,
-                min_mod_freq_hz=3,
-                max_mod_freq_hz=10,
-                mov_av_filter_len=None):
+                min_mod_freq_hz=2, #3,
+                max_mod_freq_hz=15):
         """ Run feature extraction
         :param time_sec: (ndarray) Time frames (sec)
         :param f0_hz: (ndarray) Frame-wise fundamental frequency values (Hz)
@@ -37,7 +36,6 @@ class ContourFeatures:
         :param feat_modulation_hz: (bool) Switch to compute that feature
         :param min_mod_freq_hz: (float) Minimum f0 modulation frequency
         :param max_mod_freq_hz: (float) Maximum f0 modulation frequency
-        :param mov_av_filter_len: (int / None) Moving average filter length (None if not to be applied)
         :return features: (ndarray) Feature values
         :return feature_labels: (list of strings) Feature dimension labels
         """
@@ -81,8 +79,7 @@ class ContourFeatures:
             curr_features, curr_labels = ContourFeatures.compute_modulation_features(time_sec,
                                                                                      f0_hz,
                                                                                      max_mod_freq_hz=max_mod_freq_hz,
-                                                                                     min_mod_freq_hz=min_mod_freq_hz,
-                                                                                     mov_av_filter_len=mov_av_filter_len)
+                                                                                     min_mod_freq_hz=min_mod_freq_hz)
             features += curr_features
             feature_labels += curr_labels
 
@@ -160,16 +157,11 @@ class ContourFeatures:
     @staticmethod
     def compute_modulation_features(time_sec,
                                     freq_hz,
-                                    max_mod_freq_hz=10,
-                                    min_mod_freq_hz=0.3,
-                                    mov_av_filter_len=5):
+                                    max_mod_freq_hz=15,
+                                    min_mod_freq_hz=2):
 
         features = []
         feature_labels = []
-
-        # moving average filtering
-        if mov_av_filter_len is not None:
-            freq_hz = Tools.moving_average_filter(freq_hz, N=mov_av_filter_len)
 
         # remove DC part
         freq_hz -= np.mean(freq_hz)
@@ -195,8 +187,8 @@ class ContourFeatures:
     @staticmethod
     def estimate_modulation_frequency_using_acf(time_sec,
                                                 freq_hz,
-                                                max_mod_freq_hz=10.,
-                                                min_mod_freq_hz=3.):
+                                                max_mod_freq_hz=50.,
+                                                min_mod_freq_hz=2.):
         """ Compute modulation frequency of given frequency contour using autocorrelation function (ACF)
         :param time_sec: (ndarray) Time frame values in seconds
         :param freq_hz: (ndarray) Frequency contour values in Hz
@@ -212,37 +204,52 @@ class ContourFeatures:
         acf = Tools.acf(freq_hz)
 
         acf -= np.min(acf)
-        acf /= np.max(acf)
+        if np.max(acf) > 0:
+            acf /= np.max(acf)
 
         # ACF lag values in seconds
         lag_sec = np.arange(L)*dt
 
-        # focus on search range
-        focus_bins = np.where(np.logical_and(lag_sec > 1./max_mod_freq_hz,
-                                             lag_sec < 1./min_mod_freq_hz))[0]
-        if len(focus_bins) == 0:
+        # local maxima
+        acf_shifted_left = np.concatenate((acf[1:], np.array((acf[-1],))))
+        acf_shifted_right = np.concatenate((np.array((acf[0],)), acf[:-1]))
+
+        is_local_max = np.logical_and(acf > acf_shifted_left, acf > acf_shifted_right)
+        local_max_lags = np.where(is_local_max)[0]
+        local_max_vals = acf[local_max_lags]
+        local_max_lags_sec = lag_sec[local_max_lags]
+
+        # return if no local maximum was found
+        if len(local_max_lags) == 0:
             return np.nan, np.nan
 
-        focus_acf = acf[focus_bins]
-        focus_lag_sec = lag_sec[focus_bins]
+        # select local maxima in search range
+        in_valid_range = np.logical_and(local_max_lags_sec > 1./max_mod_freq_hz,
+                                        local_max_lags_sec < 1./min_mod_freq_hz)
+        local_max_vals = local_max_vals[in_valid_range]
+        local_max_lags_sec = local_max_lags_sec[in_valid_range]
 
-        # global maximum in search val_range
-        max_idx = np.argmax(focus_acf)
+        # return if no local maximum within valid modulation frequency range was found
+        if len(local_max_vals) == 0:
+            return np.nan, np.nan
 
-        # refine peak position using quadratic interpolation
-        if len(focus_bins) > 2 and 0 < max_idx < len(focus_acf) - 1:
-            max_idx_int, peak_val = max_idx + Tools.quadratic_interpolation(focus_acf[max_idx-1:max_idx+2])
+        best_idx = np.argmax(local_max_vals)
+        max_idx = local_max_lags[best_idx]
+
+        # quadratic interpolation
+        if 0 < max_idx < len(acf) - 1:
+            max_idx_int, peak_val = Tools.quadratic_interpolation(acf[max_idx-1:max_idx+2])
+            max_idx_int += max_idx
 
             # get modulation frequency using linear interpolation
             frac = max_idx_int % 1.
             low_idx = int(np.floor(max_idx_int))
-            mod_freq = 1./(focus_lag_sec[low_idx]*frac + focus_lag_sec[low_idx+1]*(1-frac))
+            mod_freq = 1./(lag_sec[low_idx]*frac + lag_sec[low_idx+1]*(1-frac))
 
             # dominance measure for modulation
             mod_dom = peak_val
         else:
-            max_bin = focus_bins[max_idx]
-            mod_freq = 1./lag_sec[max_bin]
-            mod_dom = acf[max_bin]
+            mod_freq = 1./local_max_lags_sec[best_idx]
+            mod_dom = local_max_vals[best_idx]
 
         return mod_freq, mod_dom
