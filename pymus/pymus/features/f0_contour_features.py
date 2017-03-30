@@ -216,17 +216,19 @@ class ContourFeatures:
 
         is_local_max = np.logical_and(acf > acf_shifted_left, acf > acf_shifted_right)
         local_max_lags = np.where(is_local_max)[0]
-        local_max_vals = acf[local_max_lags]
-        local_max_lags_sec = lag_sec[local_max_lags]
 
         # return if no local maximum was found
         if len(local_max_lags) == 0:
             return np.nan, np.nan
 
+        local_max_vals = acf[local_max_lags]
+        local_max_lags_sec = lag_sec[local_max_lags]
+
         # select local maxima in search range
-        in_valid_range = np.logical_and(local_max_lags_sec > 1./max_mod_freq_hz,
-                                        local_max_lags_sec < 1./min_mod_freq_hz)
+        in_valid_range = np.logical_and(local_max_lags_sec >= 1./max_mod_freq_hz,
+                                        local_max_lags_sec <= 1./min_mod_freq_hz)
         local_max_vals = local_max_vals[in_valid_range]
+        local_max_lags = local_max_lags[in_valid_range]
         local_max_lags_sec = local_max_lags_sec[in_valid_range]
 
         # return if no local maximum within valid modulation frequency range was found
@@ -249,7 +251,7 @@ class ContourFeatures:
             # dominance measure for modulation
             mod_dom = peak_val
         else:
-            mod_freq = 1./local_max_lags_sec[best_idx]
-            mod_dom = local_max_vals[best_idx]
+            mod_freq = 1./local_max_lags_sec[max_idx]
+            mod_dom = local_max_vals[max_idx]
 
         return mod_freq, mod_dom
