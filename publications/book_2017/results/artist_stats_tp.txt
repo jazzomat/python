@@ -1,0 +1,13 @@
+Chet Baker & tp & 8 & 800 \\ 
+Clifford Brown & tp & 9 & 874 \\ 
+Dizzy Gillespie & tp & 6 & 594 \\ 
+Don Ellis & tp & 6 & 578 \\ 
+Fats Navarro & tp & 6 & 580 \\ 
+Freddie Hubbard & tp & 6 & 574 \\ 
+Kenny Dorham & tp & 7 & 691 \\ 
+Lee Morgan & tp & 4 & 400 \\ 
+Louis Armstrong & tp & 8 & 691 \\ 
+Miles Davis & tp & 19 & 1699 \\ 
+Roy Eldridge & tp & 6 & 560 \\ 
+Woody Shaw & tp & 8 & 738 \\ 
+Wynton Marsalis & tp & 7 & 690 \\ 

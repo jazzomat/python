@@ -65,6 +65,15 @@ class SymbolicAnalysisExperiments:
         numeric_feature_labels = [_ for _ in list(raw_data.columns) if _ not in metadata_feature_labels]
         numeric_features = raw_data.filter(numeric_feature_labels, axis=1).as_matrix()
 
+        # remove recordingyear as obvious feature
+        select_idx = np.array([i for i in range(len(numeric_feature_labels)) if numeric_feature_labels[i] != 'recordingyear'])
+        numeric_feature_labels = [numeric_feature_labels[i] for i in select_idx]
+        numeric_features = numeric_features[:, select_idx]
+
+        with open(os.path.join(self.dir_results, 'features.txt'), 'w+') as f:
+            for feature in numeric_feature_labels:
+                f.write('{}\n'.format(feature))
+
         return raw_data, metadata_feature_labels, metadata_features, numeric_feature_labels, numeric_features
 
     def run(self):
@@ -86,6 +95,17 @@ class SymbolicAnalysisExperiments:
                         'Zoot Sims']
         cool_group_2 = ['Lee Konitz',
                         'Warne Marsh']
+        postbop_ts_group = ['Bob Berg', 'Branford Marsalis', 'Chris Potter',
+                            'David Murray', 'George Coleman', 'Joe Henderson', 'Joe Lovano',
+                            'John Coltrane', 'Joshua Redman', 'Lee Morgan', 'Michael Brecker',
+                            'Sonny Rollins', 'Wayne Shorter']
+
+        tp_group = ['Buck Clayton', 'Charlie Shavers', 'Chet Baker', 'Clifford Brown',
+                    'Dizzy Gillespie', 'Don Ellis', 'Fats Navarro',
+                    'Harry Edison', 'Henry Allen', 'Kenny Dorham', 'Kenny Wheeler',
+                    'Lee Morgan', 'Louis Armstrong', 'Miles Davis', 'Nat Adderley',
+                    'Roy Eldridge', 'Woody Shaw', 'Wynton Marsalis']
+
 
         configs = [[['Paul Desmond'],
                     ['Chet Baker'],
@@ -107,8 +127,13 @@ class SymbolicAnalysisExperiments:
                     'PD_vs_Cool_2'],
                    [['Chet Baker'],
                     cool_group_2,
-                    'CB_vs_Cool_2']
-                   ]
+                    'CB_vs_Cool_2'],
+                   [['David Liebman'],
+                    postbop_ts_group,
+                    'David_Liebman_vs_Postbop_ts'],
+                   [['Freddie Hubbard'],
+                    tp_group,
+                    'Freddie Hubbard vs. tp']]
 
         self.feature_selection_flexible(configs,
                                         class_id,
@@ -132,6 +157,11 @@ class SymbolicAnalysisExperiments:
             configs.append([[styles_in_order[s]],
                             [styles_in_order[s+1]],
                             label])
+
+        # additional comparison
+        configs.append([['BEBOP'],
+                        ['HARDBOP'],
+                        'BEBOP vs HARDBOP'])
 
         self.feature_selection_flexible(configs,
                                         class_id,
@@ -270,7 +300,8 @@ class SymbolicAnalysisExperiments:
                                          class_labels,
                                          num_features_to_select=20,
                                          min_feature_importance=0.01,
-                                         min_effect_size=0.5):
+                                         min_effect_size=0.5,
+                                         delimiter=','):
         """ Find most discriminating features for two class partition
         Args:
             clf (scikit-learn classifier): Classifier (e.g. Random Forest) from scikit-learn package
@@ -284,12 +315,13 @@ class SymbolicAnalysisExperiments:
             min_effect_size (float): Selection threshold for effect size (Cohen's D)
         """
 
-        text_writer.add("%s vs. %s; (N = %d vs. %d)" % (class_labels[0],
-                                                        class_labels[1],
-                                                        int(np.sum(class_id == 0)),
-                                                        int(np.sum(class_id == 1))))
+        text_writer.add("{1} vs. {2}{0} (N = {3} vs. {4})".format(delimiter,
+                                                                  class_labels[0],
+                                                                  class_labels[1],
+                                                                  int(np.sum(class_id == 0)),
+                                                                  int(np.sum(class_id == 1))))
 
-        text_writer.add("Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D")
+        text_writer.add("Rank{0} Feature{0} Mean (class){0} Mean (others){0} Significance (t-test){0} Cohen's D".format(delimiter))
 
         clf.fit(feat_mat, class_id)
 
@@ -307,13 +339,16 @@ class SymbolicAnalysisExperiments:
 
             label = feature_labels[numeric_feat_idx]
 
-            # emphasize features which are significant or have at least a medium effect size
-            if p < 0.05 or np.abs(d) >= min_effect_size:
-                label = '!! ' + label
+            # # emphasize features which are significant or have at least a medium effect size
+            # if p < 0.05 or np.abs(d) >= min_effect_size:
+            #     label = '!! ' + label
+            #
 
-            text_writer.add('%d; %s; %f; %f; %s; %f' % (fid,
-                                                        label,
-                                                        class_means[0],
-                                                        class_means[1],
-                                                        AnalysisTools.generate_p_value_string(p),
-                                                        d))
+            if p < 0.05 and np.abs(d) >= min_effect_size:
+                text_writer.add('{1}{0} {2}{0} {3}{0} {4}{0} {5}{0} {6}'.format(delimiter,
+                                                                                fid,
+                                                                                label,
+                                                                                class_means[0],
+                                                                                class_means[1],
+                                                                                AnalysisTools.generate_p_value_string(p),
+                                                                                d))

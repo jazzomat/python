@@ -1,10 +1,10 @@
-1 & Don Ellis (tp) \newline (0.55~$\pm$~0.06) & Fats Navarro (tp) \newline (0.26~$\pm$~0.04) & Branford Marsalis (ts) \newline (-0.09~$\pm$~0.02) \\
-2 & Sonny Stitt (as, ts) \newline (0.53~$\pm$~0.18) & Phil Woods (as) \newline (0.18~$\pm$~0.05) & John Coltrane (ss, ts) \newline (-0.09~$\pm$~0.02) \\
-3 & Chet Baker (tp) \newline (0.52~$\pm$~0.18) & Dizzy Gillespie (tp) \newline (0.15~$\pm$~0.01) & Stan Getz (ts) \newline (-0.12~$\pm$~0.01) \\
-4 & Bix Beiderbecke (cor) \newline (0.50~$\pm$~0.10) & Michael Brecker (ts) \newline (0.12~$\pm$~0.04) & Sonny Stitt (as, ts) \newline (-0.14~$\pm$~0.03) \\
-5 & Fats Navarro (tp) \newline (0.48~$\pm$~0.11) & Cannonball Adderley (as) \newline (0.11~$\pm$~0.01) & Ben Webster (ts) \newline (-0.15~$\pm$~0.01) \\
-6 & Lee Konitz (as) \newline (0.46~$\pm$~0.15) & John Coltrane (ss, ts) \newline (0.09~$\pm$~0.12) & Ornette Coleman (as) \newline (-0.16~$\pm$~0.02) \\
-7 & Kenny Dorham (tp) \newline (0.45~$\pm$~0.16) & Clifford Brown (tp) \newline (0.05~$\pm$~0.17) & Clifford Brown (tp) \newline (-0.16~$\pm$~0.06) \\
+1 & Don Ellis (tp) \newline (0.55~$\pm$~0.06) & Lionel Hampton (vib) \newline (0.29~$\pm$~0.09) & Branford Marsalis (ts) \newline (-0.09~$\pm$~0.02) \\
+2 & Sonny Stitt (as, ts) \newline (0.53~$\pm$~0.18) & Fats Navarro (tp) \newline (0.26~$\pm$~0.04) & John Coltrane (ss, ts) \newline (-0.09~$\pm$~0.02) \\
+3 & Chet Baker (tp) \newline (0.52~$\pm$~0.18) & Phil Woods (as) \newline (0.18~$\pm$~0.05) & Stan Getz (ts) \newline (-0.12~$\pm$~0.01) \\
+4 & Bix Beiderbecke (cor) \newline (0.50~$\pm$~0.10) & Dizzy Gillespie (tp) \newline (0.15~$\pm$~0.01) & Sonny Stitt (as, ts) \newline (-0.14~$\pm$~0.03) \\
+5 & Fats Navarro (tp) \newline (0.48~$\pm$~0.11) & Michael Brecker (ts) \newline (0.12~$\pm$~0.04) & Ben Webster (ts) \newline (-0.15~$\pm$~0.01) \\
+6 & Lee Konitz (as) \newline (0.46~$\pm$~0.15) & Cannonball Adderley (as) \newline (0.11~$\pm$~0.01) & Ornette Coleman (as) \newline (-0.16~$\pm$~0.02) \\
+7 & Kenny Dorham (tp) \newline (0.45~$\pm$~0.16) & John Coltrane (ss, ts) \newline (0.10~$\pm$~0.12) & Clifford Brown (tp) \newline (-0.16~$\pm$~0.06) \\
 \hline
 52 & Michael Brecker (ts) \newline (0.14~$\pm$~0.02) & David Murray (ts) \newline (-0.23~$\pm$~0.08) & Paul Desmond (as) \newline (-0.28~$\pm$~0.14) \\
 53 & Hank Mobley (ts) \newline (0.14~$\pm$~0.01) & Gerry Mulligan (bs) \newline (-0.27~$\pm$~0.11) & David Murray (ts) \newline (-0.29~$\pm$~0.09) \\

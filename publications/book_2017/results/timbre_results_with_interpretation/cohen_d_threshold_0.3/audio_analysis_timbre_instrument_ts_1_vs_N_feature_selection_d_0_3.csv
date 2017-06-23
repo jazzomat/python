@@ -1,0 +1,70 @@
+Ben Webster vs. all; (N = 400 vs. 15233)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Bob Berg vs. all; (N = 599 vs. 15034)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Tristimulus_1; 0.192808; 0.361485; ***; -0.948900
+1; Relative_Harmonic_Magnitude_h=1; 1.811508; 0.865271; ***; 1.023866
+Branford Marsalis vs. all; (N = 600 vs. 15033)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Chris Potter vs. all; (N = 700 vs. 14933)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Coleman Hawkins vs. all; (N = 600 vs. 15033)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Mel-frequency Cepstral Coefficients_3_mean; 0.325551; -0.697641; ***; 1.093611
+1; Mel-frequency Cepstral Coefficients_3_max; 0.667293; -0.309657; ***; 1.074484
+4; Mel-frequency Cepstral Coefficients_3; 0.168298; -0.873952; ***; 1.113431
+6; Mel-frequency Cepstral Coefficients_3_min; -0.108446; -1.187342; ***; 1.070300
+7; Shape-based Spectral Contrast_3_min; 0.079254; 0.038461; ***; 0.675266
+David Liebman vs. all; (N = 1100 vs. 14533)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Shape-based Spectral Contrast_13_max; 0.000132; 0.000328; ***; -0.330121
+1; Mel-frequency Cepstral Coefficients_3_min; -2.282281; -1.059923; ***; -1.246691
+2; Shape-based Spectral Contrast_13_mean; 0.000045; 0.000125; ***; -0.431172
+3; Octave-based Spectral Contrast_13_mean; 0.000045; 0.000125; ***; -0.431172
+4; Mel-frequency Cepstral Coefficients_1_max; -24.867172; -21.410795; ***; -1.204967
+6; Mel-frequency Cepstral Coefficients_3_mean; -1.793797; -0.572431; ***; -1.351730
+7; Shape-based Spectral Contrast_7; 0.443383; 0.633909; ***; -0.688533
+8; Octave-based Spectral Contrast_13_max; 0.000132; 0.000328; ***; -0.330121
+9; Mel-frequency Cepstral Coefficients_3_max; -1.384101; -0.187998; ***; -1.364569
+David Murray vs. all; (N = 599 vs. 15034)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Dexter Gordon vs. all; (N = 600 vs. 15033)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Don Byas vs. all; (N = 769 vs. 14864)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Hank Mobley vs. all; (N = 400 vs. 15233)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Joe Henderson vs. all; (N = 800 vs. 14833)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Joe Lovano vs. all; (N = 800 vs. 14833)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+John Coltrane vs. all; (N = 1643 vs. 13990)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Joshua Redman vs. all; (N = 500 vs. 15133)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Lester Young vs. all; (N = 694 vs. 14939)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Mel-frequency Cepstral Coefficients_4_mean; 0.184456; -1.028695; ***; 1.053464
+1; Mel-frequency Cepstral Coefficients_4; 0.142419; -1.017099; ***; 1.081774
+2; Spectral Spread_S; 2465.426073; 4524.665454; ***; -0.772373
+3; Spectral Spread_max; 1214834.047701; 2329572.162238; ***; -0.748035
+5; Mel-frequency Cepstral Coefficients_4_min; -0.142177; -1.370150; ***; 1.044416
+6; Spectral Spread_mean; 1067350.054529; 2029039.723142; ***; -0.817400
+Michael Brecker vs. all; (N = 1000 vs. 14633)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Sonny Rollins vs. all; (N = 1284 vs. 14349)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Sonny Stitt vs. all; (N = 596 vs. 15037)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+1; Mel-frequency Cepstral Coefficients_2; -2.810699; -0.838061; ***; -0.913795
+2; Tristimulus_3; 0.375690; 0.223727; ***; 1.014259
+3; Relative_Harmonic_Magnitude_h=4; 1.092248; 0.334988; ***; 1.285550
+5; Mel-frequency Cepstral Coefficients_2_max; -2.330216; -0.302007; ***; -0.942939
+Stan Getz vs. all; (N = 600 vs. 15033)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Spectral Entropy_max; 5.092865; 5.738955; ***; -1.119354
+1; Octave-based Spectral Contrast_12_max; 0.000271; 0.000802; ***; -0.309950
+Wayne Shorter vs. all; (N = 882 vs. 14751)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Zoot Sims vs. all; (N = 467 vs. 15166)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D

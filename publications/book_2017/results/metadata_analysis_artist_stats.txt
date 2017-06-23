@@ -8,7 +8,7 @@ Branford Marsalis & ts & 6 & 4691\\
 Cannonball Adderley & as & 5 & 2642\\
 Charlie Parker & as & 17 & 5672\\
 Chet Baker & tp & 8 & 1428\\
-Chris Potter & ts & 7 & 7161\\
+Chris Potter & ts & 7 & 7156\\
 Clifford Brown & tp & 9 & 4232\\
 Coleman Hawkins & ts & 6 & 2609\\
 David Liebman & ss, ts & 11 & 7518\\
@@ -27,18 +27,18 @@ Herbie Hancock & p & 5 & 2769\\
 J.J. Johnson & tb & 8 & 3324\\
 Joe Henderson & ts & 8 & 4930\\
 Joe Lovano & ss, ts, ts-c & 8 & 6104\\
-John Coltrane & ss, ts & 20 & 19429\\
+John Coltrane & ss, ts & 20 & 19428\\
 Johnny Dodds & cl & 6 & 722\\
 Joshua Redman & ts & 5 & 2422\\
 Kenny Dorham & tp & 7 & 2856\\
 Kid Ory & tb & 5 & 319\\
 Lee Konitz & as & 8 & 3519\\
-Lee Morgan & tp, ts & 4 & 2243\\
+Lee Morgan & tp & 4 & 2243\\
 Lester Young & ts & 7 & 1787\\
-Lionel Hampton & vib & 6 & 1330\\
+Lionel Hampton & vib & 6 & 1326\\
 Louis Armstrong & cor, tp & 8 & 1157\\
 Michael Brecker & ts & 10 & 7601\\
-Miles Davis & tp, ts & 19 & 6734\\
+Miles Davis & tp & 19 & 6734\\
 Milt Jackson & vib & 6 & 2302\\
 Ornette Coleman & as & 5 & 2857\\
 Pat Metheny & g & 4 & 2374\\
@@ -57,4 +57,4 @@ Woody Shaw & cor, tp & 8 & 3193\\
 Wynton Marsalis & tp & 7 & 3070\\
 Zoot Sims & ts & 6 & 1136\\
 \hline
-\textbf{Total} & & \textbf{423} & \textbf{191474} \\
+\textbf{Total} & & \textbf{423} & \textbf{191464} \\

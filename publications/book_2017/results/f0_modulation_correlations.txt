@@ -1,19 +1,9 @@
- & \textbf{f0\_mod\_range\_cent} & \textbf{f0\_av\_abs\_f0\_dev\_median}\\
+ & \texttt{mod\_range\_cent} & \texttt{dev\_median} & \texttt{mod\_freq\_hz}\\
 \midrule
-\textbf{intensity\_solo\_median} & -0.10*** & 0.04***\\
-\textbf{noteid} & -0.02* & 0.02**\\
-\textbf{tatum} & -0.03*** & 0.02**\\
-\textbf{rel\_pos\_in\_phrase} & 0.07*** & -0.11***\\
-\textbf{pitch} & -0.08*** & \\
-\textbf{onset} & -0.02* & \\
-\textbf{duration} & 0.15*** & -0.22***\\
-\midrule
- & \textbf{f0\_mod\_freq\_hz} & \textbf{f0\_mod\_num\_periods}\\
-\midrule
-\textbf{intensity\_solo\_median} & -0.10*** & 0.04***\\
-\textbf{noteid} & -0.02* & 0.02**\\
-\textbf{tatum} & -0.03*** & 0.02**\\
-\textbf{rel\_pos\_in\_phrase} & 0.07*** & -0.11***\\
-\textbf{pitch} & -0.08*** & \\
-\textbf{onset} & -0.02* & \\
-\textbf{duration} & 0.15*** & -0.22***\\
+\texttt{intensity\_solo\_median} & -0.11*** & 0.04*** & -0.11***\\
+\texttt{noteid} & -0.02* & 0.02*** & -0.06***\\
+\texttt{tatum} & -0.03*** & 0.02* & -0.05***\\
+\texttt{rel\_pos\_in\_phrase} & 0.07*** & -0.11*** & 0.18***\\
+\texttt{pitch} & -0.08*** &  & -0.04***\\
+\texttt{onset} & -0.02* &  & -0.04***\\
+\texttt{duration} & 0.16*** & -0.22*** & 0.32***\\

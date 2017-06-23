@@ -1,4 +1,5 @@
 import numpy as np
+import os
 
 __author__ = 'Jakob Abesser'
 
@@ -151,3 +152,14 @@ class TextWriter:
         with open(fnTXT, 'w+') as f:
             for _ in self.content:
                 f.write(_ + '\n')
+
+        # export in TEX and Markdown formats
+        for new_ext, delimiter, final_string in zip(('.tex', '.md'), (' & ', ' | '), ('\\\\', '')):
+            ext = os.path.splitext(fnTXT)[-1]
+            fn_tex = fnTXT.replace(ext, new_ext)
+            with open(fn_tex, 'w+') as f:
+                for line_ in self.content:
+                    curr_line = line_.replace(';', delimiter)
+                    curr_line += final_string
+                    f.write(curr_line + '\n')
+

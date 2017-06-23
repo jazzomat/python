@@ -1,0 +1,58 @@
+Chet Baker vs. all; (N = 800 vs. 8669)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Clifford Brown vs. all; (N = 874 vs. 8595)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Dizzy Gillespie vs. all; (N = 594 vs. 8875)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+1; Shape-based Spectral Contrast_3_mean; 0.231642; 0.060052; ***; 1.304214
+2; Spectral Roll-off_max; 3647.195342; 2981.277432; ***; 0.471993
+3; Shape-based Spectral Contrast_6_max; 0.117143; 0.179823; ***; -0.801914
+Don Ellis vs. all; (N = 578 vs. 8891)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Spectral Spread_mean; 1571797.480207; 2664008.850527; ***; -0.648457
+1; Spectral Kurtosis_S; 0.000179; 0.000027; ***; 1.780024
+2; Spectral Spread_min; 1245495.321869; 2111980.365120; ***; -0.649767
+3; Spectral Spread_max; 1855376.233086; 3306796.465700; ***; -0.650974
+4; Spectral Skewness_S; 42.086957; 25.627917; ***; 1.248406
+5; Shape-based Spectral Contrast_6_mean; 0.187720; 0.140345; ***; 0.692773
+Fats Navarro vs. all; (N = 580 vs. 8889)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Shape-based Spectral Contrast_7_mean; 0.421575; 0.322877; ***; 0.541544
+1; Shape-based Spectral Contrast_7_min; 0.389147; 0.294761; ***; 0.541541
+2; Shape-based Spectral Contrast_7_max; 0.462467; 0.356613; ***; 0.564896
+3; Shape-based Spectral Contrast_7; 0.524010; 0.408863; ***; 0.579779
+4; Spectral Spread_max; 1677998.994565; 3318696.751313; ***; -0.738400
+5; Mel-frequency Cepstral Coefficients_2_min; -4.383671; -3.627315; ***; -0.399554
+6; Spectral Spread_mean; 1416242.950167; 2674404.401227; ***; -0.749984
+7; Spectral Flatness_min; 0.001776; 0.002195; ***; -0.387217
+8; Octave-based Spectral Contrast_7_min; 7.152986; 8.222617; ***; -0.455279
+Freddie Hubbard vs. all; (N = 574 vs. 8895)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Kenny Dorham vs. all; (N = 691 vs. 8778)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Lee Morgan vs. all; (N = 400 vs. 9069)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Spectral Entropy_mean; 5.672141; 5.075295; ***; 1.154314
+Louis Armstrong vs. all; (N = 691 vs. 8778)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Shape-based Spectral Contrast_5_mean; 0.046507; 0.068456; ***; -0.520712
+1; Spectral Spread_S; 4567.232800; 5881.394122; ***; -0.351909
+2; Shape-based Spectral Contrast_5; 0.061771; 0.090447; ***; -0.462385
+3; Tristimulus_2; 0.318576; 0.421514; ***; -0.687604
+4; Relative_Harmonic_Magnitude_h=1; 0.659236; 0.983473; ***; -0.431860
+5; Mel-frequency Cepstral Coefficients_3_mean; -1.425493; -1.912814; ***; 0.537591
+6; Mel-frequency Cepstral Coefficients_3; -1.521838; -1.982492; ***; 0.540959
+7; Shape-based Spectral Contrast_5_min; 0.028818; 0.045427; ***; -0.500109
+Miles Davis vs. all; (N = 1699 vs. 7770)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Roy Eldridge vs. all; (N = 560 vs. 8909)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+2; Spectral Skewness_S; 16.024159; 27.299421; ***; -0.835151
+4; Spectral Roll-off_min; 1710.620728; 2120.531062; ***; -0.425275
+8; Octave-based Spectral Contrast_13_mean; 0.000020; 0.000053; ***; -0.326307
+9; Shape-based Spectral Contrast_13_mean; 0.000020; 0.000053; ***; -0.326307
+Woody Shaw vs. all; (N = 738 vs. 8731)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Wynton Marsalis vs. all; (N = 690 vs. 8779)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Spectral Roll-off_S; 133.924638; 115.939970; ***; 0.345927

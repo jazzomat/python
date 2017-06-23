@@ -1,0 +1,48 @@
+Art Pepper vs. all; (N = 600 vs. 7366)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Relative_Harmonic_Magnitude_h=1; 0.458552; 0.830212; ***; -0.392068
+1; Spectral Stability_max; 0.998110; 0.993391; ***; 0.582581
+2; Spectral Spread_min; 1282015.270708; 2012216.328333; ***; -0.692324
+3; Spectral Centroid F0 Adjusted_max; 979.988522; 1597.274172; ***; -1.026372
+4; Odd_To_Even_Ratio; 0.467287; 0.728663; ***; -0.513350
+5; Spectral Entropy_mean; 4.681553; 5.302425; ***; -1.140078
+Benny Carter vs. all; (N = 700 vs. 7266)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Cannonball Adderley vs. all; (N = 500 vs. 7466)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Charlie Parker vs. all; (N = 1600 vs. 6366)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Eric Dolphy vs. all; (N = 600 vs. 7366)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Spectral Roll-off_max; 3417.498779; 2805.177670; ***; 0.454910
+Lee Konitz vs. all; (N = 778 vs. 7188)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Odd_To_Even_Ratio; 0.996591; 0.677846; ***; 0.631152
+1; Shape-based Spectral Contrast_6_min; 0.146308; 0.113398; ***; 0.482589
+Ornette Coleman vs. all; (N = 500 vs. 7466)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Paul Desmond vs. all; (N = 792 vs. 7174)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Shape-based Spectral Contrast_13_mean; 0.000014; 0.000071; ***; -0.614306
+1; Shape-based Spectral Contrast_13_max; 0.000036; 0.000192; ***; -0.527289
+2; Octave-based Spectral Contrast_13_max; 0.000036; 0.000192; ***; -0.527289
+3; Tristimulus_3; 0.053153; 0.193620; ***; -1.012201
+4; Shape-based Spectral Contrast_13; 0.000052; 0.000249; ***; -0.394366
+5; Spectral Sparseness_min; 0.908633; 0.857943; ***; 1.303039
+7; Octave-based Spectral Contrast_13; 0.000052; 0.000249; ***; -0.394366
+8; Octave-based Spectral Contrast_13_mean; 0.000014; 0.000071; ***; -0.614306
+9; Shape-based Spectral Contrast_6_min; 0.176633; 0.109986; ***; 1.010713
+Phil Woods vs. all; (N = 600 vs. 7366)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+Sonny Stitt vs. all; (N = 596 vs. 7370)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D
+0; Tristimulus_3; 0.336649; 0.166958; ***; 1.230041
+1; Tristimulus_1; 0.239822; 0.408743; ***; -0.933526
+2; Shape-based Spectral Contrast_5_max; 0.069590; 0.139453; ***; -0.829970
+3; Relative_Harmonic_Magnitude_h=5; 0.911640; 0.161329; ***; 1.223512
+4; Relative_Harmonic_Magnitude_h=6; 0.511128; 0.114021; ***; 1.212921
+6; Spectral Spread_max; 2330943.926255; 2863467.156468; ***; -0.314958
+7; Shape-based Spectral Contrast_5_mean; 0.047717; 0.101940; ***; -0.819980
+9; Shape-based Spectral Contrast_5; 0.065674; 0.141439; ***; -0.779484
+Steve Coleman vs. all; (N = 700 vs. 7266)
+Rank; Feature; Mean (class); Mean (others); Significance (t-test); Cohen's D

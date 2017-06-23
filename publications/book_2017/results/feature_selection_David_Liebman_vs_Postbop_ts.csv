@@ -1,0 +1,7 @@
+David Liebman vs. Bob Berg-Branford Marsalis-Chris Potter-David Murray-George Coleman-Joe Henderson-Joe Lovano-John Coltrane-Joshua Redman-Lee Morgan-Michael Brecker-Sonny Rollins-Wayne Shorter, (N = 34 vs. 513)
+Rank, Feature, Mean (class), Mean (others), Significance (t-test), Cohen's D
+0, pitch_median, 68.8529411764706, 63.63352826510721, ***, 1.3153509504551697
+4, pitch_std, 6.314411764705883, 5.383040935672515, **, 0.5518075140252428
+6, cpc_bigram_entropy, 5.909705882352941, 5.216179337231969, **, 0.5180633604800481
+12, ratio_chromatic_sequences, 0.1252941176470588, 0.08253411306042886, **, 0.543523082539799
+13, pitch_entropy, 4.313529411764706, 3.8596491228070176, **, 0.5145932258908711

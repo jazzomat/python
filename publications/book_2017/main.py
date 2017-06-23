@@ -11,6 +11,6 @@ __author__ = 'Jakob Abesser'
 if __name__ == '__main__':
     dir_data = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data')
     dir_results = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'results')
-    for extractor in [SymbolicAnalysisExperiments(dir_data, dir_results),
-                      AudioAnalysisExperiments(dir_data, dir_results)]:
+    for extractor in [SymbolicAnalysisExperiments(dir_data, dir_results),]:
+                      # AudioAnalysisExperiments(dir_data, dir_results)]:
         extractor.run()

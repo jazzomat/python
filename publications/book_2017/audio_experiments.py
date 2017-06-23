@@ -29,7 +29,8 @@ class AudioAnalysisExperiments:
 
 
         self.tools = AnalysisTools
-        self.extractors = {'f0': [self.f0_analysis_vibrato,
+        self.extractors = {'f0': [self.f0_analysis_vibrato_modulation,
+                                  self.f0_analysis_intonation,
                                   self.f0_analysis_classification],
                            'metadata': [self.metadata_analysis],
                            'tuning': [self.tuning_analysis_tuning_freq_vs_recording_year],
@@ -41,6 +42,9 @@ class AudioAnalysisExperiments:
 
         # data loading & preparation
         self.df_notes, self.df_beats, self.df_solos = self.load_data()
+
+        # todo remove hack
+        self.df_solos.ix[self.df_solos['performer'] == 'Lee Morgan', 'instrument'] = 'tp'
 
         # add rel_pos_in_phrase
         self.add_relative_position_in_phrase_for_all_solos()
@@ -92,14 +96,17 @@ class AudioAnalysisExperiments:
 
         # scatter plot with linear regression line
         df = pn.DataFrame({'Year': year,
-                           '$\left|\Delta f_\mathrm{ref}^\mathrm{440}\\right|$ [cent]': delta_f_ref_440_cent_abs})
+                           '|tuning_dev|': delta_f_ref_440_cent_abs})
         sns.set_style("whitegrid")
         # sns.set(font_scale=0.7)
         g = sns.lmplot(x='Year',
-                       y='$\left|\Delta f_\mathrm{ref}^\mathrm{440}\\right|$ [cent]',
+                       y='|tuning_dev|',
                        markers="o",
-                       data=df, ci=None, palette="Blues_d", size=3,
+                       data=df, ci=None,
+                       # palette="Blues_d",
+                       size=3.5,
                        scatter_kws={"s": 10, "alpha": 1})
+        # g.set(xlim=(1900, 2020))
         g.set_xticklabels(rotation=60)
         g.set(ylim=(0, 50))
         plt.savefig(os.path.join(self.dir_results, 'tuning_analysis_tuning_freq_vs_recording_year_scatterplot.eps'),
@@ -109,7 +116,7 @@ class AudioAnalysisExperiments:
         # density plot over delta_f_ref_440_cent
         plt.figure()
         plt.hold(True)
-        all_intervals = ((1920, 1940),
+        all_intervals = ((1900, 1940),
                          (1940, 1960),
                          (1960, 1980),
                          (1980, 2010))
@@ -117,50 +124,62 @@ class AudioAnalysisExperiments:
         for i, interval in enumerate(all_intervals):
             delta = delta_f_ref_440_cent[np.logical_and(year >= interval[0],
                                                         year < interval[1])]
-            g = pn.Series(delta).plot.kde(x='$\left|\Delta f_\mathrm{ref}^\mathrm{440}\\right|$ [cent]',
+            g = pn.Series(delta).plot.kde(x='tuning_dev',
                                           linestyle=linestyles[i],
                                           label='%d - %d' % (interval[0], interval[1]))
             g.set(xlim=(-50, 50))
-            g.set(xlabel='$\Delta f_\mathrm{ref}^\mathrm{440}$ [cent]')
+            g.set(xlabel='tuning_dev')
         plt.legend(loc=0)
         plt.savefig(os.path.join(self.dir_results, 'tuning_analysis_tuning_freq_dev_dist_plot.eps'),
                     bbox_inches='tight')
         plt.close()
 
-    def f0_analysis_vibrato(self,
-                               selected_instruments=('tp', 'as', 'ts'),
-                               min_number_of_notes=20):
+    def f0_analysis_vibrato_modulation(self,
+                                       selected_instruments=('tp', 'as', 'ts'),
+                                       min_number_of_notes=20):
+        """ Perform analysis of tones played with vibrato and other modulation techniques.
+        Args:
+            selected_instruments (list of string): Instruments used to group artists for analysis
+            min_number_of_notes (int): We select all artist with at least this many vibrato tones
+        """
 
         # load note-wise metadata data
         performer_notes, instrument_notes, tempo_notes, note_performer_select_mask = self.get_note_wise_metadata()
         performer_notes = np.array(performer_notes)
         num_notes = len(performer_notes)
 
+        # get annotated modulation technique as selection filters for
+        #  - vibrato tones
+        #  - all tones with modulation techniques
         f0_mod = self.df_notes['f0_mod'].as_matrix()
         vibrato_mask = f0_mod == 'vibrato'
+        mod_mask = np.logical_not(f0_mod == '')
 
-        mod_mask = np.ones(num_notes, dtype=bool)
-        mod_mask[f0_mod == ''] = False
-
-        # select artists with minimum number of notes
+        # get number of annotated vibrato tones per performer
         all_performer = np.unique(performer_notes)
         num_performer = len(all_performer)
         vibrato_notes_per_performer = np.zeros(num_performer, dtype=int)
         for i, performer in enumerate(all_performer):
             vibrato_notes_per_performer[i] = np.sum(np.logical_and(vibrato_mask, performer_notes == performer))
+
+        # select artists with minimum number of notes
         all_performer_selected = all_performer[vibrato_notes_per_performer >= min_number_of_notes]
 
+        # create mask for tone selection
         note_performer_select_mask = np.zeros(num_notes, dtype=bool)
         for performer in all_performer_selected:
             note_performer_select_mask[performer_notes == performer] = True
 
         f0_mod_freq_hz = self.df_notes['f0_mod_freq_hz']
 
-        # (3) Correlation between f0 contour features and contextual features
+        # (1) Correlation between f0 contour features and contextual features
         contour_features = ['f0_mod_range_cent',
                             'f0_av_abs_f0_dev_median',
                             'f0_mod_freq_hz',
                             'f0_mod_num_periods']
+        contour_feature_labels_paper = ['mod_range_cent',
+                                        'dev_median',
+                                        'mod_freq_hz']
 
         metadata_features = ['intensity_solo_median',
                              'noteid',
@@ -188,35 +207,36 @@ class AudioAnalysisExperiments:
                                               np.nan_to_num(self.df_notes.loc[mod_mask, metadata_feature].as_matrix()))
 
         contour_features = [_.replace('_', '\\_') for _ in contour_features]
+        contour_feature_labels_paper = [_.replace('_', '\\_') for _ in contour_feature_labels_paper]
         metadata_features = [_.replace('_', '\\_') for _ in metadata_features]
 
         self.text_writer.reset()
 
         num_feature_per_table = 2
-        for offset in (0, 2):
+        # for offset in (0, 2):
 
-            curr_contour_features = contour_features[offset:offset+num_feature_per_table]
-            curr_line = [''] + ['\\textbf{' + _ + '}' for _ in curr_contour_features]
+        # curr_contour_features = contour_feature_labels_paper[offset:offset+num_feature_per_table]
+        curr_line = [''] + ['\\texttt{' + _ + '}' for _ in contour_feature_labels_paper]
+        curr_line = ' & '.join(curr_line) + '\\\\'
+        self.text_writer.add(curr_line)
+        self.text_writer.add('\\midrule')
+
+        for m, metadata_feature in enumerate(metadata_features):
+            curr_line = ['\\texttt{' + metadata_feature + '}']
+            for c, contour_feature in enumerate(contour_feature_labels_paper):
+                if p[c, m] < 0.05:
+                    curr_line.append('%1.2f%s' % (r[c, m], self.tools.generate_p_value_string(p[c, m])))
+                else:
+                    curr_line.append('')
             curr_line = ' & '.join(curr_line) + '\\\\'
             self.text_writer.add(curr_line)
-            self.text_writer.add('\\midrule')
 
-            for m, metadata_feature in enumerate(metadata_features):
-                curr_line = ['\\textbf{' + metadata_feature + '}']
-                for c, contour_feature in enumerate(curr_contour_features):
-                    if p[c, m] < 0.05:
-                        curr_line.append('%1.2f%s' % (r[c, m], self.tools.generate_p_value_string(p[c, m])))
-                    else:
-                        curr_line.append('')
-                curr_line = ' & '.join(curr_line) + '\\\\'
-                self.text_writer.add(curr_line)
-
-            if offset == 0:
-                self.text_writer.add('\\midrule')
+            # if offset == 0:
+            #     self.text_writer.add('\\midrule')
 
         self.text_writer.save(os.path.join(self.dir_results, 'f0_modulation_correlations.txt'))
 
-        # (1) Boxplots over vibrato modulation frequency
+        # (2) Boxplots over vibrato modulation frequency
 
         # analyze performers for each instrument
         for valid_instrument in selected_instruments:
@@ -245,9 +265,9 @@ class AudioAnalysisExperiments:
             temp_df2 = temp_df2[performer_medians.index]
             temp_df2.boxplot(fontsize=self.fontsize)
             ax = plt.gca()
-            ax.set_ylim(2, 10)
+            ax.set_ylim(1, 16)
             ax.set_xlabel('Performer', fontsize=self.fontsize)
-            ax.set_ylabel('Vibrato modulation frequency [Hz]', fontsize=self.fontsize)
+            ax.set_ylabel('mod_freq_hz', fontsize=self.fontsize)
             ax.set_title('')
             ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
             for tick in ax.yaxis.get_major_ticks():
@@ -258,7 +278,7 @@ class AudioAnalysisExperiments:
             plt.savefig(os.path.join(self.dir_results, 'f0_vibrato_modulation_frequency_performer_%s.eps' % valid_instrument), dpi=300)
             plt.close()
 
-        # (2) Vibrato modulation frequency vs. tempo
+        # (3) Vibrato modulation frequency vs. tempo
 
         df = pn.DataFrame({'t_solo': tempo_notes[vibrato_mask],
                            'ratio': 60 * f0_mod_freq_hz[vibrato_mask] / tempo_notes[vibrato_mask]})
@@ -283,9 +303,9 @@ class AudioAnalysisExperiments:
                 x='t_solo',
                 y='ratio')
         plt.grid(True)
-        plt.ylabel('$f_\mathrm{mof}$ [Hz]')
+        plt.ylabel('mod\_freq\_hz')
         plt.xlabel('Tempo [bpm]')
-        ax.set_ylim(2, 10)
+        ax.set_ylim(1, 16)
         plt.xlim([25, 350])
         plt.savefig(os.path.join(self.dir_results, 'f0_vibrato_modulation_frequency_vs_tempo.eps'),
                     bbox_inches='tight')
@@ -331,7 +351,7 @@ class AudioAnalysisExperiments:
             ax = plt.gca()
             ax.set_ylim(-50, 50)
             ax.set_xlabel('Performer', fontsize=self.fontsize)
-            ax.set_ylabel('Median over tone-wise $f_0$ deviation [cent]', fontsize=self.fontsize)
+            ax.set_ylabel('dev_median', fontsize=self.fontsize)
             ax.set_title('')
             ax.set_xticklabels(ax.get_xticklabels(), rotation = 90)
             for tick in ax.yaxis.get_major_ticks():
@@ -378,6 +398,11 @@ class AudioAnalysisExperiments:
         feat_mat = np.zeros((num_notes, num_feat))
         for i, lab in enumerate(f0_feature_labels):
             feat_mat[:, i] = self.df_notes[lab].as_matrix()
+
+        # check for nans
+        idx = np.where(np.isnan(feat_mat))
+
+        a = 1
 
         # remove items with nan features
         # all_idx = np.arange(num_notes)
@@ -592,7 +617,7 @@ class AudioAnalysisExperiments:
 
         # select solos with
         #  - significant difference between first and second eight notes &
-        #  - minimum of 10 eight-note pairs
+        #  - minimum of 6 eight-note pairs
         idx_select = np.where(np.logical_and(all_p < 0.05,
                                              all_n > min_num_notes))[0]
 
@@ -627,10 +652,10 @@ class AudioAnalysisExperiments:
 
                     # write solo metadata into row
                     solo_id = solo_idx_curr_category[_]
-                    self.text_writer.add("{} & {} & {:2.1f} & {} \\\\".format(self.get_artist_instrument_label(self.df_solos['performer'][self.mel_ids[solo_id]]),
-                                                                              self.df_solos['title'][self.mel_ids[solo_id]],
-                                                                              all_d[solo_id],
-                                                                              self.tools.generate_p_value_string(all_p[solo_id])))
+                    self.text_writer.add("%s & %s & %1.2f\\textsuperscript{%s} \\\\" % (self.get_artist_instrument_label(self.df_solos['performer'][self.mel_ids[solo_id]]),
+                                                                                        self.df_solos['title'][self.mel_ids[solo_id]],
+                                                                                        all_d[solo_id],
+                                                                                        self.tools.generate_p_value_string(all_p[solo_id])))
             if k == 0:
                 self.text_writer.add("\hline")
 
@@ -782,6 +807,11 @@ class AudioAnalysisExperiments:
         tempo_solo = list(self.df_solos['avgtempo'])
         performer_solo = list(self.df_solos['performer'])
         instrument_solo = list(self.df_solos['instrument'])
+
+        performer_solo = np.array(performer_solo)
+        instrument_solo = np.array(instrument_solo)
+        instrument_solo[performer_solo == 'Miles Davis'] = 'tp'
+
         performer_selected = list(self.df_performer.index)
         performer_notes = ['' for _ in range(num_notes)]
         instrument_notes = ['' for _ in range(num_notes)]
@@ -793,6 +823,9 @@ class AudioAnalysisExperiments:
             mask = melid_notes == melid
             curr_performer = performer_solo[i]
             curr_instrument = instrument_solo[i]
+            # todo remove this hack (after bug is fixed: wrong instrument annotation for one solo of Miles)
+            if curr_performer == 'Miles Davis':
+                curr_instrument = 'tp'
             curr_tempo = tempo_solo[i]
             for n in np.where(mask)[0]:
                 performer_notes[n] = curr_performer
