@@ -190,7 +190,8 @@ class Transformer:
                        sample_rate,
                        n_fft=None):
         """ Compute instantaneous frequency values based on the method proposed in
-                Toshihiro Abe et al. in ICASSP'95, Eurospeech'97
+            Lagrange and Marchand, Estimating the Instantaneous Frequency of Sinusoidal Components Using Phase-Based
+            Methods, JAES, 2007, Eq. 17
         :param samples: (ndarray) Audio samples
         :param blocksize: (int) Blocksize in samples
         :param hopsize: (int) Hopsize in samples
