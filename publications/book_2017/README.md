@@ -11,3 +11,7 @@ We recommend to install [miniconda](https://conda.io/miniconda.html) to be able 
     conda env create -f environment.yml
     source activate jazzomat_experiments
     python main.py
+
+# Feature selection
+
+All results discussed in the chapter "Searching for musical style using statistical feature selection" can be found in the subfolder "feature_selection"
