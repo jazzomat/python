@@ -1,6 +1,0 @@
-HARDBOP vs. POSTBOP, (N = 322 vs. 616)
-Rank, Feature, Mean (class), Mean (others), Significance (t-test), Cohen's D
-0, pitch_std, 4.579844720496895, 5.561996753246753, ***, -0.599541088363997
-6, durclass_abs_hist_02_short, 0.34593167701863353, 0.24543831168831168, ***, 0.5140289803369916
-8, pitch_range, 20.53105590062112, 25.181818181818183, ***, -0.5736319600608566
-18, durclass_abs_hist_01_very_short, 0.5581987577639752, 0.681331168831169, ***, -0.5094795771717755
